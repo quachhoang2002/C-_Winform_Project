@@ -1,5 +1,6 @@
 # C-_Winform_Project
 Quy trình làm việc
+
     ***Làm chức năng mới
      -git checkout master 
      -git pull
