@@ -8,6 +8,7 @@ Quy trình làm việc
      
     **** Khi làm xong chức nắng mới
      -git checkout branch của chức năng đó
+     -git pull origin master
      -git add . 
      -git commit -m '(tên)'
      -git push
