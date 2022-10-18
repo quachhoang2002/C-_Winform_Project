@@ -470,19 +470,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+    "C:\\Users\\HP ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\Project_CakeStore.csproj",
+      "projectUniqueName": "D:\\ChuongTrinh\\C#\\C#_Project\\Project_CakeStore\\Project_CakeStore.csproj",
       "projectName": "Project_CakeStore",
-      "projectPath": "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\Project_CakeStore.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\obj\\",
+      "projectPath": "D:\\ChuongTrinh\\C#\\C#_Project\\Project_CakeStore\\Project_CakeStore.csproj",
+      "packagesPath": "C:\\Users\\HP ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\ChuongTrinh\\C#\\C#_Project\\Project_CakeStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
