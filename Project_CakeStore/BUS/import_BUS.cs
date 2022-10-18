@@ -31,5 +31,10 @@ namespace Project_CakeStore.BUS
         {
             return import_DAO.getAllImportInfor(importID, suppID, empID);
         }
+
+        public Boolean checkImportID(String importID)
+        {
+            return import_DAO.checkImportID(importID);
+        }
     }
 }
