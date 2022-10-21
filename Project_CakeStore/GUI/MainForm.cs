@@ -81,5 +81,13 @@ namespace Project_CakeStore.GUI
             customerForm customerForm = new customerForm(getName, getid);
             customerForm.ShowDialog();
         }
+
+        private void txtAcc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            accountForm accountForm = new accountForm(getName, getid);
+            accountForm.ShowDialog();
+            this.Show();
+        }
     }
 }

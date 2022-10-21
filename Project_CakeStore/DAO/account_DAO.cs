@@ -127,6 +127,38 @@ namespace Project_CakeStore.DAO
             return list;
         }
 
+        public List<account_DTO> getAllAccountWithIsDeleted()
+        {
+            List<account_DTO> list = new List<account_DTO>();
+
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select * from Account";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    while (sdr.Read())
+                    {
+                        account_DTO account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), sdr["Password"].ToString(), (int)sdr["Permission"]);
+                        list.Add(account);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+
+            return list;
+        }
+
         public bool AddAccount(account_DTO account)
         {
             Boolean check = false;
@@ -170,6 +202,7 @@ namespace Project_CakeStore.DAO
             {
                 string sql = "Update Account set isDeleted=0 Where AccID="+ID;
                 SqlCommand cm = new SqlCommand(sql, con);
+                cm.Parameters.AddWithValue("@AccID", "Acc" + (getAllAccountWithIsDeleted().Count + 1));
                 con.Open();
                 int n = cm.ExecuteNonQuery();
 
@@ -196,8 +229,9 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select * from Account where " + column + " = '" + data + "' and isDeleted = 1";
+                    string sql = "Update Account set isDeleted=0 Where AccID=@ID";
                     SqlCommand cm = new SqlCommand(sql, con);
+                    cm.Parameters.AddWithValue("@ID", ID); 
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
 
@@ -252,5 +286,9 @@ namespace Project_CakeStore.DAO
             }
             return check;
         }
+
+        
+
     }
+
 }

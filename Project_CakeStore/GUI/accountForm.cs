@@ -17,7 +17,7 @@ namespace Project_CakeStore.GUI
         private string getName;
         private string getId;
         private account_BUS accountBus=new account_BUS();
-
+        private employee_BUS employeeBUS = new employee_BUS();
         public accountForm(string getName, string getId)
         {
             InitializeComponent();
@@ -70,7 +70,12 @@ namespace Project_CakeStore.GUI
 
         public void SetCmbEmployeeID()
         {
-            
+            cmbEmpID.Items.Clear();
+            List<employee_DTO> listEmp = employeeBUS.getAllEmployee();
+            foreach (employee_DTO emp in listEmp)
+            {
+                cmbEmpID.Items.Add(emp.getEmpID());
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -103,7 +108,7 @@ namespace Project_CakeStore.GUI
             txtAccName2.Text = "";
             txtPass.Text = "";
             txtPermission.Text = "";
-            cmbEmpID.SelectedIndex = 0;
+            cmbEmpID.SelectedIndex = -1;
         }
 
         private void tableAccount_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -121,11 +126,14 @@ namespace Project_CakeStore.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String AccID = txtAccID.Text, EmpID="nv1",AccName = txtAccName2.Text,Pass=txtPass.Text,Permission=txtPermission.Text;
-            if (AccID.Length != 0&&AccName.Length!=0&&Pass.Length!=0&&Permission.Length!=0)
-            {
-                accountBus.UpdateAcc(new account_DTO(AccID,EmpID,AccName,Pass,Convert.ToInt32(Permission)));
-            }
+            String AccID = txtAccID.Text, EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = txtPermission.Text;
+            if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
+                {
+                    {
+                        accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission))); accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
+                        SetTableAccount();
+                    }
+                }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -134,16 +142,20 @@ namespace Project_CakeStore.GUI
             if (AccID.Length != 0)
             {
                 accountBus.DeleteAccount(AccID);
+                SetTableAccount();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String AccID = "", EmpID = "nv1", AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = txtPermission.Text;
-            if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0)
-            {
-                accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
-            }
+            String AccID = "", EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = txtPermission.Text;
+            if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
+                {
+                    {
+                        accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission))); accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
+                        SetTableAccount();
+                    }
+                }
         }
     }
 
