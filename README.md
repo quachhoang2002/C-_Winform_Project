@@ -4,7 +4,7 @@ Quy trình làm việc
     ***Làm chức năng mới
      -git checkout master 
      -git pull
-     -git checkout -b (Tên Chức Năng)
+     -git checkout -b (Tên Chức Năng) ---nay la tao branch moi
      
     **** Khi làm xong chức nắng mới
      -git checkout branch của chức năng đó
@@ -20,3 +20,6 @@ Quy trình làm việc
      -git commit -m 'fix (tên chức năng) conflict'
      -git push
      
+     **git pull bi loi do locla change**
+     -git restore .
+     -git pull
