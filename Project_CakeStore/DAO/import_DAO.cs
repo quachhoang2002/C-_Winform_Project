@@ -150,5 +150,35 @@ namespace Project_CakeStore.DAO
 
             return list;
         }
+
+        public Boolean checkImportID(String importID)
+        {
+            Boolean check = false;
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "Select * from Import where ImportID = '" + importID + "' and isDeleted = 1";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+
+                    SqlDataReader sdr = cm.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        check = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            return check;
+        }
     }
 }

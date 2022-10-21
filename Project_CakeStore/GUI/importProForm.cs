@@ -195,7 +195,27 @@ namespace Project_CakeStore.GUI
             {
                 check = true;
             }
+            else if (cakeBUS.checkCakeID(cakeID))
+            {
+                MessageBox.Show("Ma san pham da ton tai");
+            }
 
+            return check;
+        }
+
+        public Boolean checkImportID(String importID)
+        {
+            Boolean check = false;
+            String checkImport = @"(PN)\d{0,9}";
+            Regex rg = new Regex(checkImport);
+            if (rg.IsMatch(importID) && importBUS.checkImportID(importID) == false)
+            {
+                check = true;
+            }
+            else
+            {
+                MessageBox.Show("Sai cu phap hoac trung ma, vui long nhap lai");
+            }
             return check;
         }
 
@@ -336,8 +356,11 @@ namespace Project_CakeStore.GUI
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            addImport();
-            addImportDetail();
+            if (checkImportID(txtImportID.Text) && txtImportID.Text.Equals("") == false)
+            {
+                addImport();
+                addImportDetail();
+            }
         }
     }
 
