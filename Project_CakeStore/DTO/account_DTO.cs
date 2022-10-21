@@ -12,53 +12,22 @@ namespace Project_CakeStore.DTO
         private String empID;
         private String userName;
         private String password;
+        private int permission;
 
-        public account_DTO(String accID, String empID, String userName, String password)
+        public string AccID { get => accID; set => accID = value; }
+        public string EmpID { get => empID; set => empID = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
+        public int Permission { get => permission; set => permission = value; }
+
+        public account_DTO(string accID, string empID, string userName, string password, int permission)
         {
-            this.accID = accID;
-            this.empID = empID;
-            this.userName = userName;
-            this.password = password;
+            this.AccID = accID;
+            this.EmpID = empID;
+            this.UserName = userName;
+            this.Password = password;
+            this.Permission = permission;
         }
 
-        public String getAccID()
-        {
-            return accID;
-        }
-
-        public void setAccID(String accID)
-        {
-            this.accID = accID;
-        }
-
-        public String getEmpID()
-        {
-            return empID;
-        }
-
-        public void setEmpID(String empID)
-        {
-            this.empID = empID;
-        }
-
-        public String getUserName()
-        {
-            return userName;
-        }
-
-        public void setUserName(String userName)
-        {
-            this.userName = userName;
-        }
-
-        public String getPassword()
-        {
-            return password;
-        }
-
-        public void setPassword(String password)
-        {
-            this.password = password;
-        }
-    }
+    }   
 }
