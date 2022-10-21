@@ -231,7 +231,7 @@ namespace Project_CakeStore.DAO
                 {
                     string sql = "Update Account set isDeleted=0 Where AccID=@ID";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@ID", ID); 
+                    //cm.Parameters.AddWithValue("@ID", ID); 
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
 
