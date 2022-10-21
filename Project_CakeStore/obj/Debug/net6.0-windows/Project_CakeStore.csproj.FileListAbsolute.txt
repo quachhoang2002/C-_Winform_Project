@@ -165,3 +165,6 @@ C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.
 C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.employeeForm.resources
 C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.customerForm.resources
 >>>>>>> 57c17046267504287b8a7d3e3cd8a6758fc4f8fe
+D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.accountForm.resources
+D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.customerForm.resources
+D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.employeeForm.resources

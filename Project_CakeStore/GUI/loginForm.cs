@@ -62,7 +62,7 @@ namespace Project_CakeStore.GUI
                 else if (acc_BUS.checkLogin(userName, password) == 1)
                 {
                     this.Hide();
-                    EmployeeForm employeeForm = new EmployeeForm(getName(), getId());
+                    employeeForm employeeForm = new employeeForm(getName(), getId());
                     employeeForm.ShowDialog();
                     this.Show();
                 }
