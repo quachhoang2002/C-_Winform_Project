@@ -73,9 +73,11 @@
             this.tableOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableOrder.Location = new System.Drawing.Point(28, 178);
             this.tableOrder.Name = "tableOrder";
+            this.tableOrder.RowHeadersWidth = 62;
             this.tableOrder.RowTemplate.Height = 25;
             this.tableOrder.Size = new System.Drawing.Size(801, 333);
             this.tableOrder.TabIndex = 19;
+            this.tableOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableOrder_CellContentClick);
             this.tableOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableOrder_CellDoubleClick);
             // 
             // btnClear
@@ -147,6 +149,7 @@
             this.cmbTypeSearch.Name = "cmbTypeSearch";
             this.cmbTypeSearch.Size = new System.Drawing.Size(121, 23);
             this.cmbTypeSearch.TabIndex = 1;
+            this.cmbTypeSearch.SelectedIndexChanged += new System.EventHandler(this.cmbTypeSearch_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -215,11 +218,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 572);
+            this.ClientSize = new System.Drawing.Size(859, 421);
             this.Controls.Add(this.panel1);
             this.Name = "orderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "orderForm";
+            this.Load += new System.EventHandler(this.orderForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableOrder)).EndInit();
             this.groupBox14.ResumeLayout(false);

@@ -133,5 +133,20 @@ namespace Project_CakeStore.GUI
             setTableOrder();
             txtContent.Text = "";
         }
+
+        private void tableOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void orderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTypeSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

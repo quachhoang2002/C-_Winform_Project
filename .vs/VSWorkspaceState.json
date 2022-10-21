@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+<<<<<<< HEAD
+    "",
+    "\\Project_CakeStore",
+    "\\Project_CakeStore\\DAO",
+    "\\Project_CakeStore\\GUI"
+  ],
+  "SelectedNode": "\\Project_CakeStore\\DAO\\employee_DAO.cs",
+=======
+    ""
+  ],
+  "SelectedNode": "\\Project_CakeStore.sln",
+>>>>>>> a4846fbcb9c1858a3bf1f30261cb538a2829f573
+  "PreviewInSolutionExplorer": false
+}

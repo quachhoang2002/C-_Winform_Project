@@ -62,5 +62,24 @@ namespace Project_CakeStore.GUI
             importForm importForm = new importForm(getName, getid);
             importForm.ShowDialog();
         }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            employeeForm employeeForm = new employeeForm(getName, getid);
+            employeeForm.ShowDialog();
+        }
+
+        private void txtCus_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            customerForm customerForm = new customerForm(getName, getid);
+            customerForm.ShowDialog();
+        }
     }
 }
