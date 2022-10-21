@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\Project_CakeStore.csproj": {}
+    "C:\\Users\\Naomi On\\Downloads\\Năm 3 HK1\\C#\\DoAn\\Project_CakeStore\\Project_CakeStore.csproj": {}
   },
   "projects": {
-    "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\Project_CakeStore.csproj": {
+    "C:\\Users\\Naomi On\\Downloads\\Năm 3 HK1\\C#\\DoAn\\Project_CakeStore\\Project_CakeStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\Project_CakeStore.csproj",
+        "projectUniqueName": "C:\\Users\\Naomi On\\Downloads\\Năm 3 HK1\\C#\\DoAn\\Project_CakeStore\\Project_CakeStore.csproj",
         "projectName": "Project_CakeStore",
-        "projectPath": "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\Project_CakeStore.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProject\\C#\\C#Project\\Project_CakeStore\\obj\\",
+        "projectPath": "C:\\Users\\Naomi On\\Downloads\\Năm 3 HK1\\C#\\DoAn\\Project_CakeStore\\Project_CakeStore.csproj",
+        "packagesPath": "C:\\Users\\Naomi On\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Naomi On\\Downloads\\Năm 3 HK1\\C#\\DoAn\\Project_CakeStore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Naomi On\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

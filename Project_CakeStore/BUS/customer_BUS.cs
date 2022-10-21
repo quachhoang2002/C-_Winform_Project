@@ -16,5 +16,35 @@ namespace Project_CakeStore.BUS
         {
             return cus_DAO.getAllCusName();
         }
+
+        public Boolean addCustomer(customer_DTO cus)
+        {
+            return cus_DAO.addCustomer(cus);
+        }
+
+        public Boolean updateCustomer(customer_DTO cus)
+        {
+            return cus_DAO.updateCustomer(cus);
+        }
+
+        public Boolean deleteCustomer(customer_DTO cus)
+        {
+            return cus_DAO.deleteCustomer(cus);
+        }
+
+        public List<customer_DTO> searchCustomerByID(String data)
+        {
+            return cus_DAO.searchCustomerByID(data);
+        }
+
+        public List<customer_DTO> searchCustomerByName(String data)
+        {
+            return cus_DAO.searchCustomerByName(data);
+        }
+
+        public List<customer_DTO> searchNewestCusID()
+        {
+            return cus_DAO.searchNewestCusID();
+        }
     }
 }

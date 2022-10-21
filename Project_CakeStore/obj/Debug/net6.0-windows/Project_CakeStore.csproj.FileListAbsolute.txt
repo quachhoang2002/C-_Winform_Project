@@ -94,3 +94,37 @@ D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\refint\Proj
 D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.pdb
 D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.genruntimeconfig.cache
 D:\MyProject\C#\C#Project\Project_CakeStore\obj\Debug\net6.0-windows\ref\Project_CakeStore.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\Project_CakeStore.exe
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\Project_CakeStore.deps.json
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\Project_CakeStore.runtimeconfig.json
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\Project_CakeStore.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\Project_CakeStore.pdb
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.csproj.AssemblyReference.cache
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.importForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.importProForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.loginForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.MainForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.orderForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.sellForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.showImportDetailForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.showOrderDetailForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.Properties.Resources.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.csproj.GenerateResource.cache
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.AssemblyInfoInputs.cache
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.AssemblyInfo.cs
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.csproj.CoreCompileInputs.cache
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.csproj.CopyComplete
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\refint\Project_CakeStore.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.pdb
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.genruntimeconfig.cache
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\ref\Project_CakeStore.dll
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.employeeForm.resources
+C:\Users\Naomi On\Downloads\Năm 3 HK1\C#\DoAn\Project_CakeStore\obj\Debug\net6.0-windows\Project_CakeStore.GUI.customerForm.resources
