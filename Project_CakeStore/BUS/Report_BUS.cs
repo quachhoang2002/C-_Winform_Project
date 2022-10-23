@@ -1,5 +1,4 @@
 ﻿using Project_CakeStore.DAO;
-using Project_CakeStore.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +11,14 @@ namespace Project_CakeStore.BUS
     {
         private Report_DAO reportDao = new Report_DAO();
 
-        public static int totalEmployee = reportDao.totalEmployee();
-        public static int totalCustomer = reportDao.totalCustomer();
-        public static int totalSupplier = reportDao.totalCake();
-        public static int totalProduct = reportDao.totalOrder();
-       
-  
-     }
-  }
+        public int totalEmployee()
+        {
+            return reportDao.totalEmployee();
+        }
+
+       // public static int totalEmployee = reportDao.totalEmployee();
+       // public static int totalCustomer = reportDao.totalCustomer();
+       //  public static int totalSupplier = reportDao.totalCake();
+       // public static int totalProduct = reportDao.totalOrder();
+    }
+}

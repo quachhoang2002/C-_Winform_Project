@@ -89,5 +89,12 @@ namespace Project_CakeStore.GUI
             accountForm.ShowDialog();
             this.Show();
         }
+
+        private void txtStatic_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportForm reportForm = new ReportForm(getName, getid);
+            reportForm.ShowDialog();
+        }
     }
 }
