@@ -16,8 +16,7 @@ namespace Project_CakeStore.BUS
         public static int totalCustomer = reportDao.totalCustomer();
         public static int totalSupplier = reportDao.totalCake();
         public static int totalProduct = reportDao.totalOrder();
-        
-
+       
   
      }
   }
