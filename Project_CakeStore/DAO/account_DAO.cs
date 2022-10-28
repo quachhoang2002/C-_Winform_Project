@@ -229,9 +229,8 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    string sql = "Update Account set isDeleted=0 Where AccID=@ID";
+                    string sql = "Select * Account  Where "+column+" ="+data;
                     SqlCommand cm = new SqlCommand(sql, con);
-                    //cm.Parameters.AddWithValue("@ID", ID); 
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
 
