@@ -12,10 +12,10 @@ namespace Project_CakeStore.BUS
     {
         private Report_DAO reportDao = new Report_DAO();
 
-        public static int totalEmployee = reportDao.totalEmployee();
-        public static int totalCustomer = reportDao.totalCustomer();
-        public static int totalSupplier = reportDao.totalCake();
-        public static int totalProduct = reportDao.totalOrder();
+      //  public static int totalEmployee = reportDao.totalEmployee();
+       // public static int totalCustomer = reportDao.totalCustomer();
+       // public static int totalSupplier = reportDao.totalCake();
+        //public static int totalProduct = reportDao.totalOrder();
         
 
   
