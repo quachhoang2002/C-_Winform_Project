@@ -200,9 +200,8 @@ namespace Project_CakeStore.DAO
             Boolean check = false;
             try
             {
-                string sql = "Update Account set isDeleted=0 Where AccID="+ID;
+                string sql = "Update Account set isDeleted=0 Where AccID='"+ID+"'";
                 SqlCommand cm = new SqlCommand(sql, con);
-                cm.Parameters.AddWithValue("@AccID", "Acc" + (getAllAccountWithIsDeleted().Count + 1));
                 con.Open();
                 int n = cm.ExecuteNonQuery();
 
@@ -229,7 +228,7 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    string sql = "Select * Account  Where "+column+" ="+data;
+                    string sql = "Select * Account  Where "+column+"='"+data+"' "+" and isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();

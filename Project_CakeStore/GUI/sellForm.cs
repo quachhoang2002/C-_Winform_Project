@@ -157,8 +157,8 @@ namespace Project_CakeStore.GUI
             Boolean check = false;
             String checkNum = @"(-)\d{0,9}";
             String checkChar = @"\D";
-            Regex rg1 = new Regex(checkNum);
-            Regex rg2 = new Regex(checkChar);
+            System.Text.RegularExpressions.Regex rg1 = new System.Text.RegularExpressions.Regex(checkNum);
+            System.Text.RegularExpressions.Regex rg2 = new System.Text.RegularExpressions.Regex(checkChar);
             if (rg1.IsMatch(quantity) == false && rg2.IsMatch(quantity) == false)
             {
                 check = true;
@@ -176,7 +176,7 @@ namespace Project_CakeStore.GUI
         {
             Boolean check = false;
             String checkOrder = @"(HD)\d{0,9}";
-            Regex rg = new Regex(checkOrder);
+            System.Text.RegularExpressions.Regex rg = new System.Text.RegularExpressions.Regex(checkOrder);
             if(rg.IsMatch(orderID) && orderBUS.checkOrder(orderID) == false && orderID.Equals("") == false)
             {
                 check = true;
