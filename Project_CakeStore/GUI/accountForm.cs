@@ -27,6 +27,7 @@ namespace Project_CakeStore.GUI
             SetTableAccount();
             SetCmbTypeSearch();
             SetCmbEmployeeID();
+            SetCmbPermission();
         }
 
         public void SetTableAccount()
@@ -78,6 +79,13 @@ namespace Project_CakeStore.GUI
             }
         }
 
+        public void SetCmbPermission()
+        {
+            cmbPermission.Items.Clear();
+            cmbPermission.Items.Add(0);
+            cmbPermission.Items.Add(1);
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtContent.Text;
@@ -107,7 +115,7 @@ namespace Project_CakeStore.GUI
             txtAccID.Text = "";
             txtAccName2.Text = "";
             txtPass.Text = "";
-            txtPermission.Text = "";
+            cmbPermission.SelectedIndex=0;
             cmbEmpID.SelectedIndex = -1;
         }
 
@@ -120,13 +128,13 @@ namespace Project_CakeStore.GUI
                 cmbEmpID.SelectedItem = row.Cells["Mã nhân viên"].Value.ToString();
                 txtAccName2.Text = row.Cells["Tên tài khoản"].Value.ToString();
                 txtPass.Text = row.Cells["Mật khẩu"].Value.ToString();
-                txtPermission.Text = row.Cells["Quyền"].Value.ToString();
+                cmbPermission.SelectedItem = row.Cells["Quyền"].Value.ToString();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String AccID = txtAccID.Text, EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = txtPermission.Text;
+            String AccID = txtAccID.Text, EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission =cmbPermission.SelectedItem.ToString();
             if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
                 {
                     {
@@ -148,11 +156,11 @@ namespace Project_CakeStore.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String AccID = "", EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = txtPermission.Text;
+            String AccID = "", EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = cmbPermission.SelectedItem.ToString();
             if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
                 {
                     {
-                        accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission))); accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
+                        accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
                         SetTableAccount();
                     }
                 }
