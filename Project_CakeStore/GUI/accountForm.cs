@@ -138,7 +138,7 @@ namespace Project_CakeStore.GUI
             if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
                 {
                     {
-                        accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission))); accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
+                        accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
                         SetTableAccount();
                     }
                 }
