@@ -228,7 +228,7 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    string sql = "Select * Account  Where "+column+"='"+data+"' "+" and isDeleted=1";
+                    string sql = "Select * from Account  Where "+column+"='"+data+"' "+" and isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
