@@ -16,7 +16,7 @@ namespace Project_CakeStore.GUI
     {
         private string getName;
         private string getId;
-        private account_BUS accountBus=new account_BUS();
+        private account_BUS accountBus = new account_BUS();
         private employee_BUS employeeBUS = new employee_BUS();
         public accountForm(string getName, string getId)
         {
@@ -44,7 +44,7 @@ namespace Project_CakeStore.GUI
             for (int i = 0; i < listAccount.Count; i++)
             {
                 account_DTO account = listAccount[i];
-                tableAccount.Rows.Add(account.AccID, account.EmpID, account.UserName,account.Password,account.Permission);
+                tableAccount.Rows.Add(account.AccID, account.EmpID, account.UserName, account.Password, account.Permission);
             }
         }
 
@@ -115,7 +115,7 @@ namespace Project_CakeStore.GUI
             txtAccID.Text = "";
             txtAccName2.Text = "";
             txtPass.Text = "";
-            cmbPermission.SelectedIndex=0;
+            cmbPermission.SelectedIndex = -1;
             cmbEmpID.SelectedIndex = -1;
         }
 
@@ -125,23 +125,31 @@ namespace Project_CakeStore.GUI
             {
                 DataGridViewRow row = tableAccount.Rows[e.RowIndex];
                 txtAccID.Text = row.Cells["Mã tài khoản"].Value.ToString();
-                cmbEmpID.SelectedItem = row.Cells["Mã nhân viên"].Value.ToString();
+                cmbEmpID.SelectedItem = row.Cells["Mã nhân viên"].Value;
                 txtAccName2.Text = row.Cells["Tên tài khoản"].Value.ToString();
                 txtPass.Text = row.Cells["Mật khẩu"].Value.ToString();
-                cmbPermission.SelectedItem = row.Cells["Quyền"].Value.ToString();
+                cmbPermission.SelectedItem = row.Cells["Quyền"].Value;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String AccID = txtAccID.Text, EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission =cmbPermission.SelectedItem.ToString();
-            if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
-                {
-                    {
-                        accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission))); accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
-                        SetTableAccount();
-                    }
-                }
+            if (cmbEmpID.SelectedIndex == -1 || cmbPermission.SelectedIndex == -1)
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+                return;
+            }
+
+            String AccID = txtAccID.Text, EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = cmbPermission.SelectedItem.ToString();
+            if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission != null && EmpID != null)
+            {
+                accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
+                SetTableAccount();
+            }
+            else
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -152,18 +160,30 @@ namespace Project_CakeStore.GUI
                 accountBus.DeleteAccount(AccID);
                 SetTableAccount();
             }
+            else
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (cmbEmpID.SelectedIndex == -1 || cmbPermission.SelectedIndex == -1)
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+                return;
+            }
+
             String AccID = "", EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = cmbPermission.SelectedItem.ToString();
-            if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0) if (AccName.Length != 0 && Pass.Length != 0 && Permission.Length != 0 && EmpID.Length != 0)
-                {
-                    {
-                        accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
-                        SetTableAccount();
-                    }
-                }
+            if (AccName.Length != 0 && Pass.Length != 0 && Permission!=null && EmpID!=null)
+            {
+                accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
+                SetTableAccount();
+            }
+            else
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+            }
         }
     }
 
