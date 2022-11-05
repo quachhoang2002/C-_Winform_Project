@@ -44,16 +44,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtTotalOrder = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtTotalCustomer = new System.Windows.Forms.Label();
+            this.customer = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtTotalCake = new System.Windows.Forms.Label();
+            this.cake = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTotalEmployee = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -194,14 +194,14 @@
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(408, 170);
+            this.panel6.Location = new System.Drawing.Point(408, 160);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(203, 123);
             this.panel6.TabIndex = 6;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(20, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(64, 81);
             this.pictureBox2.TabIndex = 3;
@@ -210,11 +210,12 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(136, 74);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(118, 74);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 15);
+            this.label10.Size = new System.Drawing.Size(22, 25);
             this.label10.TabIndex = 2;
-            this.label10.Text = "label10";
+            this.label10.Text = "0";
             // 
             // label11
             // 
@@ -229,8 +230,9 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.txtTotalOrder);
             this.panel4.Controls.Add(this.label7);
+            this.panel4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel4.Location = new System.Drawing.Point(710, 289);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(206, 123);
@@ -238,35 +240,35 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(28, 18);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 18);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(64, 81);
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             // 
-            // label6
+            // txtTotalOrder
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(136, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "label6";
+            this.txtTotalOrder.AutoSize = true;
+            this.txtTotalOrder.Location = new System.Drawing.Point(118, 74);
+            this.txtTotalOrder.Name = "txtTotalOrder";
+            this.txtTotalOrder.Size = new System.Drawing.Size(22, 25);
+            this.txtTotalOrder.TabIndex = 2;
+            this.txtTotalOrder.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(136, 18);
+            this.label7.Location = new System.Drawing.Point(95, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.Size = new System.Drawing.Size(94, 25);
             this.label7.TabIndex = 1;
-            this.label7.Text = "label7";
+            this.label7.Text = "Don Hang";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.txtTotalCustomer);
+            this.panel3.Controls.Add(this.customer);
             this.panel3.Location = new System.Drawing.Point(710, 46);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(206, 123);
@@ -274,35 +276,37 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(28, 18);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 18);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(64, 81);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // label4
+            // txtTotalCustomer
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "label4";
+            this.txtTotalCustomer.AutoSize = true;
+            this.txtTotalCustomer.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTotalCustomer.Location = new System.Drawing.Point(118, 74);
+            this.txtTotalCustomer.Name = "txtTotalCustomer";
+            this.txtTotalCustomer.Size = new System.Drawing.Size(22, 25);
+            this.txtTotalCustomer.TabIndex = 2;
+            this.txtTotalCustomer.Text = "0";
             // 
-            // label5
+            // customer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(136, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
+            this.customer.AutoSize = true;
+            this.customer.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customer.Location = new System.Drawing.Point(95, 18);
+            this.customer.Name = "customer";
+            this.customer.Size = new System.Drawing.Size(107, 25);
+            this.customer.TabIndex = 1;
+            this.customer.Text = "Khach Hang";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.txtTotalCake);
+            this.panel5.Controls.Add(this.cake);
             this.panel5.Location = new System.Drawing.Point(115, 289);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(203, 123);
@@ -316,23 +320,25 @@
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
             // 
-            // label8
+            // txtTotalCake
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(136, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "label8";
+            this.txtTotalCake.AutoSize = true;
+            this.txtTotalCake.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTotalCake.Location = new System.Drawing.Point(115, 74);
+            this.txtTotalCake.Name = "txtTotalCake";
+            this.txtTotalCake.Size = new System.Drawing.Size(22, 25);
+            this.txtTotalCake.TabIndex = 2;
+            this.txtTotalCake.Text = "0";
             // 
-            // label9
+            // cake
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(136, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 15);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "label9";
+            this.cake.AutoSize = true;
+            this.cake.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cake.Location = new System.Drawing.Point(115, 18);
+            this.cake.Name = "cake";
+            this.cake.Size = new System.Drawing.Size(51, 25);
+            this.cake.TabIndex = 1;
+            this.cake.Text = "Banh";
             // 
             // panel1
             // 
@@ -350,17 +356,17 @@
             this.txtTotalEmployee.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTotalEmployee.Location = new System.Drawing.Point(115, 74);
             this.txtTotalEmployee.Name = "txtTotalEmployee";
-            this.txtTotalEmployee.Size = new System.Drawing.Size(59, 25);
+            this.txtTotalEmployee.Size = new System.Drawing.Size(22, 25);
             this.txtTotalEmployee.TabIndex = 2;
-            this.txtTotalEmployee.Text = "label3";
+            this.txtTotalEmployee.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(99, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 25);
+            this.label2.Size = new System.Drawing.Size(93, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nhan Vien";
             // 
@@ -581,11 +587,11 @@
         private Label label10;
         private Label label11;
         private Panel panel3;
-        private Label label4;
-        private Label label5;
+        private Label txtTotalCustomer;
+        private Label customer;
         private Panel panel5;
-        private Label label8;
-        private Label label9;
+        private Label txtTotalCake;
+        private Label cake;
         private Panel panel1;
         private Label txtTotalEmployee;
         private Label label2;
@@ -607,7 +613,7 @@
         private PictureBox pictureBox2;
         private Panel panel4;
         private PictureBox pictureBox4;
-        private Label label6;
+        private Label txtTotalOrder;
         private Label label7;
         private PictureBox pictureBox3;
         private PictureBox pictureBox5;

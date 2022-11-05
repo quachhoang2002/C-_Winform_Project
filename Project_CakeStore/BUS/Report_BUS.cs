@@ -16,9 +16,25 @@ namespace Project_CakeStore.BUS
             return reportDao.totalEmployee();
         }
 
-       // public static int totalEmployee = reportDao.totalEmployee();
-       // public static int totalCustomer = reportDao.totalCustomer();
-       //  public static int totalSupplier = reportDao.totalCake();
-       // public static int totalProduct = reportDao.totalOrder();
+        public int totalCustomer()
+        {
+            return reportDao.totalCustomer();
+        }
+
+        public int totalCake()
+        {
+            return reportDao.totalCake();
+        }
+
+        public int totalOrder()
+        {
+            return reportDao.totalOrder();
+        }
+    }
+
+        // public static int totalEmployee = reportDao.totalEmployee();
+        // public static int totalCustomer = reportDao.totalCustomer();
+        //  public static int totalSupplier = reportDao.totalCake();
+        // public static int totalProduct = reportDao.totalOrder();
     }
 }

@@ -42,9 +42,9 @@ namespace Project_CakeStore.GUI
             if (tabControl1.SelectedIndex == 0)
             {
                 txtTotalEmployee.Text = reportBUS.totalEmployee().ToString();
-                //txtTotalCustomer.Text = reportBUS.totalCustomer().ToString();
-                //txtTotalSupplier.Text = reportBUS.totalSupplier().ToString();
-                //txtTotalProduct.Text = reportBUS.totalProduct().ToString();
+                txtTotalCustomer.Text = reportBUS.totalCustomer().ToString();
+                txtTotalCake.Text = reportBUS.totalCake().ToString();
+                txtTotalOrder.Text = reportBUS.totalOrder().ToString();
             }
         }
 
