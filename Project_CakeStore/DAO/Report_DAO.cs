@@ -45,11 +45,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(CusID) where isDeleted=1";
+                    String sql = "select count(CusID) from Customer where isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();
-
+                    total = (int)cm.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -72,10 +71,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(CakeID) where isDeleted=1";
+                    String sql = "select count(CakeID) from Cake where isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();
+                    total = (int)cm.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -98,10 +97,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(OrderID) where isDeleted=1";
+                    String sql = "select count(OrderID) from [Order] where isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();                 
+                    total = (int)cm.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -117,6 +116,72 @@ namespace Project_CakeStore.DAO
 
         }
 
-        
+        public int totalManufactor()
+        {
+            int total = 0;
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select count(SuppID) from Supplier where isDeleted=1";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+                    total = (int)cm.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    //close database connection
+                    con.Close();
+                }
+            }
+            return total;
+        }
+
+        public List<ReportImport_DTO> importStatistical(string start_time, string end_time)
+        {
+            List<ReportImport_DTO> list = new List<ReportImport_DTO>();
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select id.CakeID, c.CakeName, sum(id.Quantity) as Quantity, sum(id.Price) as TotalPrice " +
+                        "from Import i," +
+                        "importDetail as id" +
+                        " Cake c" +
+                        " where i.ImportID = id.ImportID" +
+                        "and id.CakeID = c.CakeID" +
+                        "group by c.id " +
+                        "order by Quantity ASC";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+                    SqlDataReader sdr = cm.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        ReportImport_DTO ReportImport = new ReportImport_DTO(sdr["CakeID"].ToString(), sdr["CakeName"].ToString(),
+                            int.Parse(sdr["Quantity"].ToString()), int.Parse(sdr["TotalPrice"].ToString()));
+                        list.Add(ReportImport);
+                    }
+
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+            }
+
+            return list;
+
+        }
+
+
     }
 }

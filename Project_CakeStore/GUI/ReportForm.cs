@@ -1,4 +1,5 @@
 ﻿using Project_CakeStore.BUS;
+using Project_CakeStore.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,9 +46,20 @@ namespace Project_CakeStore.GUI
                 txtTotalCustomer.Text = reportBUS.totalCustomer().ToString();
                 txtTotalCake.Text = reportBUS.totalCake().ToString();
                 txtTotalOrder.Text = reportBUS.totalOrder().ToString();
+                txtTotalManufactor.Text = reportBUS.totalManufactor().ToString();
+            }
+            else if (tabControl1.SelectedIndex == 1)
+            {
+                tableImportReport.Rows.Clear();
+                tableImportReport.Columns[0].Name = "Ma San Pham";
+                tableImportReport.Columns[1].Name = "Ten San Pham";
+                tableImportReport.Columns[2].Name = "So Luong";
+                tableImportReport.Columns[3].Name = "Tong Tien Gia";
+                List<ReportImport_DTO> list = reportBUS.listImportReport();
+
+
             }
         }
-
     }
 }
 

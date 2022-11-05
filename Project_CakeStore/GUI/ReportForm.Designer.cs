@@ -40,7 +40,7 @@
             this.total = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtTotalManufactor = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -74,6 +74,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -94,6 +95,7 @@
             this.sell.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -169,7 +171,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 71);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1032, 524);
+            this.tabControl1.Size = new System.Drawing.Size(1032, 596);
             this.tabControl1.TabIndex = 3;
             // 
             // total
@@ -191,65 +193,71 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
             this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.txtTotalManufactor);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(408, 160);
+            this.panel6.Location = new System.Drawing.Point(755, 289);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(203, 123);
+            this.panel6.Size = new System.Drawing.Size(206, 123);
             this.panel6.TabIndex = 6;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(13, 18);
+            this.pictureBox2.Image = global::Project_CakeStore.Properties.Resources.food_truck_36px;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(64, 81);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // label10
+            // txtTotalManufactor
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(118, 74);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(22, 25);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "0";
+            this.txtTotalManufactor.AutoSize = true;
+            this.txtTotalManufactor.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTotalManufactor.Location = new System.Drawing.Point(118, 74);
+            this.txtTotalManufactor.Name = "txtTotalManufactor";
+            this.txtTotalManufactor.Size = new System.Drawing.Size(22, 25);
+            this.txtTotalManufactor.TabIndex = 2;
+            this.txtTotalManufactor.Text = "0";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(111, 18);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(91, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 25);
+            this.label11.Size = new System.Drawing.Size(111, 21);
             this.label11.TabIndex = 1;
-            this.label11.Text = "label11";
+            this.label11.Text = "Nha Cung Cap";
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.txtTotalOrder);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel4.Location = new System.Drawing.Point(710, 289);
+            this.panel4.Location = new System.Drawing.Point(419, 165);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(206, 123);
             this.panel4.TabIndex = 5;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = global::Project_CakeStore.Properties.Resources.purchase_order_36px;
             this.pictureBox4.Location = new System.Drawing.Point(12, 18);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(64, 81);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             // 
             // txtTotalOrder
             // 
             this.txtTotalOrder.AutoSize = true;
-            this.txtTotalOrder.Location = new System.Drawing.Point(118, 74);
+            this.txtTotalOrder.Location = new System.Drawing.Point(131, 74);
             this.txtTotalOrder.Name = "txtTotalOrder";
             this.txtTotalOrder.Size = new System.Drawing.Size(22, 25);
             this.txtTotalOrder.TabIndex = 2;
@@ -258,27 +266,31 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(95, 18);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(102, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 25);
+            this.label7.Size = new System.Drawing.Size(80, 21);
             this.label7.TabIndex = 1;
             this.label7.Text = "Don Hang";
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.txtTotalCustomer);
             this.panel3.Controls.Add(this.customer);
-            this.panel3.Location = new System.Drawing.Point(710, 46);
+            this.panel3.Location = new System.Drawing.Point(755, 46);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(206, 123);
             this.panel3.TabIndex = 3;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::Project_CakeStore.Properties.Resources.customer_36px;
             this.pictureBox3.Location = new System.Drawing.Point(12, 18);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(64, 81);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
@@ -286,7 +298,7 @@
             // 
             this.txtTotalCustomer.AutoSize = true;
             this.txtTotalCustomer.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTotalCustomer.Location = new System.Drawing.Point(118, 74);
+            this.txtTotalCustomer.Location = new System.Drawing.Point(129, 74);
             this.txtTotalCustomer.Name = "txtTotalCustomer";
             this.txtTotalCustomer.Size = new System.Drawing.Size(22, 25);
             this.txtTotalCustomer.TabIndex = 2;
@@ -295,28 +307,31 @@
             // customer
             // 
             this.customer.AutoSize = true;
-            this.customer.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.customer.Location = new System.Drawing.Point(95, 18);
             this.customer.Name = "customer";
-            this.customer.Size = new System.Drawing.Size(107, 25);
+            this.customer.Size = new System.Drawing.Size(93, 21);
             this.customer.TabIndex = 1;
             this.customer.Text = "Khach Hang";
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.Silver;
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.txtTotalCake);
             this.panel5.Controls.Add(this.cake);
-            this.panel5.Location = new System.Drawing.Point(115, 289);
+            this.panel5.Location = new System.Drawing.Point(78, 289);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(203, 123);
             this.panel5.TabIndex = 4;
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Image = global::Project_CakeStore.Properties.Resources.cake_36px;
             this.pictureBox5.Location = new System.Drawing.Point(14, 18);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(64, 81);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
             // 
@@ -324,7 +339,7 @@
             // 
             this.txtTotalCake.AutoSize = true;
             this.txtTotalCake.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTotalCake.Location = new System.Drawing.Point(115, 74);
+            this.txtTotalCake.Location = new System.Drawing.Point(125, 74);
             this.txtTotalCake.Name = "txtTotalCake";
             this.txtTotalCake.Size = new System.Drawing.Size(22, 25);
             this.txtTotalCake.TabIndex = 2;
@@ -333,19 +348,20 @@
             // cake
             // 
             this.cake.AutoSize = true;
-            this.cake.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cake.Location = new System.Drawing.Point(115, 18);
+            this.cake.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cake.Location = new System.Drawing.Point(116, 22);
             this.cake.Name = "cake";
-            this.cake.Size = new System.Drawing.Size(51, 25);
+            this.cake.Size = new System.Drawing.Size(45, 21);
             this.cake.TabIndex = 1;
             this.cake.Text = "Banh";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.txtTotalEmployee);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(115, 46);
+            this.panel1.Location = new System.Drawing.Point(78, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 123);
             this.panel1.TabIndex = 0;
@@ -354,7 +370,7 @@
             // 
             this.txtTotalEmployee.AutoSize = true;
             this.txtTotalEmployee.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTotalEmployee.Location = new System.Drawing.Point(115, 74);
+            this.txtTotalEmployee.Location = new System.Drawing.Point(125, 74);
             this.txtTotalEmployee.Name = "txtTotalEmployee";
             this.txtTotalEmployee.Size = new System.Drawing.Size(22, 25);
             this.txtTotalEmployee.TabIndex = 2;
@@ -363,29 +379,32 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(99, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.Size = new System.Drawing.Size(83, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nhan Vien";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Project_CakeStore.Properties.Resources.member_36px;
             this.pictureBox1.Location = new System.Drawing.Point(14, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // import
             // 
+            this.import.Controls.Add(this.tableImportReport);
             this.import.Controls.Add(this.groupBox2);
             this.import.ImageIndex = 1;
             this.import.Location = new System.Drawing.Point(4, 24);
             this.import.Name = "import";
             this.import.Padding = new System.Windows.Forms.Padding(3);
-            this.import.Size = new System.Drawing.Size(1024, 496);
+            this.import.Size = new System.Drawing.Size(1024, 568);
             this.import.TabIndex = 1;
             this.import.Text = "Nhap Hang";
             this.import.UseVisualStyleBackColor = true;
@@ -529,6 +548,15 @@
             this.imageList1.Images.SetKeyName(1, "Shoppingcart-03-arrow-down-icon.png");
             this.imageList1.Images.SetKeyName(2, "cash-icon.png");
             // 
+            // tableImportReport
+            // 
+            this.tableImportReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableImportReport.Location = new System.Drawing.Point(-4, 100);
+            this.tableImportReport.Name = "tableImportReport";
+            this.tableImportReport.RowTemplate.Height = 25;
+            this.tableImportReport.Size = new System.Drawing.Size(1022, 468);
+            this.tableImportReport.TabIndex = 12;
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -567,6 +595,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,7 +613,7 @@
         private TabPage import;
         private TabPage sell;
         private Panel panel6;
-        private Label label10;
+        private Label txtTotalManufactor;
         private Label label11;
         private Panel panel3;
         private Label txtTotalCustomer;
@@ -617,5 +646,6 @@
         private Label label7;
         private PictureBox pictureBox3;
         private PictureBox pictureBox5;
+        private DataGridView tableImportReport;
     }
 }
