@@ -169,7 +169,7 @@ namespace Project_CakeStore.DAO
                     string sql = "insert into Account (AccID, EmpID, UserName, Password, Permission, isDeleted) " +
                     "values (@AccID, @EmpID, @UserName, @Password, @Permission, 1)";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@AccID", "Acc"+(getAllAccount().Count+1));
+                    cm.Parameters.AddWithValue("@AccID", "Acc"+(getAllAccountWithIsDeleted().Count+1));
                     cm.Parameters.AddWithValue("@EmpID", account.EmpID);
                     cm.Parameters.AddWithValue("@UserName", account.UserName);
                     cm.Parameters.AddWithValue("@Password", account.Password);
@@ -200,9 +200,8 @@ namespace Project_CakeStore.DAO
             Boolean check = false;
             try
             {
-                string sql = "Update Account set isDeleted=0 Where AccID="+ID;
+                string sql = "Update Account set isDeleted=0 Where AccID='"+ID+"'";
                 SqlCommand cm = new SqlCommand(sql, con);
-                cm.Parameters.AddWithValue("@AccID", "Acc" + (getAllAccountWithIsDeleted().Count + 1));
                 con.Open();
                 int n = cm.ExecuteNonQuery();
 
@@ -229,9 +228,8 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    string sql = "Update Account set isDeleted=0 Where AccID=@ID";
+                    string sql = "Select * from Account  Where "+column+"='"+data+"' "+" and isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    //cm.Parameters.AddWithValue("@ID", ID); 
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
 

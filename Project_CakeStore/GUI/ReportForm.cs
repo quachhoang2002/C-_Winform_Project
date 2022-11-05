@@ -16,9 +16,10 @@ namespace Project_CakeStore.GUI
         String getName = "";
         String getId = "";
         private Report_BUS reportBUS = new Report_BUS();
-        public ReportForm(String name , String id)
+        public ReportForm(String name, String id)
         {
             InitializeComponent();
+            tabControl_Select();
             getName = name;
             getId = id;
             txtAccName.Text = name + "(" + id + ")";
@@ -36,6 +37,20 @@ namespace Project_CakeStore.GUI
             mainForm.ShowDialog();
         }
 
-        
+        private void tabControl_Select()
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                txtTotalEmployee.Text = reportBUS.totalEmployee().ToString();
+                //txtTotalCustomer.Text = reportBUS.totalCustomer().ToString();
+                //txtTotalSupplier.Text = reportBUS.totalSupplier().ToString();
+                //txtTotalProduct.Text = reportBUS.totalProduct().ToString();
+            }
+        }
+
     }
 }
+
+
+
+

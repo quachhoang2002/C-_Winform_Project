@@ -18,10 +18,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(EmpID) where isDeleted=1";
+                    String sql = "select count(EmpID) from Employee where isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();
+                    total = (int)cm.ExecuteScalar();
 
                 }
                 catch (Exception ex)
