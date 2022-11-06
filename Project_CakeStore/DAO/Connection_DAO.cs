@@ -15,7 +15,7 @@ namespace Project_CakeStore.DAO
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }
-
+       
         public static SqlConnection GetDBConnection()
         {
             //Data Source=VOTRANTANLOC\SQLEXPRESS;Initial Catalog=QuanLyCuaHangBanh;Persist Security Info=True;User ID=sa;Password=***********
