@@ -59,13 +59,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.import = new System.Windows.Forms.TabPage();
+            this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.sell = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
@@ -74,7 +78,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -91,11 +94,12 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.import.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.sell.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -171,8 +175,9 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 71);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1032, 596);
+            this.tabControl1.Size = new System.Drawing.Size(1020, 596);
             this.tabControl1.TabIndex = 3;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // total
             // 
@@ -187,7 +192,7 @@
             this.total.Location = new System.Drawing.Point(4, 24);
             this.total.Name = "total";
             this.total.Padding = new System.Windows.Forms.Padding(3);
-            this.total.Size = new System.Drawing.Size(1024, 496);
+            this.total.Size = new System.Drawing.Size(1012, 568);
             this.total.TabIndex = 0;
             this.total.Text = "Tong";
             // 
@@ -404,15 +409,27 @@
             this.import.Location = new System.Drawing.Point(4, 24);
             this.import.Name = "import";
             this.import.Padding = new System.Windows.Forms.Padding(3);
-            this.import.Size = new System.Drawing.Size(1024, 568);
+            this.import.Size = new System.Drawing.Size(1012, 568);
             this.import.TabIndex = 1;
             this.import.Text = "Nhap Hang";
             this.import.UseVisualStyleBackColor = true;
             // 
+            // tableImportReport
+            // 
+            this.tableImportReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableImportReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableImportReport.Location = new System.Drawing.Point(-4, 112);
+            this.tableImportReport.Name = "tableImportReport";
+            this.tableImportReport.RowTemplate.Height = 25;
+            this.tableImportReport.Size = new System.Drawing.Size(1020, 456);
+            this.tableImportReport.TabIndex = 1;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dtpEnd);
+            this.groupBox2.Controls.Add(this.dtpStart);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.textBox2);
@@ -425,19 +442,39 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
-            // dateTimePicker2
+            // label3
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(483, 61);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 10;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(66, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "label3";
             // 
-            // dateTimePicker1
+            // dataGridView1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(251, 61);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(995, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Location = new System.Drawing.Point(483, 61);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(200, 23);
+            this.dtpEnd.TabIndex = 10;
+            this.dtpEnd.Value = new System.DateTime(2022, 11, 6, 15, 35, 52, 0);
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.Location = new System.Drawing.Point(251, 61);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(200, 23);
+            this.dtpStart.TabIndex = 9;
+            this.dtpStart.Value = new System.DateTime(2022, 1, 1, 15, 31, 0, 0);
             // 
             // button2
             // 
@@ -470,15 +507,25 @@
             // 
             // sell
             // 
+            this.sell.Controls.Add(this.label4);
             this.sell.Controls.Add(this.groupBox1);
             this.sell.ImageIndex = 2;
             this.sell.Location = new System.Drawing.Point(4, 24);
             this.sell.Name = "sell";
             this.sell.Padding = new System.Windows.Forms.Padding(3);
-            this.sell.Size = new System.Drawing.Size(1024, 496);
+            this.sell.Size = new System.Drawing.Size(1012, 568);
             this.sell.TabIndex = 2;
             this.sell.Text = "Ban Hang";
             this.sell.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(199, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
             // 
             // groupBox1
             // 
@@ -548,20 +595,11 @@
             this.imageList1.Images.SetKeyName(1, "Shoppingcart-03-arrow-down-icon.png");
             this.imageList1.Images.SetKeyName(2, "cash-icon.png");
             // 
-            // tableImportReport
-            // 
-            this.tableImportReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableImportReport.Location = new System.Drawing.Point(-4, 100);
-            this.tableImportReport.Name = "tableImportReport";
-            this.tableImportReport.RowTemplate.Height = 25;
-            this.tableImportReport.Size = new System.Drawing.Size(1022, 468);
-            this.tableImportReport.TabIndex = 12;
-            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 666);
+            this.ClientSize = new System.Drawing.Size(1022, 666);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.Coral;
@@ -589,13 +627,15 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.import.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.sell.ResumeLayout(false);
+            this.sell.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -626,8 +666,8 @@
         private Label label2;
         private PictureBox pictureBox1;
         private GroupBox groupBox2;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpEnd;
+        private DateTimePicker dtpStart;
         private Button button2;
         private ComboBox comboBox2;
         private TextBox textBox2;
@@ -647,5 +687,8 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox5;
         private DataGridView tableImportReport;
+        private DataGridView dataGridView1;
+        private Label label3;
+        private Label label4;
     }
 }

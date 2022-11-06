@@ -1,4 +1,5 @@
 ﻿using Project_CakeStore.DAO;
+using Project_CakeStore.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,11 @@ namespace Project_CakeStore.BUS
         public int totalManufactor()
         {
             return reportDao.totalManufactor();
+        }
+
+        public List<ReportImport_DTO> reportImport(string start_time, string end_time)
+        {
+            return reportDao.ReportImport(start_time, end_time);
         }
     }
 

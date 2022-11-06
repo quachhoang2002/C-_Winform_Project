@@ -141,33 +141,42 @@ namespace Project_CakeStore.DAO
             return total;
         }
 
-        public List<ReportImport_DTO> importStatistical(string start_time, string end_time)
+        public List<ReportImport_DTO> ReportImport(string start_time, string end_time)
         {
             List<ReportImport_DTO> list = new List<ReportImport_DTO>();
             if (con != null)
             {
                 try
                 {
-                    String sql = "select id.CakeID, c.CakeName, sum(id.Quantity) as Quantity, sum(id.Price) as TotalPrice " +
-                        "from Import i," +
-                        "importDetail as id" +
-                        " Cake c" +
-                        " where i.ImportID = id.ImportID" +
-                        "and id.CakeID = c.CakeID" +
-                        "group by c.id " +
-                        "order by Quantity ASC";
+                    String sql = "select Cake.CakeID,Cake.CakeName ,Import.Date ,Category.CategoryName, sum(ImportDetail.Quantity) as Quantity,sum(ImportDetail.Price) as Price " +
+                        "from Cake " +
+                        "LEFT JOIN ImportDetail ON ImportDetail.CakeID = Cake.CakeID " +
+                        "LEFT JOIN Import ON ImportDetail.ImportID = Import.ImportID " +
+                        "LEFT JOIN Category ON Cake.CategoryID = Category.CategoryID " +
+                        "GROUP BY Cake.CakeID,Cake.CakeName,Import.Date,Category.CategoryName " +
+                        "ORDER BY Date DESC";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
                     while (sdr.Read())
                     {
-                        ReportImport_DTO ReportImport = new ReportImport_DTO(sdr["CakeID"].ToString(), sdr["CakeName"].ToString(),
-                            int.Parse(sdr["Quantity"].ToString()), int.Parse(sdr["TotalPrice"].ToString()));
-                        list.Add(ReportImport);
+                        if (sdr["Date"] == DBNull.Value)
+                        {
+                            continue;
+                        }
+
+                        ReportImport_DTO report = new ReportImport_DTO();
+                        report.CakeId = sdr["CakeID"].ToString();
+                        report.CakeName = sdr["CakeName"].ToString();
+                        report.Date = sdr["Date"].ToString();
+                        report.CakeType = sdr["CategoryName"].ToString();
+                        report.Quantity = int.Parse(sdr["Quantity"].ToString());
+                        report.TotalPrice = int.Parse(sdr["Price"].ToString());
+                        list.Add(report);
                     }
 
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

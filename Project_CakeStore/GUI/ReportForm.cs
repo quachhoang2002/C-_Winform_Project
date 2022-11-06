@@ -20,7 +20,6 @@ namespace Project_CakeStore.GUI
         public ReportForm(String name, String id)
         {
             InitializeComponent();
-            tabControl_Select();
             getName = name;
             getId = id;
             txtAccName.Text = name + "(" + id + ")";
@@ -38,7 +37,7 @@ namespace Project_CakeStore.GUI
             mainForm.ShowDialog();
         }
 
-        private void tabControl_Select()
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
             {
@@ -50,14 +49,26 @@ namespace Project_CakeStore.GUI
             }
             else if (tabControl1.SelectedIndex == 1)
             {
+                label3.Text = "hello";
                 tableImportReport.Rows.Clear();
+                tableImportReport.ColumnCount =6 ;
                 tableImportReport.Columns[0].Name = "Ma San Pham";
                 tableImportReport.Columns[1].Name = "Ten San Pham";
-                tableImportReport.Columns[2].Name = "So Luong";
-                tableImportReport.Columns[3].Name = "Tong Tien Gia";
-                List<ReportImport_DTO> list = reportBUS.listImportReport();
+                tableImportReport.Columns[2].Name = "Loai San Pham";
+                tableImportReport.Columns[3].Name = "So Luong";
+                tableImportReport.Columns[4].Name = "Tong Tien Gia";
+                tableImportReport.Columns[5].Name = "Thoi Gian";         
+                List<ReportImport_DTO> list = reportBUS.reportImport(dtpStart.Value.ToString("yyyy-MM-dd"), dtpEnd.Value.ToString("yyyy-MM-dd"));
+                string start_time = dtpStart.Value.ToString("yyyy-MM-dd");
+                foreach (ReportImport_DTO item in list)
+                {
+                    tableImportReport.Rows.Add(item.CakeId, item.CakeName, item.CakeType, item.Quantity.ToString(), item.TotalPrice.ToString(), item.Date);
+                }
 
-
+            }
+            else if (tabControl1.SelectedIndex == 3)
+            {
+                label4.Text = "test";
             }
         }
     }
