@@ -48,6 +48,7 @@
             this.cmbEmpID = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cmbPermission = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtAccID = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.cmbPermission = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -155,7 +155,7 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(10, 102);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 438);
             this.panel1.TabIndex = 3;
@@ -165,7 +165,7 @@
             this.panel11.Controls.Add(this.groupBox14);
             this.panel11.Controls.Add(this.btnSearch);
             this.panel11.Location = new System.Drawing.Point(541, 157);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(468, 186);
             this.panel11.TabIndex = 5;
@@ -255,7 +255,7 @@
             this.panel10.Controls.Add(this.cmbEmpID);
             this.panel10.Controls.Add(this.label8);
             this.panel10.Location = new System.Drawing.Point(550, 62);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(418, 42);
             this.panel10.TabIndex = 4;
@@ -264,7 +264,7 @@
             // 
             this.cmbEmpID.FormattingEnabled = true;
             this.cmbEmpID.Location = new System.Drawing.Point(155, 11);
-            this.cmbEmpID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEmpID.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEmpID.Name = "cmbEmpID";
             this.cmbEmpID.Size = new System.Drawing.Size(154, 28);
             this.cmbEmpID.TabIndex = 1;
@@ -285,10 +285,18 @@
             this.panel9.Controls.Add(this.cmbPermission);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Location = new System.Drawing.Point(550, 15);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(418, 42);
             this.panel9.TabIndex = 3;
+            // 
+            // cmbPermission
+            // 
+            this.cmbPermission.FormattingEnabled = true;
+            this.cmbPermission.Location = new System.Drawing.Point(93, 10);
+            this.cmbPermission.Name = "cmbPermission";
+            this.cmbPermission.Size = new System.Drawing.Size(151, 28);
+            this.cmbPermission.TabIndex = 1;
             // 
             // label7
             // 
@@ -306,7 +314,7 @@
             this.panel8.Controls.Add(this.txtAccID);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Location = new System.Drawing.Point(8, 15);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(513, 42);
             this.panel8.TabIndex = 2;
@@ -315,7 +323,7 @@
             // 
             this.txtAccID.Enabled = false;
             this.txtAccID.Location = new System.Drawing.Point(52, 11);
-            this.txtAccID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAccID.Margin = new System.Windows.Forms.Padding(2);
             this.txtAccID.Name = "txtAccID";
             this.txtAccID.Size = new System.Drawing.Size(342, 27);
             this.txtAccID.TabIndex = 1;
@@ -336,7 +344,7 @@
             this.tableAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableAccount.Location = new System.Drawing.Point(8, 157);
-            this.tableAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableAccount.Margin = new System.Windows.Forms.Padding(2);
             this.tableAccount.Name = "tableAccount";
             this.tableAccount.RowHeadersWidth = 62;
             this.tableAccount.RowTemplate.Height = 33;
@@ -349,7 +357,7 @@
             this.panel5.Controls.Add(this.txtPass);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(8, 110);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(513, 42);
             this.panel5.TabIndex = 2;
@@ -357,7 +365,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(117, 9);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(342, 27);
             this.txtPass.TabIndex = 1;
@@ -378,7 +386,7 @@
             this.panel4.Controls.Add(this.txtAccName2);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(8, 62);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(513, 42);
             this.panel4.TabIndex = 1;
@@ -386,7 +394,7 @@
             // txtAccName2
             // 
             this.txtAccName2.Location = new System.Drawing.Point(154, 10);
-            this.txtAccName2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAccName2.Margin = new System.Windows.Forms.Padding(2);
             this.txtAccName2.Name = "txtAccName2";
             this.txtAccName2.Size = new System.Drawing.Size(342, 27);
             this.txtAccName2.TabIndex = 1;
@@ -444,14 +452,6 @@
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cmbPermission
-            // 
-            this.cmbPermission.FormattingEnabled = true;
-            this.cmbPermission.Location = new System.Drawing.Point(93, 10);
-            this.cmbPermission.Name = "cmbPermission";
-            this.cmbPermission.Size = new System.Drawing.Size(151, 28);
-            this.cmbPermission.TabIndex = 1;
-            // 
             // accountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -464,7 +464,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnChangeAccount);
             this.Controls.Add(this.btnAddAccount);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "accountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account";

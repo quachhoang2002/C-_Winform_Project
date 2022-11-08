@@ -44,7 +44,7 @@ namespace Project_CakeStore.GUI
             for (int i = 0; i < listAccount.Count; i++)
             {
                 account_DTO account = listAccount[i];
-                tableAccount.Rows.Add(account.AccID, account.EmpID, account.UserName, account.Password, account.Permission);
+                tableAccount.Rows.Add(account.AccID, account.EmpID, account.UserName, account.Password, account.AccountPermission.ToString());
             }
         }
 
@@ -55,7 +55,7 @@ namespace Project_CakeStore.GUI
             for (int i = 0; i < list.Count; i++)
             {
                 account_DTO account = list[i];
-                tableAccount.Rows.Add(account.AccID, account.EmpID, account.UserName, account.Password, account.Permission);
+                tableAccount.Rows.Add(account.AccID, account.EmpID, account.UserName, account.Password, account.AccountPermission.ToString());
             }
         }
 
@@ -82,8 +82,8 @@ namespace Project_CakeStore.GUI
         public void SetCmbPermission()
         {
             cmbPermission.Items.Clear();
-            cmbPermission.Items.Add(0);
-            cmbPermission.Items.Add(1);
+            cmbPermission.Items.Add(account_DTO.Permission.Employee.ToString());
+            cmbPermission.Items.Add(account_DTO.Permission.Manager.ToString());
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -125,10 +125,10 @@ namespace Project_CakeStore.GUI
             {
                 DataGridViewRow row = tableAccount.Rows[e.RowIndex];
                 txtAccID.Text = row.Cells["Mã tài khoản"].Value.ToString();
-                cmbEmpID.SelectedItem = row.Cells["Mã nhân viên"].Value;
+                cmbEmpID.SelectedItem = row.Cells["Mã nhân viên"].Value.ToString();
                 txtAccName2.Text = row.Cells["Tên tài khoản"].Value.ToString();
                 txtPass.Text = row.Cells["Mật khẩu"].Value.ToString();
-                cmbPermission.SelectedItem = row.Cells["Quyền"].Value;
+                cmbPermission.SelectedItem = row.Cells["Quyền"].Value.ToString();
             }
         }
 
@@ -143,8 +143,16 @@ namespace Project_CakeStore.GUI
             String AccID = txtAccID.Text, EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = cmbPermission.SelectedItem.ToString();
             if (AccID.Length != 0 && AccName.Length != 0 && Pass.Length != 0 && Permission != null && EmpID != null)
             {
-                accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
-                SetTableAccount();
+                if (Permission.Equals(account_DTO.Permission.Manager.ToString()))
+                {
+                    accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Manager));
+                    SetTableAccount();
+                }
+                else if(Permission.Equals(account_DTO.Permission.Employee.ToString()))
+                {
+                    accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Employee));
+                    SetTableAccount();
+                }
             }
             else
             {
@@ -177,8 +185,16 @@ namespace Project_CakeStore.GUI
             String AccID = "", EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = cmbPermission.SelectedItem.ToString();
             if (AccName.Length != 0 && Pass.Length != 0 && Permission!=null && EmpID!=null)
             {
-                accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, Convert.ToInt32(Permission)));
-                SetTableAccount();
+                if (Permission.Equals(account_DTO.Permission.Manager.ToString()))
+                {
+                    accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Manager));
+                    SetTableAccount();
+                }
+                else if(Permission.Equals(account_DTO.Permission.Employee.ToString()))
+                {
+                    accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Employee));
+                    SetTableAccount();
+                }
             }
             else
             {
