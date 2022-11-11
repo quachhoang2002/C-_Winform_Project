@@ -63,6 +63,8 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
+            this.btnExportEcel = new System.Windows.Forms.Button();
+            this.btnImportExcel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -146,7 +148,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExportEcel);
             this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.btnImportExcel);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
@@ -452,6 +456,33 @@
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnExportEcel
+            // 
+            this.btnExportEcel.BackColor = System.Drawing.Color.Red;
+            this.btnExportEcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExportEcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExportEcel.Location = new System.Drawing.Point(889, 360);
+            this.btnExportEcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExportEcel.Name = "btnExportEcel";
+            this.btnExportEcel.Size = new System.Drawing.Size(120, 55);
+            this.btnExportEcel.TabIndex = 25;
+            this.btnExportEcel.Text = "Xuất Excel";
+            this.btnExportEcel.UseVisualStyleBackColor = false;
+            this.btnExportEcel.Click += new System.EventHandler(this.btnExportEcel_Click);
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.BackColor = System.Drawing.Color.Red;
+            this.btnImportExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnImportExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnImportExcel.Location = new System.Drawing.Point(705, 360);
+            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(123, 55);
+            this.btnImportExcel.TabIndex = 24;
+            this.btnImportExcel.Text = "Nhập Excel";
+            this.btnImportExcel.UseVisualStyleBackColor = false;
+            // 
             // accountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -529,5 +560,7 @@
         private Label label8;
         private Panel panel11;
         private ComboBox cmbPermission;
+        private Button btnExportEcel;
+        private Button btnImportExcel;
     }
 }
