@@ -61,13 +61,12 @@
             this.import = new System.Windows.Forms.TabPage();
             this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.cbxSearch = new System.Windows.Forms.ComboBox();
+            this.searchValue = new System.Windows.Forms.TextBox();
             this.sell = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -230,10 +229,10 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(91, 22);
+            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(77, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 21);
+            this.label11.Size = new System.Drawing.Size(123, 19);
             this.label11.TabIndex = 1;
             this.label11.Text = "Nha Cung Cap";
             // 
@@ -271,10 +270,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(102, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 21);
+            this.label7.Size = new System.Drawing.Size(88, 19);
             this.label7.TabIndex = 1;
             this.label7.Text = "Don Hang";
             // 
@@ -312,10 +311,10 @@
             // customer
             // 
             this.customer.AutoSize = true;
-            this.customer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customer.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.customer.Location = new System.Drawing.Point(95, 18);
             this.customer.Name = "customer";
-            this.customer.Size = new System.Drawing.Size(93, 21);
+            this.customer.Size = new System.Drawing.Size(105, 19);
             this.customer.TabIndex = 1;
             this.customer.Text = "Khach Hang";
             // 
@@ -353,10 +352,10 @@
             // cake
             // 
             this.cake.AutoSize = true;
-            this.cake.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cake.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.cake.Location = new System.Drawing.Point(116, 22);
             this.cake.Name = "cake";
-            this.cake.Size = new System.Drawing.Size(45, 21);
+            this.cake.Size = new System.Drawing.Size(50, 19);
             this.cake.TabIndex = 1;
             this.cake.Text = "Banh";
             // 
@@ -384,10 +383,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(99, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 21);
+            this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nhan Vien";
             // 
@@ -426,13 +425,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.dtpEnd);
             this.groupBox2.Controls.Add(this.dtpStart);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Controls.Add(this.cbxSearch);
+            this.groupBox2.Controls.Add(this.searchValue);
             this.groupBox2.Location = new System.Drawing.Point(3, 5);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -441,15 +439,6 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "label3";
             // 
             // dataGridView1
             // 
@@ -466,7 +455,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 23);
             this.dtpEnd.TabIndex = 10;
-            this.dtpEnd.Value = new System.DateTime(2022, 11, 6, 15, 35, 52, 0);
+            this.dtpEnd.Value = new System.DateTime(2022, 11, 11, 13, 10, 16, 0);
             // 
             // dtpStart
             // 
@@ -476,34 +465,35 @@
             this.dtpStart.TabIndex = 9;
             this.dtpStart.Value = new System.DateTime(2022, 1, 1, 15, 31, 0, 0);
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(721, 58);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 32);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Tìm Kiếm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.Red;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(721, 58);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(263, 32);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // comboBox2
+            // cbxSearch
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 20);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(105, 23);
-            this.comboBox2.TabIndex = 6;
+            this.cbxSearch.FormattingEnabled = true;
+            this.cbxSearch.Location = new System.Drawing.Point(133, 20);
+            this.cbxSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxSearch.Name = "cbxSearch";
+            this.cbxSearch.Size = new System.Drawing.Size(105, 23);
+            this.cbxSearch.TabIndex = 6;
             // 
-            // textBox2
+            // searchValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(251, 20);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(443, 23);
-            this.textBox2.TabIndex = 7;
+            this.searchValue.Location = new System.Drawing.Point(251, 20);
+            this.searchValue.Margin = new System.Windows.Forms.Padding(2);
+            this.searchValue.Name = "searchValue";
+            this.searchValue.Size = new System.Drawing.Size(443, 23);
+            this.searchValue.TabIndex = 7;
             // 
             // sell
             // 
@@ -668,9 +658,9 @@
         private GroupBox groupBox2;
         private DateTimePicker dtpEnd;
         private DateTimePicker dtpStart;
-        private Button button2;
-        private ComboBox comboBox2;
-        private TextBox textBox2;
+        private Button btnSearch;
+        private ComboBox cbxSearch;
+        private TextBox searchValue;
         private GroupBox groupBox1;
         private DateTimePicker dateTimePicker3;
         private DateTimePicker dateTimePicker4;
@@ -688,7 +678,6 @@
         private PictureBox pictureBox5;
         private DataGridView tableImportReport;
         private DataGridView dataGridView1;
-        private Label label3;
         private Label label4;
     }
 }

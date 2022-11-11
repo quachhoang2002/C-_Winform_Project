@@ -141,7 +141,7 @@ namespace Project_CakeStore.DAO
             return total;
         }
 
-        public List<ReportImport_DTO> ReportImport(string start_time, string end_time)
+        public List<ReportImport_DTO> ReportImport(string start_time, string end_time, string field, string data)
         {
             List<ReportImport_DTO> list = new List<ReportImport_DTO>();
             if (con != null)
@@ -153,8 +153,10 @@ namespace Project_CakeStore.DAO
                         "LEFT JOIN ImportDetail ON ImportDetail.CakeID = Cake.CakeID " +
                         "LEFT JOIN Import ON ImportDetail.ImportID = Import.ImportID " +
                         "LEFT JOIN Category ON Cake.CategoryID = Category.CategoryID " +
+                        "where Import.Date between '" + start_time + "' and '" + end_time + "' " +
+                        " and " + field + " LIKE '%" + data + "%' " +
                         "GROUP BY Cake.CakeID,Cake.CakeName,Import.Date,Category.CategoryName " +
-                        "ORDER BY Date DESC";
+                        "ORDER BY Import.Date DESC";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
