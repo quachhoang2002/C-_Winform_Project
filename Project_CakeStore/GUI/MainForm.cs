@@ -18,8 +18,8 @@ namespace Project_CakeStore.GUI
         {
             InitializeComponent();
             getName = name;
-            getid = id;  
-            this.txtAccName.Text = name + "("+id+")";
+            getid = id;
+            this.txtAccName.Text = name + "(" + id + ")";
         }
 
         private void picLogOut_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Project_CakeStore.GUI
             this.Hide();
             loginForm loginForm = new loginForm();
             loginForm.ShowDialog();
-            
+
         }
 
         private void picExit_Click(object sender, EventArgs e)
@@ -88,6 +88,27 @@ namespace Project_CakeStore.GUI
             accountForm accountForm = new accountForm(getName, getid);
             accountForm.ShowDialog();
             this.Show();
+        }
+
+        private void txtStatic_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportForm reportForm = new ReportForm(getName, getid);
+            reportForm.ShowDialog();
+        }
+
+        private void txtCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            categoryForm category = new categoryForm(getName, getid);
+            category.ShowDialog();
+        }
+
+        private void txtCake_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            cakeForm cake = new cakeForm(getName, getid);
+            cake.ShowDialog();
         }
     }
 }

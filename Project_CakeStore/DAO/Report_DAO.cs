@@ -18,10 +18,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(EmpID) where isDeleted=1";
+                    String sql = "select count(EmpID) from Employee where isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();
+                    total = (int)cm.ExecuteScalar();
 
                 }
                 catch (Exception ex)
@@ -45,11 +45,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(CusID) where isDeleted=1";
+                    String sql = "select count(CusID) from Customer where isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();
-
+                    total = (int)cm.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -72,10 +71,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(CakeID) where isDeleted=1";
+                    String sql = "select count(CakeID) from Cake where isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();
+                    total = (int)cm.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -98,10 +97,10 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select count(OrderID) where isDeleted=1";
+                    String sql = "select count(OrderID) from [Order] where isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
-                    total = cm.ExecuteNonQuery();                 
+                    total = (int)cm.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -117,6 +116,83 @@ namespace Project_CakeStore.DAO
 
         }
 
-        
+        public int totalManufactor()
+        {
+            int total = 0;
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select count(SuppID) from Supplier where isDeleted=1";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+                    total = (int)cm.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    //close database connection
+                    con.Close();
+                }
+            }
+            return total;
+        }
+
+        public List<ReportImport_DTO> ReportImport(string start_time, string end_time, string field, string data)
+        {
+            List<ReportImport_DTO> list = new List<ReportImport_DTO>();
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select Cake.CakeID,Cake.CakeName ,Import.Date ,Category.CategoryName, sum(ImportDetail.Quantity) as Quantity,sum(ImportDetail.Price) as Price " +
+                        "from Cake " +
+                        "LEFT JOIN ImportDetail ON ImportDetail.CakeID = Cake.CakeID " +
+                        "LEFT JOIN Import ON ImportDetail.ImportID = Import.ImportID " +
+                        "LEFT JOIN Category ON Cake.CategoryID = Category.CategoryID " +
+                        "where Import.Date between '" + start_time + "' and '" + end_time + "' " +
+                        " and " + field + " LIKE '%" + data + "%' " +
+                        "GROUP BY Cake.CakeID,Cake.CakeName,Import.Date,Category.CategoryName " +
+                        "ORDER BY Import.Date DESC";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+                    SqlDataReader sdr = cm.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        if (sdr["Date"] == DBNull.Value)
+                        {
+                            continue;
+                        }
+
+                        ReportImport_DTO report = new ReportImport_DTO();
+                        report.CakeId = sdr["CakeID"].ToString();
+                        report.CakeName = sdr["CakeName"].ToString();
+                        report.Date = sdr["Date"].ToString();
+                        report.CakeType = sdr["CategoryName"].ToString();
+                        report.Quantity = int.Parse(sdr["Quantity"].ToString());
+                        report.TotalPrice = int.Parse(sdr["Price"].ToString());
+                        list.Add(report);
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+            }
+
+            return list;
+
+        }
+
+
     }
 }
