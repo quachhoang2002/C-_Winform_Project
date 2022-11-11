@@ -12,22 +12,28 @@ namespace Project_CakeStore.DTO
         private String empID;
         private String userName;
         private String password;
-        private int permission;
-
+        private Permission accountPermission;
+       
         public string AccID { get => accID; set => accID = value; }
         public string EmpID { get => empID; set => empID = value; }
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
-        public int Permission { get => permission; set => permission = value; }
+        internal Permission AccountPermission { get => accountPermission; set => accountPermission = value; }
 
-        public account_DTO(string accID, string empID, string userName, string password, int permission)
+        public account_DTO()
         {
-            this.AccID = accID;
-            this.EmpID = empID;
-            this.UserName = userName;
-            this.Password = password;
-            this.Permission = permission;
+            
         }
 
+        public account_DTO(string accID, string empID, string userName, string password, Permission accountPermission)
+        {
+            this.accID = accID;
+            this.empID = empID;
+            this.userName = userName;
+            this.password = password;
+            this.accountPermission = accountPermission;
+        }
+
+        public enum Permission {None, Manager,Employee }
     }   
 }

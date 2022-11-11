@@ -52,14 +52,14 @@ namespace Project_CakeStore.GUI
             } 
             else
             {
-                if (acc_BUS.checkLogin(userName, password) == 0)
+                if (acc_BUS.checkLogin(userName, password).Equals(account_DTO.Permission.Manager))
                 {
                     this.Hide();
                     MainForm mainForm = new MainForm(getName(), getId());
                     mainForm.ShowDialog();
                     this.Show();
                 }
-                else if (acc_BUS.checkLogin(userName, password) == 1)
+                else if (acc_BUS.checkLogin(userName, password).Equals(account_DTO.Permission.Employee))
                 {
                     this.Hide();
                     employeeLoginForm employeeLoginForm = new employeeLoginForm(getName(), getId());
