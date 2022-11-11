@@ -14,7 +14,6 @@ namespace Project_CakeStore.DTO
         private String password;
         private Permission accountPermission;
        
-
         public string AccID { get => accID; set => accID = value; }
         public string EmpID { get => empID; set => empID = value; }
         public string UserName { get => userName; set => userName = value; }
