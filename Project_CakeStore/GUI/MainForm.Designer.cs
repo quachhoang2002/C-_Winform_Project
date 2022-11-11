@@ -310,6 +310,7 @@
             this.txtCake.Size = new System.Drawing.Size(66, 26);
             this.txtCake.TabIndex = 7;
             this.txtCake.Text = "Bánh";
+            this.txtCake.Click += new System.EventHandler(this.txtCake_Click);
             // 
             // pictureBox5
             // 
