@@ -77,6 +77,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.exportExcel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -425,6 +426,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.exportExcel);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.dtpEnd);
             this.groupBox2.Controls.Add(this.dtpStart);
@@ -451,7 +453,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(483, 61);
+            this.dtpEnd.Location = new System.Drawing.Point(331, 54);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 23);
             this.dtpEnd.TabIndex = 10;
@@ -459,7 +461,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(251, 61);
+            this.dtpStart.Location = new System.Drawing.Point(97, 54);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 23);
             this.dtpStart.TabIndex = 9;
@@ -469,7 +471,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Red;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(721, 58);
+            this.btnSearch.Location = new System.Drawing.Point(625, 34);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(263, 32);
@@ -481,7 +483,7 @@
             // cbxSearch
             // 
             this.cbxSearch.FormattingEnabled = true;
-            this.cbxSearch.Location = new System.Drawing.Point(133, 20);
+            this.cbxSearch.Location = new System.Drawing.Point(92, 20);
             this.cbxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSearch.Name = "cbxSearch";
             this.cbxSearch.Size = new System.Drawing.Size(105, 23);
@@ -489,10 +491,10 @@
             // 
             // searchValue
             // 
-            this.searchValue.Location = new System.Drawing.Point(251, 20);
+            this.searchValue.Location = new System.Drawing.Point(201, 20);
             this.searchValue.Margin = new System.Windows.Forms.Padding(2);
             this.searchValue.Name = "searchValue";
-            this.searchValue.Size = new System.Drawing.Size(443, 23);
+            this.searchValue.Size = new System.Drawing.Size(398, 23);
             this.searchValue.TabIndex = 7;
             // 
             // sell
@@ -584,6 +586,19 @@
             this.imageList1.Images.SetKeyName(0, "coins-icon.png");
             this.imageList1.Images.SetKeyName(1, "Shoppingcart-03-arrow-down-icon.png");
             this.imageList1.Images.SetKeyName(2, "cash-icon.png");
+            // 
+            // exportExcel
+            // 
+            this.exportExcel.BackColor = System.Drawing.Color.Red;
+            this.exportExcel.ForeColor = System.Drawing.Color.White;
+            this.exportExcel.Location = new System.Drawing.Point(892, 59);
+            this.exportExcel.Margin = new System.Windows.Forms.Padding(2);
+            this.exportExcel.Name = "exportExcel";
+            this.exportExcel.Size = new System.Drawing.Size(106, 43);
+            this.exportExcel.TabIndex = 12;
+            this.exportExcel.Text = "Xuat Excel";
+            this.exportExcel.UseVisualStyleBackColor = false;
+            this.exportExcel.Click += new System.EventHandler(this.exportExcel_Click);
             // 
             // ReportForm
             // 
@@ -679,5 +694,6 @@
         private DataGridView tableImportReport;
         private DataGridView dataGridView1;
         private Label label4;
+        private Button exportExcel;
     }
 }

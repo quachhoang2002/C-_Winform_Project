@@ -96,5 +96,12 @@ namespace Project_CakeStore.GUI
             ReportForm reportForm = new ReportForm(getName, getid);
             reportForm.ShowDialog();
         }
+
+        private void txtCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            categoryForm category = new categoryForm(getName, getid);
+            category.ShowDialog();
+        }
     }
 }
