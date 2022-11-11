@@ -12,7 +12,7 @@ namespace Project_CakeStore.BUS
     {
         account_DAO acc_DAO = new account_DAO();
 
-        public int checkLogin(String userName, String password)
+        public account_DTO.Permission checkLogin(String userName, String password)
         {
             return acc_DAO.checkLogin(userName, password);
         }
