@@ -271,5 +271,61 @@ namespace Project_CakeStore.GUI
         {
             resetData();
         }
+        private void ToExcel(DataGridView dataGridView1, string fileName)
+        {
+
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+
+                worksheet.Name = "Cake Table";
+
+
+                for (int i = 0; i < tableCustomer.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = tableCustomer.Columns[i].HeaderText;
+                }
+
+                for (int i = 0; i < tableCustomer.RowCount; i++)
+                {
+                    for (int j = 0; j < tableCustomer.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = tableCustomer.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                workbook.SaveAs(fileName);
+
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ToExcel(tableCustomer, saveFileDialog.FileName);
+            }
+        }
     }
 }

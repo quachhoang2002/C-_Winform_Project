@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -278,7 +279,7 @@ namespace Project_CakeStore.GUI
 
             }
         }
-
+       
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtSearch.Text;
@@ -298,6 +299,62 @@ namespace Project_CakeStore.GUI
                 txtSearch.Text = "";
             }
 
+        }
+        private void ToExcel(DataGridView dataGridView1, string fileName)
+        {
+
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+
+                worksheet.Name = "Cake Table";
+
+
+                for (int i = 0; i < tableEmployee.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = tableEmployee.Columns[i].HeaderText;
+                }
+
+                for (int i = 0; i < tableEmployee.RowCount; i++)
+                {
+                    for (int j = 0; j < tableEmployee.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = tableEmployee.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                workbook.SaveAs(fileName);
+
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ToExcel(tableEmployee, saveFileDialog.FileName);
+            }
         }
     }
 }
