@@ -1,4 +1,5 @@
 ﻿using Project_CakeStore.BUS;
+using Project_CakeStore.DAO;
 using Project_CakeStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Project_CakeStore.GUI
     public partial class customerForm : Form
     {
         private customer_BUS cus_BUS = new customer_BUS();
+        RegexPattern regex = new RegexPattern();
         String getName = "";
         String getId = "";
         public customerForm(String name,String id)
@@ -22,6 +24,7 @@ namespace Project_CakeStore.GUI
             InitializeComponent();
             getId = id;
             getName = name;
+            txtCusID.Enabled = false;
             txtAccName.Text = getName + "(" + getId + ")";
             setTableCustomer();
             setCbxSearch();
@@ -30,6 +33,7 @@ namespace Project_CakeStore.GUI
 
         public void loadNewestCusID()
         {
+            txtNewestCusID.Text = "";
             List<customer_DTO> NewestCusID = cus_BUS.searchNewestCusID();
             for (int i = 0; i < NewestCusID.Count; i++)
             {
@@ -63,39 +67,22 @@ namespace Project_CakeStore.GUI
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtCusID.Text.Equals(""))
+            if (txtCusName.Text.Trim().Equals("") || dtDayOfBirth.Text.Trim().Equals("") || 
+                txtCusPhone.Text.Trim().Equals("") || txtCusAddress.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Vui lòng nhập mã khách hàng!");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!");
             }
-            else if (txtCusName.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập tên khách hàng!");
-            }
-            else if (dtDayOfBirth.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng chọn ngày sinh khách hàng!");
-            }
-            else if (txtCusPhone.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại của khách hàng!");
-            }
-            else if (cbxCusSex.Text.Equals(""))
+            else if (cbxCusSex.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn giới tính khách hàng!");
-            }
-            else if (txtCusAddress.Text.Equals(""))
+            }else if (regex.checkPhoneNumber(txtCusPhone.Text))
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ của khách hàng!");
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
             }
             else
             {
-                customer_DTO cus = new customer_DTO();
-                cus.setCusID(txtCusID.Text);
-                cus.setCusName(txtCusName.Text);
-                cus.setDoB(dtDayOfBirth.Text);
-                cus.setPhone(txtCusPhone.Text);
-                cus.setSex(cbxCusSex.Text);
-                cus.setAddress(txtCusAddress.Text);
+                String id = "", cusname = txtCusName.Text, dob = dtDayOfBirth.Text, phone = txtCusPhone.Text, gender = cbxCusSex.SelectedItem.ToString(), add = txtCusAddress.Text;
+                customer_DTO cus = new customer_DTO(id,cusname,dob,phone,gender,add);
                 if (cus_BUS.addCustomer(cus))
                 {
                     MessageBox.Show("Thêm khách hàng thành công!");
@@ -194,7 +181,6 @@ namespace Project_CakeStore.GUI
         {
             if (e.RowIndex >= 0)
             {
-                txtCusID.Enabled = false;
                 DataGridViewRow row = tableCustomer.Rows[e.RowIndex];
                 txtCusID.Text = row.Cells["Mã Khách Hàng"].Value.ToString();
                 txtCusName.Text = row.Cells["Họ Tên"].Value.ToString();
@@ -208,38 +194,21 @@ namespace Project_CakeStore.GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtCusName.Text.Equals(""))
+            if (txtCusName.Text.Trim().Equals("") || dtDayOfBirth.Text.Trim().Equals("") ||
+                txtCusPhone.Text.Trim().Equals("") || txtCusAddress.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Vui lòng nhập tên khách hàng!");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!");
             }
-            else if (dtDayOfBirth.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng chọn ngày sinh khách hàng!");
-            }
-            else if (txtCusPhone.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại của khách hàng!");
-            }
-            else if (cbxCusSex.Text.Equals(""))
+            else if (cbxCusSex.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn giới tính khách hàng!");
             }
-            else if (txtCusAddress.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập địa chỉ của khách hàng!");
-            }
             else
             {
-                customer_DTO cus = new customer_DTO();
-                cus.setCusID(txtCusID.Text);
-                cus.setCusName(txtCusName.Text);
-                cus.setDoB(dtDayOfBirth.Text);
-                cus.setPhone(txtCusPhone.Text);
-                cus.setSex(cbxCusSex.Text);
-                cus.setAddress(txtCusAddress.Text);
+                String id = txtCusID.Text, cusname = txtCusName.Text, dob = dtDayOfBirth.Text, phone = txtCusPhone.Text, gender = cbxCusSex.SelectedItem.ToString(), add = txtCusAddress.Text;
+                customer_DTO cus = new customer_DTO(id,cusname,dob,phone,gender,add);
                 if (cus_BUS.updateCustomer(cus))
                 {
-                    txtCusID.Enabled = true;
                     MessageBox.Show("Sửa khách hàng thành công!");
                     resetData();
                 }
@@ -248,9 +217,8 @@ namespace Project_CakeStore.GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            customer_DTO cus = new customer_DTO();
-            cus.setCusID(txtCusID.Text);
-            if (cus_BUS.deleteCustomer(cus))
+            String id = txtCusID.Text;
+            if (cus_BUS.deleteCustomer(id))
             {
                 MessageBox.Show("Xóa khách hàng thành công!");
                 resetData();
@@ -258,7 +226,6 @@ namespace Project_CakeStore.GUI
         }
         public void resetData()
         {
-            txtCusID.Enabled = true;
             txtCusID.Text = "";
             txtCusName.Text = "";
             dtDayOfBirth.Text = "1/1/2000";
@@ -266,6 +233,7 @@ namespace Project_CakeStore.GUI
             txtCusPhone.Text = "";
             txtCusAddress.Text = "";
             setTableCustomer();
+            loadNewestCusID();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -287,7 +255,7 @@ namespace Project_CakeStore.GUI
                 workbook = excel.Workbooks.Add(Type.Missing);
                 worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
 
-                worksheet.Name = "Cake Table";
+                worksheet.Name = "Customer Table";
 
 
                 for (int i = 0; i < tableCustomer.ColumnCount; i++)
@@ -326,6 +294,13 @@ namespace Project_CakeStore.GUI
             {
                 ToExcel(tableCustomer, saveFileDialog.FileName);
             }
+        }
+
+        private void picExit_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm main = new MainForm(getName, getId);
+            main.ShowDialog();
         }
     }
 }

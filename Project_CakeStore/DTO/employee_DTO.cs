@@ -15,8 +15,6 @@ namespace Project_CakeStore.DTO
         private String phone;
         private String address;
 
-        public employee_DTO() { 
-        }
         public employee_DTO(String empID, String empName, String position, String sex, String phone, String address)
         {
             this.empID = empID;

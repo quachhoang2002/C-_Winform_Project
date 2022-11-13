@@ -107,6 +107,7 @@
             this.picExit.Size = new System.Drawing.Size(51, 63);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click_1);
             // 
             // picLogOut
             // 
@@ -425,7 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 793);
+            this.ClientSize = new System.Drawing.Size(1249, 943);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tableCustomer);

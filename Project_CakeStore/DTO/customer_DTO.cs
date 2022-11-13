@@ -15,11 +15,6 @@ namespace Project_CakeStore.DTO
         private String sex;
         private String address;
         
-        public customer_DTO()
-        {
-
-        }
-
         public customer_DTO(String cusID, String cusName, String DoB, String phone, String sex, String address)
         {
             this.cusID = cusID;
