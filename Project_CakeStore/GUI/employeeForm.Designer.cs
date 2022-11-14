@@ -37,8 +37,6 @@
             this.ABC = new System.Windows.Forms.Label();
             this.tableEmployee = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtNewestEmpID = new System.Windows.Forms.Label();
             this.txtEmpPosition = new System.Windows.Forms.TextBox();
             this.cbxEmpSex = new System.Windows.Forms.ComboBox();
             this.txtEmpAddress = new System.Windows.Forms.TextBox();
@@ -67,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableEmployee)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -155,7 +152,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.txtEmpPosition);
             this.groupBox1.Controls.Add(this.cbxEmpSex);
             this.groupBox1.Controls.Add(this.txtEmpAddress);
@@ -174,27 +170,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhân Viên";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtNewestEmpID);
-            this.groupBox4.Location = new System.Drawing.Point(7, 190);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(299, 54);
-            this.groupBox4.TabIndex = 13;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Mã NV mới nhất";
-            // 
-            // txtNewestEmpID
-            // 
-            this.txtNewestEmpID.AutoSize = true;
-            this.txtNewestEmpID.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNewestEmpID.Location = new System.Drawing.Point(7, 27);
-            this.txtNewestEmpID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtNewestEmpID.Name = "txtNewestEmpID";
-            this.txtNewestEmpID.Size = new System.Drawing.Size(25, 21);
-            this.txtNewestEmpID.TabIndex = 2;
-            this.txtNewestEmpID.Text = "...";
             // 
             // txtEmpPosition
             // 
@@ -442,8 +417,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableEmployee)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -484,7 +457,5 @@
         private GroupBox groupBox3;
         private Button btnExportExcel;
         private Button btnImportExcel;
-        private GroupBox groupBox4;
-        private Label txtNewestEmpID;
     }
 }

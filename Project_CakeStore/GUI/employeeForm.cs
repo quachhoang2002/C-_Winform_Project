@@ -29,7 +29,6 @@ namespace Project_CakeStore.GUI
             txtAccName.Text = getName + "(" + getId + ")";
             setTableEmloyee();
             setCbxSearch();
-            loadNewestEmpID();
         }
 
 
@@ -88,16 +87,7 @@ namespace Project_CakeStore.GUI
 
         }
 
-        public void loadNewestEmpID()
-        {
-            txtNewestEmpID.Text = "";
-            List<employee_DTO> NewestEmpID = emp_BUS.SearchNewestEmpID();
-            for (int i = 0; i < NewestEmpID.Count; i++)
-            {
-                employee_DTO emp = NewestEmpID[i];
-                txtNewestEmpID.Text = emp.getEmpID();
-            }
-        }
+
         public void setTableSearchByName(String data)
         {
             tableEmployee.Rows.Clear();
@@ -137,7 +127,7 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Vui lòng chọn giới tính nhân viên!");
             }
-            else if (regex.checkPhoneNumber(txtEmpPhone.Text))
+            else if (!regex.checkPhoneNumber(txtEmpPhone.Text))
             {
                 MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
             }
@@ -171,7 +161,6 @@ namespace Project_CakeStore.GUI
             txtSearch.Text = "";
             cbxSearch.Text = "";
             setTableEmloyee();
-            loadNewestEmpID();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -222,6 +211,10 @@ namespace Project_CakeStore.GUI
             else if (cbxEmpSex.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn giới tính nhân viên!");
+            }
+            else if (!regex.checkPhoneNumber(txtEmpPhone.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
             }
             else
             {

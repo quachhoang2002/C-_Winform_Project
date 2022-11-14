@@ -36,8 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ABC = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtNewestCusID = new System.Windows.Forms.Label();
             this.dtDayOfBirth = new System.Windows.Forms.DateTimePicker();
             this.cbxCusSex = new System.Windows.Forms.ComboBox();
             this.txtCusAddress = new System.Windows.Forms.TextBox();
@@ -66,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCustomer)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -143,7 +140,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.dtDayOfBirth);
             this.groupBox1.Controls.Add(this.cbxCusSex);
             this.groupBox1.Controls.Add(this.txtCusAddress);
@@ -162,27 +158,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Khách Hàng";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtNewestCusID);
-            this.groupBox4.Location = new System.Drawing.Point(7, 200);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(299, 54);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Mã KH mới nhất";
-            // 
-            // txtNewestCusID
-            // 
-            this.txtNewestCusID.AutoSize = true;
-            this.txtNewestCusID.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNewestCusID.Location = new System.Drawing.Point(7, 27);
-            this.txtNewestCusID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtNewestCusID.Name = "txtNewestCusID";
-            this.txtNewestCusID.Size = new System.Drawing.Size(25, 21);
-            this.txtNewestCusID.TabIndex = 2;
-            this.txtNewestCusID.Text = "...";
             // 
             // dtDayOfBirth
             // 
@@ -440,8 +415,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCustomer)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -483,7 +456,5 @@
         private Button btnEdit;
         private Button btnAdd;
         private DateTimePicker dtDayOfBirth;
-        private GroupBox groupBox4;
-        private Label txtNewestCusID;
     }
 }

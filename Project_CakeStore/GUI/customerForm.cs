@@ -28,19 +28,9 @@ namespace Project_CakeStore.GUI
             txtAccName.Text = getName + "(" + getId + ")";
             setTableCustomer();
             setCbxSearch();
-            loadNewestCusID();
         }
 
-        public void loadNewestCusID()
-        {
-            txtNewestCusID.Text = "";
-            List<customer_DTO> NewestCusID = cus_BUS.searchNewestCusID();
-            for (int i = 0; i < NewestCusID.Count; i++)
-            {
-                customer_DTO cus = NewestCusID[i];
-                txtNewestCusID.Text = cus.getCusID();
-            }
-        }
+  
         public void setTableCustomer()
         {
             tableCustomer.Rows.Clear();
@@ -75,7 +65,7 @@ namespace Project_CakeStore.GUI
             else if (cbxCusSex.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn giới tính khách hàng!");
-            }else if (regex.checkPhoneNumber(txtCusPhone.Text))
+            }else if (!regex.checkPhoneNumber(txtCusPhone.Text))
             {
                 MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
             }
@@ -203,6 +193,10 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Vui lòng chọn giới tính khách hàng!");
             }
+            else if (!regex.checkPhoneNumber(txtCusPhone.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
+            }
             else
             {
                 String id = txtCusID.Text, cusname = txtCusName.Text, dob = dtDayOfBirth.Text, phone = txtCusPhone.Text, gender = cbxCusSex.SelectedItem.ToString(), add = txtCusAddress.Text;
@@ -233,7 +227,6 @@ namespace Project_CakeStore.GUI
             txtCusPhone.Text = "";
             txtCusAddress.Text = "";
             setTableCustomer();
-            loadNewestCusID();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
