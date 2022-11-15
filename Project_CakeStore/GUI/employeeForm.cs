@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,17 +17,18 @@ namespace Project_CakeStore.GUI
     public partial class employeeForm : Form
     {
         private employee_BUS emp_BUS = new employee_BUS();
+        RegexPattern regex = new RegexPattern();
         String getName = "";
         String getId = "";
         public employeeForm(String name, String id)
         {
             InitializeComponent();
             getId = id;
+            txtEmpID.Enabled = false;
             getName = name;
             txtAccName.Text = getName + "(" + getId + ")";
             setTableEmloyee();
             setCbxSearch();
-            loadNewestEmpID();
         }
 
 
@@ -85,15 +87,7 @@ namespace Project_CakeStore.GUI
 
         }
 
-        public void loadNewestEmpID()
-        {       
-            List<employee_DTO> NewestEmpID = emp_BUS.SearchNewestEmpID();
-            for (int i = 0; i < NewestEmpID.Count; i++)
-            {
-                employee_DTO emp = NewestEmpID[i];
-                txtNewestEmpID.Text = emp.getEmpID();
-            }
-        }
+
         public void setTableSearchByName(String data)
         {
             tableEmployee.Rows.Clear();
@@ -123,45 +117,24 @@ namespace Project_CakeStore.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtEmpID.Text.Equals(""))
+            if (txtEmpName.Text.Trim().Equals("")|| 
+                txtEmpPosition.Text.Trim().Equals("")|| 
+                txtEmpPhone.Text.Trim().Equals("") || txtEmpAddress.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Vui lòng nhập vào mã nhân viên!");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên!");
             }
-
-            else if (txtEmpName.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập vào họ tên nhân viên!");
-
-            }
-            else if (txtEmpPosition.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập vào vị trí nhân viên!");
-
-            }
-            else if (cbxEmpSex.Text.Equals(""))
+            else if (cbxEmpSex.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn giới tính nhân viên!");
-
             }
-            else if (txtEmpPhone.Text.Equals(""))
+            else if (!regex.checkPhoneNumber(txtEmpPhone.Text))
             {
-                MessageBox.Show("Vui lòng nhập vào số diện thoại của nhân viên!");
-
-            }
-            else if (txtEmpAddress.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập vào địa chỉ của nhân viên!");
-
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
             }
             else
             {
-                employee_DTO emp = new employee_DTO();
-                emp.setEmpID(txtEmpID.Text);
-                emp.setEmpName(txtEmpName.Text);
-                emp.setPosition(txtEmpPosition.Text);
-                emp.setSex(cbxEmpSex.Text);
-                emp.setPhone(txtEmpPhone.Text);
-                emp.setAddress(txtEmpAddress.Text);
+                String id = "", name = txtEmpName.Text, position = txtEmpPosition.Text, gender = cbxEmpSex.SelectedItem.ToString(), phone = txtEmpPhone.Text, add = txtEmpAddress.Text;
+                employee_DTO emp = new employee_DTO(id,name,position,gender,phone,add);
                 if (emp_BUS.addEmployee(emp))
                 {
                     MessageBox.Show("Thêm nhân viên thành công!");
@@ -179,7 +152,6 @@ namespace Project_CakeStore.GUI
         }
         public void resetData()
         {
-            txtEmpID.Enabled = true;
             txtEmpID.Text = "";
             txtEmpName.Text = "";
             txtEmpPosition.Text = "";
@@ -206,7 +178,6 @@ namespace Project_CakeStore.GUI
         {
             if (e.RowIndex >= 0)
             {
-                txtEmpID.Enabled = false;
                 DataGridViewRow row = tableEmployee.Rows[e.RowIndex];
                 txtEmpID.Text = row.Cells["Mã Nhân Viên"].Value.ToString();
                 txtEmpName.Text = row.Cells["Họ Tên"].Value.ToString();
@@ -219,9 +190,8 @@ namespace Project_CakeStore.GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            employee_DTO emp = new employee_DTO();
-            emp.setEmpID(txtEmpID.Text);
-            if (emp_BUS.deleteEmployee(emp))
+            String id = txtEmpID.Text;
+            if (emp_BUS.deleteEmployee(id))
             {
                 MessageBox.Show("Xóa nhân viên thành công!");
                 
@@ -233,44 +203,27 @@ namespace Project_CakeStore.GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtEmpName.Text.Equals(""))
+            if (txtEmpName.Text.Trim().Equals("") || txtEmpPosition.Text.Trim().Equals("") ||
+                txtEmpPhone.Text.Trim().Equals("") || txtEmpAddress.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Vui lòng nhập vào họ tên nhân viên!");
-
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên!");
             }
-            else if (txtEmpPosition.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập vào vị trí nhân viên!");
-
-            }
-            else if (cbxEmpSex.Text.Equals(""))
+            else if (cbxEmpSex.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn giới tính nhân viên!");
-
             }
-            else if (txtEmpPhone.Text.Equals(""))
+            else if (!regex.checkPhoneNumber(txtEmpPhone.Text))
             {
-                MessageBox.Show("Vui lòng nhập vào số diện thoại của nhân viên!");
-
-            }
-            else if (txtEmpAddress.Text.Equals(""))
-            {
-                MessageBox.Show("Vui lòng nhập vào địa chỉ của nhân viên!");
-
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!");
             }
             else
             {
-                employee_DTO emp = new employee_DTO();
-                emp.setEmpID(txtEmpID.Text);
-                emp.setEmpName(txtEmpName.Text);
-                emp.setPosition(txtEmpPosition.Text);
-                emp.setSex(cbxEmpSex.Text);
-                emp.setPhone(txtEmpPhone.Text);
-                emp.setAddress(txtEmpAddress.Text);
+                String id = txtEmpID.Text, name = txtEmpName.Text, position = txtEmpPosition.Text, gender = cbxEmpSex.SelectedItem.ToString(), phone = txtEmpPhone.Text, add = txtEmpAddress.Text;
+                employee_DTO emp = new employee_DTO(id, name, position, gender, phone, add);
+
 
                 if (emp_BUS.updateEmployee(emp))
                 {
-                    txtEmpID.Enabled = true;
                     MessageBox.Show("Sửa nhân viên thành công!");
                     resetData();
 
@@ -278,7 +231,7 @@ namespace Project_CakeStore.GUI
 
             }
         }
-
+       
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtSearch.Text;
@@ -298,6 +251,62 @@ namespace Project_CakeStore.GUI
                 txtSearch.Text = "";
             }
 
+        }
+        private void ToExcel(DataGridView dataGridView1, string fileName)
+        {
+
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+
+                worksheet.Name = "Employee Table";
+
+
+                for (int i = 0; i < tableEmployee.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = tableEmployee.Columns[i].HeaderText;
+                }
+
+                for (int i = 0; i < tableEmployee.RowCount; i++)
+                {
+                    for (int j = 0; j < tableEmployee.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = tableEmployee.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                workbook.SaveAs(fileName);
+
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ToExcel(tableEmployee, saveFileDialog.FileName);
+            }
         }
     }
 }
