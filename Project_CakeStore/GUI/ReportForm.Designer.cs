@@ -61,6 +61,7 @@
             this.import = new System.Windows.Forms.TabPage();
             this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.exportExcel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -68,16 +69,16 @@
             this.cbxSearch = new System.Windows.Forms.ComboBox();
             this.searchValue = new System.Windows.Forms.TextBox();
             this.sell = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tableSellReport = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.exportExcelSell = new System.Windows.Forms.Button();
+            this.dtpEndSell = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartSell = new System.Windows.Forms.DateTimePicker();
+            this.btnSellSearch = new System.Windows.Forms.Button();
+            this.cbxSellSearch = new System.Windows.Forms.ComboBox();
+            this.sellSearch = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.exportExcel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -98,6 +99,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.sell.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSellReport)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -442,6 +444,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
+            // exportExcel
+            // 
+            this.exportExcel.BackColor = System.Drawing.Color.Red;
+            this.exportExcel.ForeColor = System.Drawing.Color.White;
+            this.exportExcel.Location = new System.Drawing.Point(868, 57);
+            this.exportExcel.Margin = new System.Windows.Forms.Padding(2);
+            this.exportExcel.Name = "exportExcel";
+            this.exportExcel.Size = new System.Drawing.Size(106, 35);
+            this.exportExcel.TabIndex = 12;
+            this.exportExcel.Text = "Xuat Excel";
+            this.exportExcel.UseVisualStyleBackColor = false;
+            this.exportExcel.Click += new System.EventHandler(this.exportExcel_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -453,7 +468,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(331, 54);
+            this.dtpEnd.Location = new System.Drawing.Point(290, 60);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 23);
             this.dtpEnd.TabIndex = 10;
@@ -461,7 +476,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(97, 54);
+            this.dtpStart.Location = new System.Drawing.Point(73, 60);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 23);
             this.dtpStart.TabIndex = 9;
@@ -471,7 +486,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Red;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(625, 34);
+            this.btnSearch.Location = new System.Drawing.Point(541, 57);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(263, 32);
@@ -483,7 +498,7 @@
             // cbxSearch
             // 
             this.cbxSearch.FormattingEnabled = true;
-            this.cbxSearch.Location = new System.Drawing.Point(92, 20);
+            this.cbxSearch.Location = new System.Drawing.Point(56, 20);
             this.cbxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSearch.Name = "cbxSearch";
             this.cbxSearch.Size = new System.Drawing.Size(105, 23);
@@ -491,15 +506,15 @@
             // 
             // searchValue
             // 
-            this.searchValue.Location = new System.Drawing.Point(201, 20);
+            this.searchValue.Location = new System.Drawing.Point(182, 20);
             this.searchValue.Margin = new System.Windows.Forms.Padding(2);
             this.searchValue.Name = "searchValue";
-            this.searchValue.Size = new System.Drawing.Size(398, 23);
+            this.searchValue.Size = new System.Drawing.Size(462, 23);
             this.searchValue.TabIndex = 7;
             // 
             // sell
             // 
-            this.sell.Controls.Add(this.label4);
+            this.sell.Controls.Add(this.tableSellReport);
             this.sell.Controls.Add(this.groupBox1);
             this.sell.ImageIndex = 2;
             this.sell.Location = new System.Drawing.Point(4, 24);
@@ -510,22 +525,24 @@
             this.sell.Text = "Ban Hang";
             this.sell.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // tableSellReport
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(199, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "label4";
+            this.tableSellReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableSellReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableSellReport.Location = new System.Drawing.Point(-1, 112);
+            this.tableSellReport.Name = "tableSellReport";
+            this.tableSellReport.RowTemplate.Height = 25;
+            this.tableSellReport.Size = new System.Drawing.Size(1020, 456);
+            this.tableSellReport.TabIndex = 13;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.dateTimePicker4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.exportExcelSell);
+            this.groupBox1.Controls.Add(this.dtpEndSell);
+            this.groupBox1.Controls.Add(this.dtpStartSell);
+            this.groupBox1.Controls.Add(this.btnSellSearch);
+            this.groupBox1.Controls.Add(this.cbxSellSearch);
+            this.groupBox1.Controls.Add(this.sellSearch);
             this.groupBox1.Location = new System.Drawing.Point(2, 5);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -535,48 +552,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
-            // dateTimePicker3
+            // exportExcelSell
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(483, 61);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker3.TabIndex = 10;
+            this.exportExcelSell.BackColor = System.Drawing.Color.Red;
+            this.exportExcelSell.ForeColor = System.Drawing.Color.White;
+            this.exportExcelSell.Location = new System.Drawing.Point(870, 61);
+            this.exportExcelSell.Margin = new System.Windows.Forms.Padding(2);
+            this.exportExcelSell.Name = "exportExcelSell";
+            this.exportExcelSell.Size = new System.Drawing.Size(106, 32);
+            this.exportExcelSell.TabIndex = 13;
+            this.exportExcelSell.Text = "Xuat Excel";
+            this.exportExcelSell.UseVisualStyleBackColor = false;
+            this.exportExcelSell.Click += new System.EventHandler(this.exportExcelSell_Click);
             // 
-            // dateTimePicker4
+            // dtpEndSell
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(251, 61);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker4.TabIndex = 9;
+            this.dtpEndSell.Location = new System.Drawing.Point(295, 64);
+            this.dtpEndSell.Name = "dtpEndSell";
+            this.dtpEndSell.Size = new System.Drawing.Size(200, 23);
+            this.dtpEndSell.TabIndex = 10;
             // 
-            // button1
+            // dtpStartSell
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(721, 58);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(263, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Tìm Kiếm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.dtpStartSell.Location = new System.Drawing.Point(77, 64);
+            this.dtpStartSell.Name = "dtpStartSell";
+            this.dtpStartSell.Size = new System.Drawing.Size(200, 23);
+            this.dtpStartSell.TabIndex = 9;
+            this.dtpStartSell.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             // 
-            // comboBox1
+            // btnSellSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 20);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 23);
-            this.comboBox1.TabIndex = 6;
+            this.btnSellSearch.BackColor = System.Drawing.Color.Red;
+            this.btnSellSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSellSearch.Location = new System.Drawing.Point(550, 61);
+            this.btnSellSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSellSearch.Name = "btnSellSearch";
+            this.btnSellSearch.Size = new System.Drawing.Size(263, 32);
+            this.btnSellSearch.TabIndex = 8;
+            this.btnSellSearch.Text = "Tìm Kiếm";
+            this.btnSellSearch.UseVisualStyleBackColor = false;
+            this.btnSellSearch.Click += new System.EventHandler(this.btnSellSearch_Click);
             // 
-            // textBox1
+            // cbxSellSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(251, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(443, 23);
-            this.textBox1.TabIndex = 7;
+            this.cbxSellSearch.FormattingEnabled = true;
+            this.cbxSellSearch.Location = new System.Drawing.Point(57, 20);
+            this.cbxSellSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxSellSearch.Name = "cbxSellSearch";
+            this.cbxSellSearch.Size = new System.Drawing.Size(105, 23);
+            this.cbxSellSearch.TabIndex = 6;
+            // 
+            // sellSearch
+            // 
+            this.sellSearch.Location = new System.Drawing.Point(184, 20);
+            this.sellSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.sellSearch.Name = "sellSearch";
+            this.sellSearch.Size = new System.Drawing.Size(457, 23);
+            this.sellSearch.TabIndex = 7;
             // 
             // imageList1
             // 
@@ -586,19 +618,6 @@
             this.imageList1.Images.SetKeyName(0, "coins-icon.png");
             this.imageList1.Images.SetKeyName(1, "Shoppingcart-03-arrow-down-icon.png");
             this.imageList1.Images.SetKeyName(2, "cash-icon.png");
-            // 
-            // exportExcel
-            // 
-            this.exportExcel.BackColor = System.Drawing.Color.Red;
-            this.exportExcel.ForeColor = System.Drawing.Color.White;
-            this.exportExcel.Location = new System.Drawing.Point(892, 59);
-            this.exportExcel.Margin = new System.Windows.Forms.Padding(2);
-            this.exportExcel.Name = "exportExcel";
-            this.exportExcel.Size = new System.Drawing.Size(106, 43);
-            this.exportExcel.TabIndex = 12;
-            this.exportExcel.Text = "Xuat Excel";
-            this.exportExcel.UseVisualStyleBackColor = false;
-            this.exportExcel.Click += new System.EventHandler(this.exportExcel_Click);
             // 
             // ReportForm
             // 
@@ -637,7 +656,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.sell.ResumeLayout(false);
-            this.sell.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSellReport)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -677,11 +696,11 @@
         private ComboBox cbxSearch;
         private TextBox searchValue;
         private GroupBox groupBox1;
-        private DateTimePicker dateTimePicker3;
-        private DateTimePicker dateTimePicker4;
-        private Button button1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private DateTimePicker dtpEndSell;
+        private DateTimePicker dtpStartSell;
+        private Button btnSellSearch;
+        private ComboBox cbxSellSearch;
+        private TextBox sellSearch;
         private ImageList imageList1;
         private BindingSource bindingSource1;
         private PictureBox pictureBox2;
@@ -693,7 +712,8 @@
         private PictureBox pictureBox5;
         private DataGridView tableImportReport;
         private DataGridView dataGridView1;
-        private Label label4;
         private Button exportExcel;
+        private DataGridView tableSellReport;
+        private Button exportExcelSell;
     }
 }
