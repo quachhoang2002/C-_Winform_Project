@@ -50,6 +50,44 @@ namespace Project_CakeStore.DAO
             return list;
         }
 
+        public List<customer_DTO> getAllCusWithIsDeleted()
+        {
+            List<customer_DTO> list = new List<customer_DTO>();
+
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select CusID, Name, DoB, Phone, Sex, Address from Customer";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+                    SqlDataReader sdr = cm.ExecuteReader();
+
+                    while (sdr.Read())
+                    {
+                        customer_DTO cus = new customer_DTO(sdr["CusID"].ToString()
+                            , sdr["Name"].ToString()
+                            , sdr["DoB"].ToString()
+                            , sdr["Phone"].ToString()
+                            , sdr["Sex"].ToString()
+                            , sdr["Address"].ToString());
+
+                        list.Add(cus);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+
+            return list;
+        }
+
 
         //add Customer
         public Boolean addCustomer(customer_DTO cus)
@@ -61,7 +99,7 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "insert into Customer values(@CusID,@CusName,@CusDoB,@CusPhone,@CusSex,@CusAddress,1)";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@CusID", cus.getCusID());
+                    cm.Parameters.AddWithValue("@CusID", "KH" + (getAllCusWithIsDeleted().Count + 1));
                     cm.Parameters.AddWithValue("@CusName", cus.getCusName());
                     cm.Parameters.AddWithValue("@CusDoB", cus.getDoB());
                     cm.Parameters.AddWithValue("@CusPhone", cus.getPhone());
@@ -123,7 +161,7 @@ namespace Project_CakeStore.DAO
         }
 
         //delete Customer
-        public Boolean deleteCustomer(customer_DTO cus)
+        public Boolean deleteCustomer(String id)
         {
             bool check = false;
             if (con != null)
@@ -132,7 +170,7 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "update Customer set isDeleted=0 where CusID=@CusID";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@CusID", cus.getCusID());
+                    cm.Parameters.AddWithValue("@CusID", id);
                     con.Open();
                     int n = cm.ExecuteNonQuery();
                     if (n > 0)

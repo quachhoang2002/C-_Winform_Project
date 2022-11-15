@@ -27,9 +27,9 @@ namespace Project_CakeStore.BUS
             return cus_DAO.updateCustomer(cus);
         }
 
-        public Boolean deleteCustomer(customer_DTO cus)
+        public Boolean deleteCustomer(String id)
         {
-            return cus_DAO.deleteCustomer(cus);
+            return cus_DAO.deleteCustomer(id);
         }
 
         public List<customer_DTO> searchCustomerByID(String data)

@@ -21,9 +21,9 @@ namespace Project_CakeStore.BUS
             return emp_DAO.addEmployee(emp);
         }
 
-        public Boolean deleteEmployee(employee_DTO emp)
+        public Boolean deleteEmployee(String id)
         {
-            return emp_DAO.deleteEmployee(emp);
+            return emp_DAO.deleteEmployee(id);
         }
 
         public Boolean updateEmployee(employee_DTO emp)
