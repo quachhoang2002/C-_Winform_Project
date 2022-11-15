@@ -41,6 +41,11 @@ namespace Project_CakeStore.BUS
         {
             return reportDao.ReportImport(start_time, end_time, field, data);
         }
+
+        public List<ReportSell_DTO> reportSell(string start_time, string end_time, string field, string data)
+        {
+            return reportDao.ReportSell(start_time, end_time, field, data);
+        }
     }
 
     // public static int totalEmployee = reportDao.totalEmployee();
