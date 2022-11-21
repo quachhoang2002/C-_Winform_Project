@@ -18,11 +18,11 @@ namespace Project_CakeStore.DAO
        
         public static SqlConnection GetDBConnection()
         {
-            //Data Source=VOTRANTANLOC\SQLEXPRESS;Initial Catalog=QuanLyCuaHangBanh;Persist Security Info=True;User ID=sa;Password=***********
+            //Data Source=DESKTOP-PPTN3ME;Initial Catalog=Cake;Integrated Security=True;User ID=sa;Password=***********
             string datasource = @".\";
             string database = "Cake";
-            string username = "sa";
-            string password = "123456";
+            string username = "";
+            string password = "";
             return GetDBConnection(datasource, database, username, password);
         }
     }
