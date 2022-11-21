@@ -162,7 +162,6 @@ namespace Project_CakeStore.GUI
                 }
                 
                 workbook.SaveAs(fileName);
-                Console.WriteLine(workbook);
                 
                 workbook.Close();
                 excel.Quit();
