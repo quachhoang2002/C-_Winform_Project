@@ -11,7 +11,7 @@ namespace Project_CakeStore.DAO
     {
         public static SqlConnection GetDBConnection(string datasource, string database, string username, string password)
         {
-            string connString = @"Data Source=" + datasource + ";Initial Catalog=" + database + ";Integrated Security=True;User ID=" + username + ";Password=" + password;
+            string connString = @"Data Source=" + datasource + ";Initial Catalog=" + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
             SqlConnection conn = new SqlConnection(connString);
             return conn;
         }
@@ -19,10 +19,10 @@ namespace Project_CakeStore.DAO
         public static SqlConnection GetDBConnection()
         {
             //Data Source=DESKTOP-PPTN3ME;Initial Catalog=Cake;Integrated Security=True;User ID=sa;Password=***********
-            string datasource = @"DESKTOP-PPTN3ME";
+            string datasource = @".\";
             string database = "Cake";
-            string username = "sa";
-            string password = "123456";
+            string username = "";
+            string password = "";
             return GetDBConnection(datasource, database, username, password);
         }
     }

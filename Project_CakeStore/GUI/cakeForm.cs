@@ -148,16 +148,16 @@ namespace Project_CakeStore.GUI
                 worksheet.Name = "Cake Table";
 
                 
-                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                for (int i = 0; i < tableCake.ColumnCount; i++)
                 {
-                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                    worksheet.Cells[1, i + 1] = tableCake.Columns[i].HeaderText;
                 }
                 
-                for (int i = 0; i < dataGridView1.RowCount; i++)
+                for (int i = 0; i < tableCake.RowCount; i++)
                 {
-                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    for (int j = 0; j < tableCake.ColumnCount; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        worksheet.Cells[i + 2, j + 1] = tableCake.Rows[i].Cells[j].Value.ToString();
                     }
                 }
                 
@@ -165,7 +165,7 @@ namespace Project_CakeStore.GUI
                 Console.WriteLine(workbook);
                 
                 workbook.Close();
-                
+                excel.Quit();
                 MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
             }
             catch (Exception ex)
