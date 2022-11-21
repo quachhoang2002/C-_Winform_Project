@@ -295,5 +295,15 @@ namespace Project_CakeStore.GUI
             MainForm main = new MainForm(getName, getId);
             main.ShowDialog();
         }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCusID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

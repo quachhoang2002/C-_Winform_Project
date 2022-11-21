@@ -89,6 +89,7 @@
             this.picExit.Size = new System.Drawing.Size(41, 50);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // picLogOut
             // 

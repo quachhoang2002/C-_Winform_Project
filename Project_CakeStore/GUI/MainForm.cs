@@ -110,5 +110,12 @@ namespace Project_CakeStore.GUI
             cakeForm cake = new cakeForm(getName, getid);
             cake.ShowDialog();
         }
+
+        private void txtSupp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            supplierForm supplierForm = new supplierForm(getName, getid);
+            supplierForm.ShowDialog();
+        }
     }
 }

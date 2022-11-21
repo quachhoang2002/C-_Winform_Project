@@ -263,5 +263,12 @@ namespace Project_CakeStore.GUI
                 ToExcel(tableCake, saveFileDialog.FileName);
             }
         }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm main = new MainForm(getName, getID);
+            main.ShowDialog();
+        }
     }
 }

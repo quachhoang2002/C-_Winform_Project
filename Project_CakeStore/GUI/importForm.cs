@@ -123,5 +123,12 @@ namespace Project_CakeStore.GUI
             txtContent.Text = "";
             setTableimport();
         }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm main = new MainForm(getName, getId);
+            main.ShowDialog();
+        }
     }
 }
