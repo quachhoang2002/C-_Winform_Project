@@ -153,13 +153,9 @@ namespace Project_CakeStore.GUI
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (txtSuppName.Text.Trim().Equals("") || txtSuppAddress.Text.Trim().Equals("") ||
-                txtSuppCP.Text.Trim().Equals(""))
+                txtSuppEmail.Text.Trim().Equals("") || txtSuppCP.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà cung cấp!");
-            }
-            else if (!regex.checkEmail(txtSuppEmail.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đúng định dạng email!");
             }
             else if (!regex.checkPhoneNumber(txtSuppPhone.Text))
             {
