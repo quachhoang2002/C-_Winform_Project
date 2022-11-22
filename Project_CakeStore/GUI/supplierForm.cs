@@ -1,4 +1,5 @@
-﻿using Project_CakeStore.BUS;
+﻿using OfficeOpenXml;
+using Project_CakeStore.BUS;
 using Project_CakeStore.DAO;
 using Project_CakeStore.DTO;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -123,7 +125,7 @@ namespace Project_CakeStore.GUI
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtSuppName.Text.Trim().Equals("") || txtSuppAddress.Text.Trim().Equals("") ||
-                 txtSuppEmail.Text.Trim().Equals("") || txtSuppCP.Text.Trim().Equals(""))
+                txtSuppEmail.Text.Trim().Equals("") || txtSuppCP.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà cung cấp!");
             }
@@ -151,9 +153,13 @@ namespace Project_CakeStore.GUI
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (txtSuppName.Text.Trim().Equals("") || txtSuppAddress.Text.Trim().Equals("") ||
-                 txtSuppEmail.Text.Trim().Equals("") || txtSuppCP.Text.Trim().Equals(""))
+                txtSuppCP.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà cung cấp!");
+            }
+            else if (!regex.checkEmail(txtSuppEmail.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng email!");
             }
             else if (!regex.checkPhoneNumber(txtSuppPhone.Text))
             {
@@ -302,6 +308,49 @@ namespace Project_CakeStore.GUI
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 ToExcel(tableSupplier, saveFileDialog.FileName);
+            }
+        }
+
+        private void ImportExcel(string path)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
+                DataTable dataTable = new DataTable();
+                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+                {
+                    dataTable.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+                }
+                for (int i = excelWorksheet.Dimension.Start.Row + 1; i < excelWorksheet.Dimension.End.Row; i++)
+                {
+                    List<string> listRows = new List<string>();
+                    for (int j = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; j++)
+                    {
+                        listRows.Add(excelWorksheet.Cells[i, j].Value.ToString());
+                    }
+                    dataTable.Rows.Add(listRows.ToArray());
+                }
+                DataGridView dataGridView = new DataGridView();
+                dataGridView.DataSource = dataTable;
+            }
+        }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import Excel";
+            openFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImportExcel(openFileDialog.FileName);
+                    MessageBox.Show("Nhập dữ liệu vào Excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nhập dữ liệu không thành công!\n" + ex.Message);
+                }
             }
         }
     }

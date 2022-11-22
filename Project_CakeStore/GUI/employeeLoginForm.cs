@@ -13,19 +13,19 @@ namespace Project_CakeStore.GUI
     public partial class employeeLoginForm : Form
     {
         String getName = "";
-        String getID = "";
+        String getid = "";
         public employeeLoginForm(String name,String id)
         {
             InitializeComponent();
             getName = name;
-            getID = id;
+            getid = id;
             this.txtAccName.Text = name + "(" + id + ")";
         }
 
         private void txtSellForm_Click(object sender, EventArgs e)
         {
             this.Hide();
-            sellForm sellForm = new sellForm(getName, getID);
+            sellForm sellForm = new sellForm(getName, getid);
             sellForm.ShowDialog();
             this.Show();
         }
@@ -33,7 +33,7 @@ namespace Project_CakeStore.GUI
         private void txtImportPro_Click(object sender, EventArgs e)
         {
             this.Hide();
-            importProForm importForm = new importProForm(getName, getID);
+            importProForm importForm = new importProForm(getName, getid);
             importForm.ShowDialog();
             this.Show();
         }
@@ -41,7 +41,7 @@ namespace Project_CakeStore.GUI
         private void txtCus_Click(object sender, EventArgs e)
         {
             this.Hide();
-            customerForm customerForm = new customerForm(getName, getID);
+            customerForm customerForm = new customerForm(getName, getid);
             customerForm.ShowDialog();
             this.Show();
         }
@@ -49,7 +49,7 @@ namespace Project_CakeStore.GUI
         private void picExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainForm main = new MainForm(getName, getID);
+            MainForm main = new MainForm(getName, getid);
             main.ShowDialog();
         }
     }

@@ -19,7 +19,7 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select SuppID, SuppName, Address, Email, Phone, ContactPerson from Supplier where isDeleted = 1";
+                    String sql = "select * from Supplier where isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
@@ -257,41 +257,5 @@ namespace Project_CakeStore.DAO
             }
             return list;
         }
-
-        /*//find newest employee id
-        public List<supplier_DTO> SearchNewestSuppID()
-        {
-            List<supplier_DTO> list = new List<supplier_DTO>();
-            if (con != null)
-            {
-                try
-                {
-                    String sql = "SELECT TOP 1 SuppID,SuppName,Address,Email,Phone,ContactPerson FROM Supplier ORDER BY SuppID DESC";
-                    SqlCommand cm = new SqlCommand(sql, con);
-                    con.Open();
-                    SqlDataReader sdr = cm.ExecuteReader();
-                    while (sdr.Read())
-                    {
-                        supplier_DTO supp = new supplier_DTO(sdr["SuppID"].ToString(),
-                            sdr["SuppName"].ToString(),
-                            sdr["Address"].ToString(),
-                            sdr["Email"].ToString(),
-                            sdr["Phone"].ToString(),
-                            sdr["ContactPerson"].ToString());
-                        list.Add(supp);
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
-            }
-            return list;
-        }*/
     }
 }

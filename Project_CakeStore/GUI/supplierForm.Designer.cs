@@ -329,6 +329,7 @@
             this.btnImportExcel.TabIndex = 4;
             this.btnImportExcel.Text = "Nhập excel";
             this.btnImportExcel.UseVisualStyleBackColor = false;
+            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
             // 
             // btnRefesh
             // 

@@ -41,10 +41,5 @@ namespace Project_CakeStore.BUS
         {
             return sup_DAO.searchSupplierByName(data);
         }
-
-        /*public List<supplier_DTO> SearchNewestSuppID()
-        {
-            return sup_DAO.SearchNewestSuppID();
-        }*/
     }
 }
