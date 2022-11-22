@@ -150,9 +150,15 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(9, 106);
+<<<<<<< HEAD
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+=======
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.groupBox1.Size = new System.Drawing.Size(591, 208);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -162,7 +168,11 @@
             // 
             this.dtDayOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDayOfBirth.Location = new System.Drawing.Point(81, 110);
+<<<<<<< HEAD
             this.dtDayOfBirth.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.dtDayOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.dtDayOfBirth.Name = "dtDayOfBirth";
             this.dtDayOfBirth.Size = new System.Drawing.Size(165, 27);
             this.dtDayOfBirth.TabIndex = 12;
@@ -174,7 +184,11 @@
             "Nam",
             "Nữ"});
             this.cbxCusSex.Location = new System.Drawing.Point(371, 74);
+<<<<<<< HEAD
             this.cbxCusSex.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.cbxCusSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.cbxCusSex.Name = "cbxCusSex";
             this.cbxCusSex.Size = new System.Drawing.Size(165, 28);
             this.cbxCusSex.TabIndex = 11;
@@ -182,7 +196,11 @@
             // txtCusAddress
             // 
             this.txtCusAddress.Location = new System.Drawing.Point(371, 114);
+<<<<<<< HEAD
             this.txtCusAddress.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.txtCusAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.txtCusAddress.Multiline = true;
             this.txtCusAddress.Name = "txtCusAddress";
             this.txtCusAddress.Size = new System.Drawing.Size(165, 74);
@@ -191,7 +209,11 @@
             // txtCusPhone
             // 
             this.txtCusPhone.Location = new System.Drawing.Point(370, 38);
+<<<<<<< HEAD
             this.txtCusPhone.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.txtCusPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(165, 27);
             this.txtCusPhone.TabIndex = 8;
@@ -199,7 +221,11 @@
             // txtCusName
             // 
             this.txtCusName.Location = new System.Drawing.Point(81, 74);
+<<<<<<< HEAD
             this.txtCusName.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.txtCusName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.Size = new System.Drawing.Size(165, 27);
             this.txtCusName.TabIndex = 7;
@@ -207,7 +233,11 @@
             // txtCusID
             // 
             this.txtCusID.Location = new System.Drawing.Point(81, 34);
+<<<<<<< HEAD
             this.txtCusID.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.txtCusID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.txtCusID.Name = "txtCusID";
             this.txtCusID.Size = new System.Drawing.Size(165, 27);
             this.txtCusID.TabIndex = 6;
@@ -277,7 +307,11 @@
             // 
             this.tableCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCustomer.Location = new System.Drawing.Point(9, 326);
+<<<<<<< HEAD
             this.tableCustomer.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.tableCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.tableCustomer.Name = "tableCustomer";
             this.tableCustomer.RowHeadersWidth = 62;
             this.tableCustomer.RowTemplate.Height = 33;
@@ -291,9 +325,15 @@
             this.groupBox3.Controls.Add(this.cbxSearch);
             this.groupBox3.Controls.Add(this.txtSearch);
             this.groupBox3.Location = new System.Drawing.Point(641, 118);
+<<<<<<< HEAD
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+=======
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.groupBox3.Size = new System.Drawing.Size(328, 198);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
@@ -304,7 +344,11 @@
             this.btnSearch.BackColor = System.Drawing.Color.Red;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(14, 104);
+<<<<<<< HEAD
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(301, 42);
             this.btnSearch.TabIndex = 8;
@@ -316,7 +360,11 @@
             // 
             this.cbxSearch.FormattingEnabled = true;
             this.cbxSearch.Location = new System.Drawing.Point(14, 64);
+<<<<<<< HEAD
             this.cbxSearch.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.cbxSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.cbxSearch.Name = "cbxSearch";
             this.cbxSearch.Size = new System.Drawing.Size(119, 28);
             this.cbxSearch.TabIndex = 6;
@@ -324,7 +372,11 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(138, 64);
+<<<<<<< HEAD
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(175, 27);
             this.txtSearch.TabIndex = 7;
@@ -338,9 +390,15 @@
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Location = new System.Drawing.Point(641, 320);
+<<<<<<< HEAD
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+=======
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.groupBox2.Size = new System.Drawing.Size(328, 330);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
@@ -351,7 +409,11 @@
             this.btnExportExcel.BackColor = System.Drawing.Color.Red;
             this.btnExportExcel.ForeColor = System.Drawing.Color.White;
             this.btnExportExcel.Location = new System.Drawing.Point(177, 246);
+<<<<<<< HEAD
             this.btnExportExcel.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(137, 50);
             this.btnExportExcel.TabIndex = 6;
@@ -364,7 +426,11 @@
             this.btnImportExcel.BackColor = System.Drawing.Color.Red;
             this.btnImportExcel.ForeColor = System.Drawing.Color.White;
             this.btnImportExcel.Location = new System.Drawing.Point(14, 246);
+<<<<<<< HEAD
             this.btnImportExcel.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnImportExcel.Name = "btnImportExcel";
             this.btnImportExcel.Size = new System.Drawing.Size(137, 50);
             this.btnImportExcel.TabIndex = 5;
@@ -377,7 +443,11 @@
             this.btnReset.BackColor = System.Drawing.Color.Red;
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Location = new System.Drawing.Point(177, 134);
+<<<<<<< HEAD
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(137, 50);
             this.btnReset.TabIndex = 4;
@@ -390,7 +460,11 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(14, 134);
+<<<<<<< HEAD
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(137, 50);
             this.btnDelete.TabIndex = 3;
@@ -403,7 +477,11 @@
             this.btnEdit.BackColor = System.Drawing.Color.Red;
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Location = new System.Drawing.Point(177, 30);
+<<<<<<< HEAD
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(137, 50);
             this.btnEdit.TabIndex = 2;
@@ -416,7 +494,11 @@
             this.btnAdd.BackColor = System.Drawing.Color.Red;
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(14, 30);
+<<<<<<< HEAD
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(137, 50);
             this.btnAdd.TabIndex = 1;
@@ -434,7 +516,11 @@
             this.Controls.Add(this.tableCustomer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
             this.Name = "customerForm";
             this.Text = "customerForm";
             this.panel2.ResumeLayout(false);

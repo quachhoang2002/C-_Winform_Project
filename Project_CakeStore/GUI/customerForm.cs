@@ -1,4 +1,5 @@
-﻿using Project_CakeStore.BUS;
+﻿using OfficeOpenXml;
+using Project_CakeStore.BUS;
 using Project_CakeStore.DAO;
 using Project_CakeStore.DTO;
 using System;
@@ -296,6 +297,7 @@ namespace Project_CakeStore.GUI
             main.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void btnImportExcel_Click(object sender, EventArgs e)
         {
 
@@ -304,6 +306,48 @@ namespace Project_CakeStore.GUI
         private void txtCusID_TextChanged(object sender, EventArgs e)
         {
 
+=======
+        private void ImportExcel(string path)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
+                DataTable dataTable = new DataTable();
+                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+                {
+                    dataTable.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+                }
+                for (int i = excelWorksheet.Dimension.Start.Row + 1; i < excelWorksheet.Dimension.End.Row; i++)
+                {
+                    List<string> listRows = new List<string>();
+                    for (int j = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; j++)
+                    {
+                        listRows.Add(excelWorksheet.Cells[i, j].Value.ToString());
+                    }
+                    dataTable.Rows.Add(listRows.ToArray());
+                }
+                DataGridView dataGridView = new DataGridView();
+                dataGridView.DataSource = dataTable;
+            }
+        }
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import Excel";
+            openFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImportExcel(openFileDialog.FileName);
+                    MessageBox.Show("Nhập dữ liệu vào Excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nhập dữ liệu không thành công!\n" + ex.Message);
+                }
+            }
+>>>>>>> eab1018161c511e9181614015e14b0f46c96b8a7
         }
     }
 }
