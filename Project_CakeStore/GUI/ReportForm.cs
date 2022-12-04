@@ -196,6 +196,19 @@ namespace Project_CakeStore.GUI
                 ToExcel(tableImportReport, saveFileDialog.FileName);
             }
         }
+
+        //refresh
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            string field = "Cake.CakeName";
+            string data = "";
+            dtpStart.Value = new DateTime(2022, 1, 1);
+            dtpEnd.Value = DateTime.Now;
+            string start_time = dtpStart.Value.ToString("yyyy-MM-dd");
+            string end_time = dtpEnd.Value.ToString("yyyy-MM-dd");
+            setReportImportTable(start_time, end_time, field, data);
+
+        }
         #endregion
 
 
@@ -310,8 +323,23 @@ namespace Project_CakeStore.GUI
             }
 
         }
+
+        //refresh
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            string field = "Cake.CakeName";
+            string data = "";
+            dtpStart.Value = new DateTime(2022, 1, 1);
+            dtpEnd.Value = DateTime.Now;
+            string start_time = dtpStart.Value.ToString("yyyy-MM-dd");
+            string end_time = dtpEnd.Value.ToString("yyyy-MM-dd");
+            setReportSellTable(start_time, end_time, field, data);
+        }
+
+
         #endregion
 
+       
 
     }
 }

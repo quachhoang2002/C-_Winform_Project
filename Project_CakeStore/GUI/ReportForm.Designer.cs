@@ -61,6 +61,7 @@
             this.import = new System.Windows.Forms.TabPage();
             this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.exportExcel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +80,7 @@
             this.sellSearch = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -97,11 +99,13 @@
             this.import.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.sell.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSellReport)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -131,7 +135,7 @@
             // picExit
             // 
             this.picExit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
-            this.picExit.Location = new System.Drawing.Point(832, 12);
+            this.picExit.Location = new System.Drawing.Point(945, 12);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(36, 38);
             this.picExit.TabIndex = 3;
@@ -162,7 +166,7 @@
             this.ABC.AutoSize = true;
             this.ABC.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ABC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ABC.Location = new System.Drawing.Point(381, 18);
+            this.ABC.Location = new System.Drawing.Point(438, 18);
             this.ABC.Name = "ABC";
             this.ABC.Size = new System.Drawing.Size(171, 32);
             this.ABC.TabIndex = 0;
@@ -428,6 +432,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox6);
             this.groupBox2.Controls.Add(this.exportExcel);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.dtpEnd);
@@ -443,6 +448,17 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Project_CakeStore.Properties.Resources.refresh;
+            this.pictureBox6.Location = new System.Drawing.Point(742, 21);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(32, 23);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // exportExcel
             // 
@@ -468,7 +484,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(290, 60);
+            this.dtpEnd.Location = new System.Drawing.Point(363, 61);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 23);
             this.dtpEnd.TabIndex = 10;
@@ -476,7 +492,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(73, 60);
+            this.dtpStart.Location = new System.Drawing.Point(126, 61);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 23);
             this.dtpStart.TabIndex = 9;
@@ -486,10 +502,10 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Red;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(541, 57);
+            this.btnSearch.Location = new System.Drawing.Point(598, 58);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(263, 32);
+            this.btnSearch.Size = new System.Drawing.Size(176, 32);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -498,7 +514,7 @@
             // cbxSearch
             // 
             this.cbxSearch.FormattingEnabled = true;
-            this.cbxSearch.Location = new System.Drawing.Point(56, 20);
+            this.cbxSearch.Location = new System.Drawing.Point(126, 20);
             this.cbxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSearch.Name = "cbxSearch";
             this.cbxSearch.Size = new System.Drawing.Size(105, 23);
@@ -506,10 +522,10 @@
             // 
             // searchValue
             // 
-            this.searchValue.Location = new System.Drawing.Point(182, 20);
+            this.searchValue.Location = new System.Drawing.Point(255, 20);
             this.searchValue.Margin = new System.Windows.Forms.Padding(2);
             this.searchValue.Name = "searchValue";
-            this.searchValue.Size = new System.Drawing.Size(462, 23);
+            this.searchValue.Size = new System.Drawing.Size(436, 23);
             this.searchValue.TabIndex = 7;
             // 
             // sell
@@ -537,6 +553,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox7);
             this.groupBox1.Controls.Add(this.exportExcelSell);
             this.groupBox1.Controls.Add(this.dtpEndSell);
             this.groupBox1.Controls.Add(this.dtpStartSell);
@@ -567,14 +584,14 @@
             // 
             // dtpEndSell
             // 
-            this.dtpEndSell.Location = new System.Drawing.Point(295, 64);
+            this.dtpEndSell.Location = new System.Drawing.Point(358, 64);
             this.dtpEndSell.Name = "dtpEndSell";
             this.dtpEndSell.Size = new System.Drawing.Size(200, 23);
             this.dtpEndSell.TabIndex = 10;
             // 
             // dtpStartSell
             // 
-            this.dtpStartSell.Location = new System.Drawing.Point(77, 64);
+            this.dtpStartSell.Location = new System.Drawing.Point(132, 64);
             this.dtpStartSell.Name = "dtpStartSell";
             this.dtpStartSell.Size = new System.Drawing.Size(200, 23);
             this.dtpStartSell.TabIndex = 9;
@@ -584,10 +601,10 @@
             // 
             this.btnSellSearch.BackColor = System.Drawing.Color.Red;
             this.btnSellSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSellSearch.Location = new System.Drawing.Point(550, 61);
+            this.btnSellSearch.Location = new System.Drawing.Point(602, 61);
             this.btnSellSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSellSearch.Name = "btnSellSearch";
-            this.btnSellSearch.Size = new System.Drawing.Size(263, 32);
+            this.btnSellSearch.Size = new System.Drawing.Size(170, 32);
             this.btnSellSearch.TabIndex = 8;
             this.btnSellSearch.Text = "Tìm Kiếm";
             this.btnSellSearch.UseVisualStyleBackColor = false;
@@ -596,7 +613,7 @@
             // cbxSellSearch
             // 
             this.cbxSellSearch.FormattingEnabled = true;
-            this.cbxSellSearch.Location = new System.Drawing.Point(57, 20);
+            this.cbxSellSearch.Location = new System.Drawing.Point(132, 20);
             this.cbxSellSearch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSellSearch.Name = "cbxSellSearch";
             this.cbxSellSearch.Size = new System.Drawing.Size(105, 23);
@@ -604,10 +621,10 @@
             // 
             // sellSearch
             // 
-            this.sellSearch.Location = new System.Drawing.Point(184, 20);
+            this.sellSearch.Location = new System.Drawing.Point(268, 20);
             this.sellSearch.Margin = new System.Windows.Forms.Padding(2);
             this.sellSearch.Name = "sellSearch";
-            this.sellSearch.Size = new System.Drawing.Size(457, 23);
+            this.sellSearch.Size = new System.Drawing.Size(427, 23);
             this.sellSearch.TabIndex = 7;
             // 
             // imageList1
@@ -618,6 +635,17 @@
             this.imageList1.Images.SetKeyName(0, "coins-icon.png");
             this.imageList1.Images.SetKeyName(1, "Shoppingcart-03-arrow-down-icon.png");
             this.imageList1.Images.SetKeyName(2, "cash-icon.png");
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Project_CakeStore.Properties.Resources.refresh;
+            this.pictureBox7.Location = new System.Drawing.Point(742, 20);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 23);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // ReportForm
             // 
@@ -654,12 +682,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableImportReport)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.sell.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableSellReport)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -715,5 +745,7 @@
         private Button exportExcel;
         private DataGridView tableSellReport;
         private Button exportExcelSell;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox7;
     }
 }
