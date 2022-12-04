@@ -61,6 +61,7 @@ namespace Project_CakeStore.DAO
                     String sql = "insert into Cake (CakeID, CakeName, CategoryID, UnitPrice, Quantity, isDeleted)" +
                     " values (@CakeID, @CakeName, @categoryID, @UnitPrice, @Quantity, 1)";
                     SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
                     cm.Parameters.AddWithValue("@CakeID", cake.getCakeID());
                     cm.Parameters.AddWithValue("@CakeName", cake.getCakeName());
                     cm.Parameters.AddWithValue("@categoryID", cake.getCategoryID());
@@ -298,6 +299,7 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "select * from Cake where " + column + " = '" + data + "'";
                     SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
                     while (sdr.Read())
                     {

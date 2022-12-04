@@ -151,8 +151,8 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "select * from Category where " + column + " = '" + data + "' and isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
-
                     while (sdr.Read())
                     {
                         category_DTO cate = new category_DTO(sdr["CategoryID"].ToString(), sdr["CategoryName"].ToString());

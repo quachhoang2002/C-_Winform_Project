@@ -112,7 +112,7 @@
             this.txtStatic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtStatic.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtStatic.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtStatic.Location = new System.Drawing.Point(460, 365);
+            this.txtStatic.Location = new System.Drawing.Point(461, 363);
             this.txtStatic.Name = "txtStatic";
             this.txtStatic.Size = new System.Drawing.Size(109, 26);
             this.txtStatic.TabIndex = 25;
@@ -133,7 +133,7 @@
             this.txtAcc.AutoSize = true;
             this.txtAcc.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAcc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcc.Location = new System.Drawing.Point(255, 365);
+            this.txtAcc.Location = new System.Drawing.Point(255, 363);
             this.txtAcc.Name = "txtAcc";
             this.txtAcc.Size = new System.Drawing.Size(114, 26);
             this.txtAcc.TabIndex = 21;
@@ -154,7 +154,7 @@
             this.txtSupp.AutoSize = true;
             this.txtSupp.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSupp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSupp.Location = new System.Drawing.Point(460, 250);
+            this.txtSupp.Location = new System.Drawing.Point(460, 244);
             this.txtSupp.Name = "txtSupp";
             this.txtSupp.Size = new System.Drawing.Size(171, 26);
             this.txtSupp.TabIndex = 19;
@@ -175,7 +175,7 @@
             this.txtCus.AutoSize = true;
             this.txtCus.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCus.Location = new System.Drawing.Point(691, 250);
+            this.txtCus.Location = new System.Drawing.Point(691, 244);
             this.txtCus.Name = "txtCus";
             this.txtCus.Size = new System.Drawing.Size(145, 26);
             this.txtCus.TabIndex = 17;
@@ -196,7 +196,7 @@
             this.txtEmp.AutoSize = true;
             this.txtEmp.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtEmp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtEmp.Location = new System.Drawing.Point(62, 365);
+            this.txtEmp.Location = new System.Drawing.Point(62, 363);
             this.txtEmp.Name = "txtEmp";
             this.txtEmp.Size = new System.Drawing.Size(122, 26);
             this.txtEmp.TabIndex = 15;
@@ -218,7 +218,7 @@
             this.txtImport.AutoSize = true;
             this.txtImport.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtImport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtImport.Location = new System.Drawing.Point(705, 134);
+            this.txtImport.Location = new System.Drawing.Point(691, 134);
             this.txtImport.Name = "txtImport";
             this.txtImport.Size = new System.Drawing.Size(131, 26);
             this.txtImport.TabIndex = 13;
@@ -260,7 +260,7 @@
             this.txtCategory.AutoSize = true;
             this.txtCategory.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCategory.Location = new System.Drawing.Point(255, 250);
+            this.txtCategory.Location = new System.Drawing.Point(255, 244);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(114, 26);
             this.txtCategory.TabIndex = 9;
@@ -281,7 +281,7 @@
             this.txtCake.AutoSize = true;
             this.txtCake.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCake.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCake.Location = new System.Drawing.Point(62, 250);
+            this.txtCake.Location = new System.Drawing.Point(62, 244);
             this.txtCake.Name = "txtCake";
             this.txtCake.Size = new System.Drawing.Size(66, 26);
             this.txtCake.TabIndex = 7;
