@@ -177,7 +177,7 @@ namespace Project_CakeStore.GUI
 
         private void tableEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.RowIndex < tableEmployee.Rows.Count -1)
             {
                 DataGridViewRow row = tableEmployee.Rows[e.RowIndex];
                 txtEmpID.Text = row.Cells["Mã Nhân Viên"].Value.ToString();
@@ -186,6 +186,10 @@ namespace Project_CakeStore.GUI
                 cbxEmpSex.Text = row.Cells["Giới Tính"].Value.ToString();
                 txtEmpPhone.Text = row.Cells["Số Điện Thoại"].Value.ToString();
                 txtEmpAddress.Text = row.Cells["Địa Chỉ"].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu!");
             }
         }
 

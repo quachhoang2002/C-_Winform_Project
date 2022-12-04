@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -56,6 +57,7 @@ namespace Project_CakeStore.GUI
 
             }
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtCusName.Text.Trim().Equals("") || dtDayOfBirth.Text.Trim().Equals("") || 
@@ -170,7 +172,7 @@ namespace Project_CakeStore.GUI
 
         private void tableCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.RowIndex < tableCustomer.Rows.Count - 1)
             {
                 DataGridViewRow row = tableCustomer.Rows[e.RowIndex];
                 txtCusID.Text = row.Cells["Mã Khách Hàng"].Value.ToString();
@@ -180,6 +182,10 @@ namespace Project_CakeStore.GUI
                 cbxCusSex.Text = row.Cells["Giới Tính"].Value.ToString();
                 txtCusAddress.Text = row.Cells["Địa Chỉ"].Value.ToString();
 
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu!");
             }
         }
 
