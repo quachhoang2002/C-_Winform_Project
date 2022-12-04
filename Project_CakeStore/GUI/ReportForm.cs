@@ -28,9 +28,12 @@ namespace Project_CakeStore.GUI
             txtAccName.Text = name + "(" + id + ")";
         }
 
+
         private void picLogOut_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
         }
 
         private void picExit_Click(object sender, EventArgs e)
@@ -339,7 +342,7 @@ namespace Project_CakeStore.GUI
 
         #endregion
 
-       
+
 
     }
 }
