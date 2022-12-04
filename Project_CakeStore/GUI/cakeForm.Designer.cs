@@ -346,6 +346,7 @@
             // 
             // tableCake
             // 
+            this.tableCake.AllowUserToAddRows = false;
             this.tableCake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCake.Location = new System.Drawing.Point(3, 255);
             this.tableCake.Name = "tableCake";

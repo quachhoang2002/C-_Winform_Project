@@ -69,6 +69,7 @@
             // 
             // tableOrder
             // 
+            this.tableOrder.AllowUserToAddRows = false;
             this.tableOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableOrder.Location = new System.Drawing.Point(28, 178);
@@ -218,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 421);
+            this.ClientSize = new System.Drawing.Size(863, 514);
             this.Controls.Add(this.panel1);
             this.Name = "orderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

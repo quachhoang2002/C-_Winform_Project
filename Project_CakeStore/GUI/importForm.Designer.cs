@@ -69,6 +69,7 @@
             // 
             // tableImport
             // 
+            this.tableImport.AllowUserToAddRows = false;
             this.tableImport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableImport.Location = new System.Drawing.Point(31, 178);

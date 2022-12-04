@@ -282,6 +282,7 @@
             // 
             // tableCate
             // 
+            this.tableCate.AllowUserToAddRows = false;
             this.tableCate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCate.Location = new System.Drawing.Point(3, 255);
             this.tableCate.Name = "tableCate";

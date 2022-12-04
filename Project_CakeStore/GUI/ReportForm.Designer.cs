@@ -72,6 +72,7 @@
             this.sell = new System.Windows.Forms.TabPage();
             this.tableSellReport = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.exportExcelSell = new System.Windows.Forms.Button();
             this.dtpEndSell = new System.Windows.Forms.DateTimePicker();
             this.dtpStartSell = new System.Windows.Forms.DateTimePicker();
@@ -80,7 +81,6 @@
             this.sellSearch = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -104,8 +104,8 @@
             this.sell.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSellReport)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -422,6 +422,7 @@
             // 
             // tableImportReport
             // 
+            this.tableImportReport.AllowUserToAddRows = false;
             this.tableImportReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableImportReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableImportReport.Location = new System.Drawing.Point(-4, 112);
@@ -543,6 +544,7 @@
             // 
             // tableSellReport
             // 
+            this.tableSellReport.AllowUserToAddRows = false;
             this.tableSellReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableSellReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableSellReport.Location = new System.Drawing.Point(-1, 112);
@@ -568,6 +570,17 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Project_CakeStore.Properties.Resources.refresh;
+            this.pictureBox7.Location = new System.Drawing.Point(742, 20);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 23);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // exportExcelSell
             // 
@@ -636,17 +649,6 @@
             this.imageList1.Images.SetKeyName(1, "Shoppingcart-03-arrow-down-icon.png");
             this.imageList1.Images.SetKeyName(2, "cash-icon.png");
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Project_CakeStore.Properties.Resources.refresh;
-            this.pictureBox7.Location = new System.Drawing.Point(742, 20);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 23);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -688,8 +690,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableSellReport)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
