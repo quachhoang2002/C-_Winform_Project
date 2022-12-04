@@ -146,7 +146,7 @@ namespace Project_CakeStore.GUI
                 DataGridViewRow row = tableCate.Rows[e.RowIndex];
                 txtCateID.Text = row.Cells["Mã"].Value.ToString();
                 txtCateName.Text = row.Cells["Tên"].Value.ToString();
-                
+
             }
         }
 
@@ -185,11 +185,11 @@ namespace Project_CakeStore.GUI
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtContent.Text;
-            if(cmbTypeSearch.SelectedIndex == 0)
+            if (cmbTypeSearch.SelectedIndex == 0)
             {
                 setTableSearch("CategoryID", data);
             }
-            else if(cmbTypeSearch.SelectedIndex == 1)
+            else if (cmbTypeSearch.SelectedIndex == 1)
             {
                 setTableSearch("CategoryName", data);
             }
@@ -244,6 +244,20 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Nhập dữ liệu không thành công!\n" + ex.Message);
                 }
             }
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm(getName, getID);
+            mainForm.ShowDialog();
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
         }
     }
 }

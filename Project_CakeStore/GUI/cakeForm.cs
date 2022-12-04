@@ -35,7 +35,7 @@ namespace Project_CakeStore.GUI
             setTableCake();
             setCmbSearch();
             setCmbCate();
-            
+
         }
 
         public void setTableCake()
@@ -75,7 +75,7 @@ namespace Project_CakeStore.GUI
             for (int i = 0; i < list.Count; i++)
             {
                 category_DTO cate = list.ElementAt(i);
-                String cateID = cate.getCategoryID() ;
+                String cateID = cate.getCategoryID();
                 cmbCate.Items.Add(cateID);
             }
         }
@@ -111,12 +111,12 @@ namespace Project_CakeStore.GUI
             Regex rg1 = new Regex(checkNum);
             Regex rg2 = new Regex(checkChar);
 
-            if(cakeName.Trim().Equals("") || unitPrice.Trim().Equals("") || quantity.Trim().Equals(""))
+            if (cakeName.Trim().Equals("") || unitPrice.Trim().Equals("") || quantity.Trim().Equals(""))
             {
-                
+
                 MessageBox.Show("Vui long nhap dung format");
             }
-            else if(rg1.IsMatch(quantity) || rg2.IsMatch(quantity) || rg1.IsMatch(unitPrice) || rg2.IsMatch(unitPrice))
+            else if (rg1.IsMatch(quantity) || rg2.IsMatch(quantity) || rg1.IsMatch(unitPrice) || rg2.IsMatch(unitPrice))
             {
                 MessageBox.Show("Vui long nhap day du thong tin");
             }
@@ -131,28 +131,28 @@ namespace Project_CakeStore.GUI
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {
-            
+
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook workbook;
             Microsoft.Office.Interop.Excel.Worksheet worksheet;
             try
             {
-                
+
                 excel = new Microsoft.Office.Interop.Excel.Application();
                 excel.Visible = false;
                 excel.DisplayAlerts = false;
-                
+
                 workbook = excel.Workbooks.Add(Type.Missing);
                 worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                
+
                 worksheet.Name = "Cake Table";
 
-                
+
                 for (int i = 0; i < tableCake.ColumnCount; i++)
                 {
                     worksheet.Cells[1, i + 1] = tableCake.Columns[i].HeaderText;
                 }
-                
+
                 for (int i = 0; i < tableCake.RowCount; i++)
                 {
                     for (int j = 0; j < tableCake.ColumnCount; j++)
@@ -160,9 +160,9 @@ namespace Project_CakeStore.GUI
                         worksheet.Cells[i + 2, j + 1] = tableCake.Rows[i].Cells[j].Value.ToString();
                     }
                 }
-                
+
                 workbook.SaveAs(fileName);
-                
+
                 workbook.Close();
                 excel.Quit();
                 MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
@@ -224,7 +224,7 @@ namespace Project_CakeStore.GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text))
             {
                 cake_DTO cake = new cake_DTO(txtCakeId.Text, txtCakeName.Text
                 , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
@@ -239,21 +239,21 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Chinh sua that bai");
                 }
             }
-            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtContent.Text;
-            if(cmbTypeSearch.SelectedIndex == 0)
+            if (cmbTypeSearch.SelectedIndex == 0)
             {
                 setTableSearch("CakeID", data);
             }
-            else if(cmbTypeSearch.SelectedIndex == 1)
+            else if (cmbTypeSearch.SelectedIndex == 1)
             {
                 setTableSearch("CakeName", data);
             }
-            else if(cmbTypeSearch.SelectedIndex == 2)
+            else if (cmbTypeSearch.SelectedIndex == 2)
             {
                 setTableSearch("CategoryID", data);
             }
@@ -276,11 +276,11 @@ namespace Project_CakeStore.GUI
             {
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
                 DataTable dataTable = new DataTable();
-                for (int i = excelWorksheet.Dimension.Start.Column; i<=excelWorksheet.Dimension.End.Column; i++)
+                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
                 {
                     dataTable.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
                 }
-                for (int i = excelWorksheet.Dimension.Start.Row+1; i < excelWorksheet.Dimension.End.Row; i++)
+                for (int i = excelWorksheet.Dimension.Start.Row + 1; i < excelWorksheet.Dimension.End.Row; i++)
                 {
                     List<string> listRows = new List<string>();
                     for (int j = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; j++)
@@ -299,7 +299,7 @@ namespace Project_CakeStore.GUI
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Import Excel";
             openFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
@@ -312,5 +312,22 @@ namespace Project_CakeStore.GUI
                 }
             }
         }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm(getName, getID);
+            mainForm.ShowDialog();
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
+
+        }
+
+
     }
 }
