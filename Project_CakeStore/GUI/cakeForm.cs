@@ -103,7 +103,7 @@ namespace Project_CakeStore.GUI
             }
         }
 
-        public Boolean checkInput(String cakeName, String unitPrice, String quantity)
+        public Boolean checkInput(String cakeName, String unitPrice, String quantity, int typeIndex)
         {
             Boolean check = false;
             String checkNum = @"(-)\d{0,9}";
@@ -111,21 +111,26 @@ namespace Project_CakeStore.GUI
             Regex rg1 = new Regex(checkNum);
             Regex rg2 = new Regex(checkChar);
 
-            if (cakeName.Trim().Equals("") || unitPrice.Trim().Equals("") || quantity.Trim().Equals(""))
+            if (cakeName == "" || unitPrice == "" || quantity == "")
             {
-
-                MessageBox.Show("Vui long nhap dung format");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
-            else if (rg1.IsMatch(quantity) || rg2.IsMatch(quantity) || rg1.IsMatch(unitPrice) || rg2.IsMatch(unitPrice))
+            else if (rg1.IsMatch(unitPrice) || rg1.IsMatch(quantity))
             {
-                MessageBox.Show("Vui long nhap day du thong tin");
+                MessageBox.Show("Đơn giá và số lượng không được âm");
+            }
+            else if (rg2.IsMatch(unitPrice) || rg2.IsMatch(quantity))
+            {
+                MessageBox.Show("Đơn giá và số lượng phải là số");
+            }
+            else if (typeIndex == -1)
+            {
+                MessageBox.Show("Hay chon loai");
             }
             else
             {
                 check = true;
             }
-
-
             return check;
         }
 
@@ -180,7 +185,7 @@ namespace Project_CakeStore.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
             {
                 cake_DTO cake = new cake_DTO("", txtCakeName.Text
                 , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
@@ -195,6 +200,8 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Them that bai");
                 }
             }
+
+            setTableCake();
         }
 
         private void tableCake_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -220,11 +227,12 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Xoa that bai");
             }
+            setTableCake();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
             {
                 cake_DTO cake = new cake_DTO(txtCakeId.Text, txtCakeName.Text
                 , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
@@ -238,6 +246,7 @@ namespace Project_CakeStore.GUI
                 {
                     MessageBox.Show("Chinh sua that bai");
                 }
+                setTableCake();
             }
 
         }

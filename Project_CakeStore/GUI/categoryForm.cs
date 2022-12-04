@@ -137,6 +137,7 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Them that bai");
                 }
             }
+            setTableCate();
         }
 
         private void tableCate_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -160,6 +161,7 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Xoa that bai");
             }
+            setTableCate();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -180,6 +182,7 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Chinh sua that bai");
                 }
             }
+            setTableCate();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

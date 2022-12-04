@@ -16,7 +16,7 @@ namespace Project_CakeStore.DAO
         {
             List<cake_DTO> list = new List<cake_DTO>();
 
-            if(con != null)
+            if (con != null)
             {
                 try
                 {
@@ -37,7 +37,7 @@ namespace Project_CakeStore.DAO
                         list.Add(cake);
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
@@ -54,7 +54,7 @@ namespace Project_CakeStore.DAO
         {
             Boolean check = false;
 
-            if(con != null)
+            if (con != null)
             {
                 try
                 {
@@ -75,7 +75,7 @@ namespace Project_CakeStore.DAO
                         check = true;
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
@@ -104,7 +104,7 @@ namespace Project_CakeStore.DAO
                         check = true;
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
@@ -112,6 +112,33 @@ namespace Project_CakeStore.DAO
             }
 
             return check;
+        }
+
+        private int CountCake()
+        {
+            {
+                int count = 0;
+                if (con != null)
+                {
+                    try
+                    {
+                        String sql = "select count(CakeID) from Cake";
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        con.Open();
+                        count = (int)cmd.ExecuteScalar();
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+
+                return count;
+            }
         }
 
         public Boolean updateQuantityCake(String cakeID, int quantity)
@@ -123,7 +150,7 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "update Cake set Quantity = Quantity - @quantity where CakeID = @cakeID and isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@quantity",quantity);
+                    cm.Parameters.AddWithValue("@quantity", quantity);
                     cm.Parameters.AddWithValue("@cakeID", cakeID);
                     con.Open();
 
@@ -132,10 +159,10 @@ namespace Project_CakeStore.DAO
                     {
                         check = true;
                     }
-                    
+
 
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
@@ -187,7 +214,7 @@ namespace Project_CakeStore.DAO
         public Boolean addCakeAuto(cake_DTO cake)
         {
             Boolean check = false;
-            List<cake_DTO> list = getAllCakeName();
+            int Id = CountCake() + 1;
 
             if (con != null)
             {
@@ -196,7 +223,7 @@ namespace Project_CakeStore.DAO
                     String sql = "insert into Cake (CakeID, CakeName, CategoryID, UnitPrice, Quantity, isDeleted)" +
                     " values (@CakeID, @CakeName, @categoryID, @UnitPrice, @Quantity, 1)";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@CakeID", "C" + (list.Count + 1));
+                    cm.Parameters.AddWithValue("@CakeID", "C" + Id.ToString());
                     cm.Parameters.AddWithValue("@CakeName", cake.getCakeName());
                     cm.Parameters.AddWithValue("@categoryID", cake.getCategoryID());
                     cm.Parameters.AddWithValue("@UnitPrice", cake.getUnitPrice());
