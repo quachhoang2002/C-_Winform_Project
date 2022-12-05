@@ -25,7 +25,6 @@ namespace Project_CakeStore.GUI
         private void picLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
-            this.Owner.Close();
         }
 
         private void picExit_Click(object sender, EventArgs e)

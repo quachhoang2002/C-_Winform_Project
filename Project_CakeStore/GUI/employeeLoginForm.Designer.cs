@@ -89,6 +89,7 @@
             this.picExit.Size = new System.Drawing.Size(41, 50);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // picLogOut
             // 
@@ -99,6 +100,7 @@
             this.picLogOut.Size = new System.Drawing.Size(35, 50);
             this.picLogOut.TabIndex = 2;
             this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // label1
             // 
