@@ -65,6 +65,7 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -79,11 +80,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.exit);
             this.panel2.Controls.Add(this.txtAccName1);
             this.panel2.Controls.Add(this.picExit);
             this.panel2.Controls.Add(this.picLogOut);
@@ -114,7 +117,6 @@
             this.picExit.Size = new System.Drawing.Size(36, 38);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
-            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // picLogOut
             // 
@@ -471,6 +473,16 @@
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.button1_Click);
             // 
+            // exit
+            // 
+            this.exit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
+            this.exit.Location = new System.Drawing.Point(854, 10);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(36, 38);
+            this.exit.TabIndex = 24;
+            this.exit.TabStop = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
             // accountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -508,6 +520,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,5 +563,6 @@
         private ComboBox cmbPermission;
         private Button btnExportEcel;
         private Button btnImportExcel;
+        private PictureBox exit;
     }
 }

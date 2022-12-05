@@ -265,21 +265,11 @@ namespace Project_CakeStore.GUI
         }
 
 
-        private void picExit_Click(object sender, EventArgs e)
-        {
-            var x = MessageBox.Show("Bạn có thật sự muốn thoát ? ",
-                             "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (x == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void picLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
-            this.Owner.Close();
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
         }
         private void ImportExcel(string path)
         {
@@ -322,6 +312,13 @@ namespace Project_CakeStore.GUI
                 }
             }
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm(getName, getId);
+            mainForm.ShowDialog();
         }
     }
 
