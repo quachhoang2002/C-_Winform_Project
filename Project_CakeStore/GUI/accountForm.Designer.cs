@@ -108,11 +108,14 @@
             // picExit
             // 
             this.picExit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
-            this.picExit.Location = new System.Drawing.Point(832, 12);
+            this.picExit.Location = new System.Drawing.Point(976, 16);
+            this.picExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(36, 38);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // picLogOut
             // 
@@ -122,6 +125,7 @@
             this.picLogOut.Size = new System.Drawing.Size(31, 38);
             this.picLogOut.TabIndex = 2;
             this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // label1
             // 
@@ -166,9 +170,11 @@
             this.btnExportEcel.BackColor = System.Drawing.Color.Red;
             this.btnExportEcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExportEcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+
             this.btnExportEcel.Location = new System.Drawing.Point(778, 270);
             this.btnExportEcel.Name = "btnExportEcel";
             this.btnExportEcel.Size = new System.Drawing.Size(105, 41);
+
             this.btnExportEcel.TabIndex = 25;
             this.btnExportEcel.Text = "Xuất Excel";
             this.btnExportEcel.UseVisualStyleBackColor = false;
@@ -246,6 +252,7 @@
             this.btnImportExcel.BackColor = System.Drawing.Color.Red;
             this.btnImportExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnImportExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+
             this.btnImportExcel.Location = new System.Drawing.Point(617, 270);
             this.btnImportExcel.Name = "btnImportExcel";
             this.btnImportExcel.Size = new System.Drawing.Size(108, 41);
@@ -253,6 +260,7 @@
             this.btnImportExcel.Text = "Nhập Excel";
             this.btnImportExcel.UseVisualStyleBackColor = false;
             this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
+
             // 
             // btnClear
             // 

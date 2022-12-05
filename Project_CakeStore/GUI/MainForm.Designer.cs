@@ -112,7 +112,8 @@
             this.txtStatic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtStatic.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtStatic.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtStatic.Location = new System.Drawing.Point(461, 363);
+            this.txtStatic.Location = new System.Drawing.Point(312, 520);
+
             this.txtStatic.Name = "txtStatic";
             this.txtStatic.Size = new System.Drawing.Size(109, 26);
             this.txtStatic.TabIndex = 25;
@@ -122,7 +123,10 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = global::Project_CakeStore.Properties.Resources.statistics_36px;
-            this.pictureBox12.Location = new System.Drawing.Point(416, 353);
+
+            this.pictureBox12.Location = new System.Drawing.Point(261, 506);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(38, 52);
             this.pictureBox12.TabIndex = 24;

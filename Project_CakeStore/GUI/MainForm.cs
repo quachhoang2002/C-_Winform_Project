@@ -27,12 +27,17 @@ namespace Project_CakeStore.GUI
             this.Hide();
             loginForm loginForm = new loginForm();
             loginForm.ShowDialog();
-
         }
 
         private void picExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var x = MessageBox.Show("Bạn có thật sự muốn thoát ? ",
+                             "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (x == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void txtSellForm_Click(object sender, EventArgs e)
@@ -86,12 +91,14 @@ namespace Project_CakeStore.GUI
         {
             this.Hide();
             accountForm accountForm = new accountForm(getName, getid);
+            accountForm.Owner = this;
             accountForm.ShowDialog();
             this.Show();
         }
 
         private void txtStatic_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             ReportForm reportForm = new ReportForm(getName, getid);
             reportForm.ShowDialog();

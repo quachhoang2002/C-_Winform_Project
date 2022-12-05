@@ -45,5 +45,21 @@ namespace Project_CakeStore.GUI
             customerForm.ShowDialog();
             this.Show();
         }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            var x = MessageBox.Show("Bạn có thật sự muốn thoát ? ",
+                             "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (x == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
