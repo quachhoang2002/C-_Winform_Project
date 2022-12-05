@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_CakeStore.BUS;
 using Project_CakeStore.DTO;
+using Project_CakeStore.DAO;
 
 namespace Project_CakeStore.GUI
 {
@@ -18,6 +19,7 @@ namespace Project_CakeStore.GUI
         private string getId;
         private account_BUS accountBus = new account_BUS();
         private employee_BUS employeeBUS = new employee_BUS();
+        private RegexPattern checkData=new RegexPattern();
         public accountForm(string getName, string getId)
         {
             InitializeComponent();
@@ -183,14 +185,14 @@ namespace Project_CakeStore.GUI
             }
 
             String AccID = "", EmpID = cmbEmpID.SelectedItem.ToString(), AccName = txtAccName2.Text, Pass = txtPass.Text, Permission = cmbPermission.SelectedItem.ToString();
-            if (AccName.Length != 0 && Pass.Length != 0 && Permission!=null && EmpID!=null)
+            if (AccName.Length != 0 && Pass.Length != 0 && Permission != null && EmpID != null)
             {
                 if (Permission.Equals(account_DTO.Permission.Manager.ToString()))
                 {
                     accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Manager));
                     SetTableAccount();
                 }
-                else if(Permission.Equals(account_DTO.Permission.Employee.ToString()))
+                else if (Permission.Equals(account_DTO.Permission.Employee.ToString()))
                 {
                     accountBus.AddAccount(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Employee));
                     SetTableAccount();
@@ -200,6 +202,7 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Dữ liệu không hợp lệ");
             }
+
         }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
@@ -258,6 +261,23 @@ namespace Project_CakeStore.GUI
             {
                 ToExcel(tableAccount, saveFileDialog.FileName);
             }
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            var x = MessageBox.Show("Bạn có thật sự muốn thoát ? ",
+                             "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (x == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Owner.Close();
         }
     }
 

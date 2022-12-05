@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ABC = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExportEcel = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -43,6 +44,7 @@
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.cmbTypeSearch = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnImportExcel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.cmbEmpID = new System.Windows.Forms.ComboBox();
@@ -63,8 +65,6 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.btnExportEcel = new System.Windows.Forms.Button();
-            this.btnImportExcel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -109,12 +109,13 @@
             // picExit
             // 
             this.picExit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
-            this.picExit.Location = new System.Drawing.Point(951, 16);
+            this.picExit.Location = new System.Drawing.Point(976, 16);
             this.picExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(41, 50);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // picLogOut
             // 
@@ -125,6 +126,7 @@
             this.picLogOut.Size = new System.Drawing.Size(35, 50);
             this.picLogOut.TabIndex = 2;
             this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // label1
             // 
@@ -163,6 +165,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 438);
             this.panel1.TabIndex = 3;
+            // 
+            // btnExportEcel
+            // 
+            this.btnExportEcel.BackColor = System.Drawing.Color.Red;
+            this.btnExportEcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExportEcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExportEcel.Location = new System.Drawing.Point(889, 360);
+            this.btnExportEcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExportEcel.Name = "btnExportEcel";
+            this.btnExportEcel.Size = new System.Drawing.Size(120, 55);
+            this.btnExportEcel.TabIndex = 25;
+            this.btnExportEcel.Text = "Xuất Excel";
+            this.btnExportEcel.UseVisualStyleBackColor = false;
+            this.btnExportEcel.Click += new System.EventHandler(this.btnExportEcel_Click);
             // 
             // panel11
             // 
@@ -239,6 +255,19 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.BackColor = System.Drawing.Color.Red;
+            this.btnImportExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnImportExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnImportExcel.Location = new System.Drawing.Point(705, 360);
+            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(123, 55);
+            this.btnImportExcel.TabIndex = 24;
+            this.btnImportExcel.Text = "Nhập Excel";
+            this.btnImportExcel.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
@@ -455,33 +484,6 @@
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnExportEcel
-            // 
-            this.btnExportEcel.BackColor = System.Drawing.Color.Red;
-            this.btnExportEcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExportEcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExportEcel.Location = new System.Drawing.Point(889, 360);
-            this.btnExportEcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnExportEcel.Name = "btnExportEcel";
-            this.btnExportEcel.Size = new System.Drawing.Size(120, 55);
-            this.btnExportEcel.TabIndex = 25;
-            this.btnExportEcel.Text = "Xuất Excel";
-            this.btnExportEcel.UseVisualStyleBackColor = false;
-            this.btnExportEcel.Click += new System.EventHandler(this.btnExportEcel_Click);
-            // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.BackColor = System.Drawing.Color.Red;
-            this.btnImportExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnImportExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImportExcel.Location = new System.Drawing.Point(705, 360);
-            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(123, 55);
-            this.btnImportExcel.TabIndex = 24;
-            this.btnImportExcel.Text = "Nhập Excel";
-            this.btnImportExcel.UseVisualStyleBackColor = false;
             // 
             // accountForm
             // 

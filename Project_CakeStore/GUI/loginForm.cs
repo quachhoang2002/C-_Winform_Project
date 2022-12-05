@@ -56,6 +56,7 @@ namespace Project_CakeStore.GUI
                 {
                     this.Hide();
                     MainForm mainForm = new MainForm(getName(), getId());
+                    mainForm.Owner = this;
                     mainForm.ShowDialog();
                     this.Show();
                 }
@@ -63,6 +64,7 @@ namespace Project_CakeStore.GUI
                 {
                     this.Hide();
                     employeeLoginForm employeeLoginForm = new employeeLoginForm(getName(), getId());
+                    employeeLoginForm.Owner = this;
                     employeeLoginForm.ShowDialog();
                     this.Show();
                 }

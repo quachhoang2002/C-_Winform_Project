@@ -10,7 +10,7 @@ namespace Project_CakeStore.DAO
     internal class RegexPattern
     {
         private Regex emailRegex = new Regex("(?<user>[^@]+)@(?<host>.+)");
-        private Regex validatePhoneNumberRegex = new Regex("^\\+?[1-9][0-9]{7,14}$");
+        private Regex validatePhoneNumberRegex = new Regex("[0-9]");
 
 		public bool checkEmail(string Email)
 		{

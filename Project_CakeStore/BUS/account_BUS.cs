@@ -29,6 +29,16 @@ namespace Project_CakeStore.BUS
 
         public void AddAccount(account_DTO account)
         {
+            List<account_DTO> accountList = getAllAccount();
+            for (int i = 0; i < accountList.Count; i++)
+            {
+                if (accountList[i].UserName.Equals(account.UserName))
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại");
+                    return;
+                }
+            }
+            
             if (acc_DAO.AddAccount(account))
             {
                 MessageBox.Show("Thêm tài khoản thành công");
@@ -58,6 +68,16 @@ namespace Project_CakeStore.BUS
 
         public void UpdateAcc(account_DTO account)
         {
+            List<account_DTO> accountList = getAllAccount();
+            for (int i = 0; i < accountList.Count; i++)
+            {
+                if (accountList[i].UserName.Equals(account.UserName))
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại");
+                    return;
+                }
+            }
+
             if (acc_DAO.UpdateAccount(account))
             { 
                 MessageBox.Show("Cập nhật tài khoản thành công");

@@ -32,8 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtStatic = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.txtPermission = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.txtAcc = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.txtSupp = new System.Windows.Forms.Label();
@@ -62,7 +60,6 @@
             this.ABC = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -83,8 +80,6 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.txtStatic);
             this.panel1.Controls.Add(this.pictureBox12);
-            this.panel1.Controls.Add(this.txtPermission);
-            this.panel1.Controls.Add(this.pictureBox13);
             this.panel1.Controls.Add(this.txtAcc);
             this.panel1.Controls.Add(this.pictureBox14);
             this.panel1.Controls.Add(this.txtSupp);
@@ -117,42 +112,22 @@
             this.txtStatic.AutoSize = true;
             this.txtStatic.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtStatic.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtStatic.Location = new System.Drawing.Point(550, 520);
+            this.txtStatic.Location = new System.Drawing.Point(312, 520);
             this.txtStatic.Name = "txtStatic";
             this.txtStatic.Size = new System.Drawing.Size(133, 32);
             this.txtStatic.TabIndex = 25;
             this.txtStatic.Text = "Thống Kê";
+            this.txtStatic.Click += new System.EventHandler(this.txtStatic_Click);
             // 
             // pictureBox12
             // 
             this.pictureBox12.Image = global::Project_CakeStore.Properties.Resources.statistics_36px;
-            this.pictureBox12.Location = new System.Drawing.Point(499, 506);
+            this.pictureBox12.Location = new System.Drawing.Point(261, 506);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(43, 70);
             this.pictureBox12.TabIndex = 24;
             this.pictureBox12.TabStop = false;
-            // 
-            // txtPermission
-            // 
-            this.txtPermission.AutoSize = true;
-            this.txtPermission.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtPermission.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtPermission.Location = new System.Drawing.Point(311, 520);
-            this.txtPermission.Name = "txtPermission";
-            this.txtPermission.Size = new System.Drawing.Size(101, 32);
-            this.txtPermission.TabIndex = 23;
-            this.txtPermission.Text = "Quyền";
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::Project_CakeStore.Properties.Resources.access_denied_36px;
-            this.pictureBox13.Location = new System.Drawing.Point(261, 506);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(43, 70);
-            this.pictureBox13.TabIndex = 22;
-            this.pictureBox13.TabStop = false;
             // 
             // txtAcc
             // 
@@ -452,7 +427,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -476,8 +450,6 @@
         private Panel panel1;
         private Label txtStatic;
         private PictureBox pictureBox12;
-        private Label txtPermission;
-        private PictureBox pictureBox13;
         private Label txtAcc;
         private PictureBox pictureBox14;
         private Label txtSupp;
