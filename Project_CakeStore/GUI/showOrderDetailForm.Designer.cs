@@ -134,6 +134,7 @@
             // 
             // tableShowInfo
             // 
+            this.tableShowInfo.AllowUserToAddRows = false;
             this.tableShowInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableShowInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableShowInfo.Location = new System.Drawing.Point(26, 71);

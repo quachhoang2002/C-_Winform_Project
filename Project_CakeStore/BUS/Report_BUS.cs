@@ -12,12 +12,45 @@ namespace Project_CakeStore.BUS
     {
         private Report_DAO reportDao = new Report_DAO();
 
-      //  public static int totalEmployee = reportDao.totalEmployee();
-       // public static int totalCustomer = reportDao.totalCustomer();
-       // public static int totalSupplier = reportDao.totalCake();
-        //public static int totalProduct = reportDao.totalOrder();
-        
+        public int totalEmployee()
+        {
+            return reportDao.totalEmployee();
+        }
 
-  
-     }
-  }
+        public int totalCustomer()
+        {
+            return reportDao.totalCustomer();
+        }
+
+        public int totalCake()
+        {
+            return reportDao.totalCake();
+        }
+
+        public int totalOrder()
+        {
+            return reportDao.totalOrder();
+        }
+
+        public int totalManufactor()
+        {
+            return reportDao.totalManufactor();
+        }
+
+        public List<ReportImport_DTO> reportImport(string start_time, string end_time, string field, string data)
+        {
+            return reportDao.ReportImport(start_time, end_time, field, data);
+        }
+
+        public List<ReportSell_DTO> reportSell(string start_time, string end_time, string field, string data)
+        {
+            return reportDao.ReportSell(start_time, end_time, field, data);
+        }
+    }
+
+    // public static int totalEmployee = reportDao.totalEmployee();
+    // public static int totalCustomer = reportDao.totalCustomer();
+    //  public static int totalSupplier = reportDao.totalCake();
+    // public static int totalProduct = reportDao.totalOrder();
+}
+

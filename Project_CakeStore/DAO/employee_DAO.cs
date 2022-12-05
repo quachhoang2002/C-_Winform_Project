@@ -55,6 +55,48 @@ namespace Project_CakeStore.DAO
             return list;
         }
 
+        public List<employee_DTO> getAllEmpWithIsDeleted()
+        {
+            List<employee_DTO> list = new List<employee_DTO>();
+
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select EmpID, EmpName, Position, Sex, Phone, Address from Employee";
+                    SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
+                    SqlDataReader sdr = cm.ExecuteReader();
+                    //Have data in the database
+                    while (sdr.Read())
+                    {
+
+                        //initialize object transmitting parameters as database's table values
+                        employee_DTO emp = new employee_DTO(sdr["EmpID"].ToString()
+                            , sdr["EmpName"].ToString()
+                            , sdr["Position"].ToString()
+                            , sdr["Sex"].ToString()
+                            , sdr["Phone"].ToString()
+                            , sdr["Address"].ToString());
+                        list.Add(emp);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    //close database connection
+                    con.Close();
+
+                }
+            }
+            return list;
+        }
+
+
         //add employee
         public Boolean addEmployee(employee_DTO emp)
         {
@@ -65,7 +107,7 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "insert into Employee values(@EmpID,@EmpName,@Position,@Sex,@Phone,@Address,1)";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@EmpID", emp.getEmpID());
+                    cm.Parameters.AddWithValue("@EmpID", "NV"+ (getAllEmpWithIsDeleted().Count+1));
                     cm.Parameters.AddWithValue("@EmpName", emp.getEmpName());
                     cm.Parameters.AddWithValue("@Position", emp.getPosition());
                     cm.Parameters.AddWithValue("@Sex", emp.getSex());
@@ -92,7 +134,7 @@ namespace Project_CakeStore.DAO
         }
 
         //delete employee
-        public Boolean deleteEmployee(employee_DTO emp)
+        public Boolean deleteEmployee(String id)
         {
             bool check = false;
             if (con != null)
@@ -101,7 +143,7 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "update Employee set isDeleted=0 where EmpID=@EmpID";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@EmpID", emp.getEmpID());
+                    cm.Parameters.AddWithValue("@EmpID", id);
                     con.Open();
                     int n = cm.ExecuteNonQuery();
                     if (n > 0)

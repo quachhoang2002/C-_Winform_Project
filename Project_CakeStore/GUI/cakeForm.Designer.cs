@@ -130,6 +130,7 @@
             this.btnImportExcel.TabIndex = 14;
             this.btnImportExcel.Text = "Nhập Excel";
             this.btnImportExcel.UseVisualStyleBackColor = false;
+            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
             // 
             // btnClear
             // 
@@ -345,9 +346,11 @@
             // 
             // tableCake
             // 
+            this.tableCake.AllowUserToAddRows = false;
             this.tableCake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCake.Location = new System.Drawing.Point(3, 255);
             this.tableCake.Name = "tableCake";
+            this.tableCake.RowHeadersWidth = 51;
             this.tableCake.RowTemplate.Height = 25;
             this.tableCake.Size = new System.Drawing.Size(487, 270);
             this.tableCake.TabIndex = 4;
@@ -385,6 +388,7 @@
             this.picExit.Size = new System.Drawing.Size(36, 38);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
             // picLogOut
             // 
@@ -394,6 +398,7 @@
             this.picLogOut.Size = new System.Drawing.Size(31, 38);
             this.picLogOut.TabIndex = 2;
             this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // label1
             // 

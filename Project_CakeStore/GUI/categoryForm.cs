@@ -1,4 +1,5 @@
-﻿using Project_CakeStore.BUS;
+﻿using OfficeOpenXml;
+using Project_CakeStore.BUS;
 using Project_CakeStore.DTO;
 using System;
 using System.Collections.Generic;
@@ -136,6 +137,7 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Them that bai");
                 }
             }
+            setTableCate();
         }
 
         private void tableCate_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -145,7 +147,7 @@ namespace Project_CakeStore.GUI
                 DataGridViewRow row = tableCate.Rows[e.RowIndex];
                 txtCateID.Text = row.Cells["Mã"].Value.ToString();
                 txtCateName.Text = row.Cells["Tên"].Value.ToString();
-                
+
             }
         }
 
@@ -159,6 +161,7 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Xoa that bai");
             }
+            setTableCate();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -179,16 +182,17 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Chinh sua that bai");
                 }
             }
+            setTableCate();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtContent.Text;
-            if(cmbTypeSearch.SelectedIndex == 0)
+            if (cmbTypeSearch.SelectedIndex == 0)
             {
                 setTableSearch("CategoryID", data);
             }
-            else if(cmbTypeSearch.SelectedIndex == 1)
+            else if (cmbTypeSearch.SelectedIndex == 1)
             {
                 setTableSearch("CategoryName", data);
             }
@@ -201,6 +205,62 @@ namespace Project_CakeStore.GUI
             {
                 ToExcel(tableCate, saveFileDialog.FileName);
             }
+        }
+
+        private void ImportExcel(string path)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
+                DataTable dataTable = new DataTable();
+                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+                {
+                    dataTable.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+                }
+                for (int i = excelWorksheet.Dimension.Start.Row + 1; i < excelWorksheet.Dimension.End.Row; i++)
+                {
+                    List<string> listRows = new List<string>();
+                    for (int j = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; j++)
+                    {
+                        listRows.Add(excelWorksheet.Cells[i, j].Value.ToString());
+                    }
+                    dataTable.Rows.Add(listRows.ToArray());
+                }
+                DataGridView dataGridView = new DataGridView();
+                dataGridView.DataSource = dataTable;
+            }
+        }
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import Excel";
+            openFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImportExcel(openFileDialog.FileName);
+                    MessageBox.Show("Nhập dữ liệu vào Excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nhập dữ liệu không thành công!\n" + ex.Message);
+                }
+            }
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm(getName, getID);
+            mainForm.ShowDialog();
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
         }
     }
 }

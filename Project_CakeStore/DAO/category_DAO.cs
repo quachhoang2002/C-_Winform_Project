@@ -46,17 +46,41 @@ namespace Project_CakeStore.DAO
             return list;
         }
 
+        private int countCategory()
+        {
+            int count = 0;
+            if (con != null)
+            {
+                try
+                {
+                    String sql = "select count(CategoryID) from Category";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    con.Open();
+                    count = (int)cmd.ExecuteScalar();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            return count;
+
+        }
         public Boolean addCate(category_DTO cate)
         {
             Boolean check = false;
-            List<category_DTO> list = getAllCategory();
+            int Id = countCategory() + 1;
             if (con != null)
             {
                 try
                 {
                     String sql = "insert into Category values (@cateID, @cateName, 1)";
                     SqlCommand cm = new SqlCommand(sql, con);
-                    cm.Parameters.AddWithValue("@cateID", "L" + (list.Count + 1));
+                    cm.Parameters.AddWithValue("@cateID", "L" + (Id.ToString()));
                     cm.Parameters.AddWithValue("@cateName", cate.getCategoryName());
                     con.Open();
 
@@ -151,8 +175,8 @@ namespace Project_CakeStore.DAO
                 {
                     String sql = "select * from Category where " + column + " = '" + data + "' and isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
+                    con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
-
                     while (sdr.Read())
                     {
                         category_DTO cate = new category_DTO(sdr["CategoryID"].ToString(), sdr["CategoryName"].ToString());

@@ -11,6 +11,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Project_CakeStore.GUI
 {
@@ -22,6 +25,7 @@ namespace Project_CakeStore.GUI
         private cake_BUS cakeBUS = new cake_BUS();
         private category_BUS cateBUS = new category_BUS();
 
+
         public cakeForm(String name, String id)
         {
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace Project_CakeStore.GUI
             setTableCake();
             setCmbSearch();
             setCmbCate();
-            
+
         }
 
         public void setTableCake()
@@ -71,7 +75,7 @@ namespace Project_CakeStore.GUI
             for (int i = 0; i < list.Count; i++)
             {
                 category_DTO cate = list.ElementAt(i);
-                String cateID = cate.getCategoryID() ;
+                String cateID = cate.getCategoryID();
                 cmbCate.Items.Add(cateID);
             }
         }
@@ -99,7 +103,7 @@ namespace Project_CakeStore.GUI
             }
         }
 
-        public Boolean checkInput(String cakeName, String unitPrice, String quantity)
+        public Boolean checkInput(String cakeName, String unitPrice, String quantity, int typeIndex)
         {
             Boolean check = false;
             String checkNum = @"(-)\d{0,9}";
@@ -107,48 +111,53 @@ namespace Project_CakeStore.GUI
             Regex rg1 = new Regex(checkNum);
             Regex rg2 = new Regex(checkChar);
 
-            if(cakeName.Trim().Equals("") || unitPrice.Trim().Equals("") || quantity.Trim().Equals(""))
+            if (cakeName == "" || unitPrice == "" || quantity == "")
             {
-                
-                MessageBox.Show("Vui long nhap dung format");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
-            else if(rg1.IsMatch(quantity) || rg2.IsMatch(quantity) || rg1.IsMatch(unitPrice) || rg2.IsMatch(unitPrice))
+            else if (rg1.IsMatch(unitPrice) || rg1.IsMatch(quantity))
             {
-                MessageBox.Show("Vui long nhap day du thong tin");
+                MessageBox.Show("Đơn giá và số lượng không được âm");
+            }
+            else if (rg2.IsMatch(unitPrice) || rg2.IsMatch(quantity))
+            {
+                MessageBox.Show("Đơn giá và số lượng phải là số");
+            }
+            else if (typeIndex == -1)
+            {
+                MessageBox.Show("Hay chon loai");
             }
             else
             {
                 check = true;
             }
-
-
             return check;
         }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {
-            
+
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook workbook;
             Microsoft.Office.Interop.Excel.Worksheet worksheet;
             try
             {
-                
+
                 excel = new Microsoft.Office.Interop.Excel.Application();
                 excel.Visible = false;
                 excel.DisplayAlerts = false;
-                
+
                 workbook = excel.Workbooks.Add(Type.Missing);
                 worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                
+
                 worksheet.Name = "Cake Table";
 
-                
+
                 for (int i = 0; i < tableCake.ColumnCount; i++)
                 {
                     worksheet.Cells[1, i + 1] = tableCake.Columns[i].HeaderText;
                 }
-                
+
                 for (int i = 0; i < tableCake.RowCount; i++)
                 {
                     for (int j = 0; j < tableCake.ColumnCount; j++)
@@ -156,9 +165,9 @@ namespace Project_CakeStore.GUI
                         worksheet.Cells[i + 2, j + 1] = tableCake.Rows[i].Cells[j].Value.ToString();
                     }
                 }
-                
+
                 workbook.SaveAs(fileName);
-                
+
                 workbook.Close();
                 excel.Quit();
                 MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
@@ -176,7 +185,7 @@ namespace Project_CakeStore.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
             {
                 cake_DTO cake = new cake_DTO("", txtCakeName.Text
                 , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
@@ -191,6 +200,8 @@ namespace Project_CakeStore.GUI
                     MessageBox.Show("Them that bai");
                 }
             }
+
+            setTableCake();
         }
 
         private void tableCake_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -216,11 +227,12 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Xoa that bai");
             }
+            setTableCake();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
             {
                 cake_DTO cake = new cake_DTO(txtCakeId.Text, txtCakeName.Text
                 , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
@@ -234,28 +246,31 @@ namespace Project_CakeStore.GUI
                 {
                     MessageBox.Show("Chinh sua that bai");
                 }
+                setTableCake();
             }
-            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String data = txtContent.Text;
-            if(cmbTypeSearch.SelectedIndex == 0)
+            if (cmbTypeSearch.SelectedIndex == 0)
             {
                 setTableSearch("CakeID", data);
             }
-            else if(cmbTypeSearch.SelectedIndex == 1)
+            else if (cmbTypeSearch.SelectedIndex == 1)
             {
                 setTableSearch("CakeName", data);
             }
-            else if(cmbTypeSearch.SelectedIndex == 2)
+            else if (cmbTypeSearch.SelectedIndex == 2)
             {
                 setTableSearch("CategoryID", data);
             }
         }
 
         private void btnExportEcel_Click(object sender, EventArgs e)
+
+
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -263,5 +278,65 @@ namespace Project_CakeStore.GUI
                 ToExcel(tableCake, saveFileDialog.FileName);
             }
         }
+
+        private void ImportExcel(string path)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
+                DataTable dataTable = new DataTable();
+                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+                {
+                    dataTable.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+                }
+                for (int i = excelWorksheet.Dimension.Start.Row + 1; i < excelWorksheet.Dimension.End.Row; i++)
+                {
+                    List<string> listRows = new List<string>();
+                    for (int j = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; j++)
+                    {
+                        listRows.Add(excelWorksheet.Cells[i, j].Value.ToString());
+                    }
+                    dataTable.Rows.Add(listRows.ToArray());
+                }
+                DataGridView dataGridView = new DataGridView();
+                dataGridView.DataSource = dataTable;
+            }
+        }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import Excel";
+            openFileDialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImportExcel(openFileDialog.FileName);
+                    MessageBox.Show("Nhập dữ liệu vào Excel thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nhập dữ liệu không thành công!\n" + ex.Message);
+                }
+            }
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm(getName, getID);
+            mainForm.ShowDialog();
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
+
+        }
+
+
     }
 }
