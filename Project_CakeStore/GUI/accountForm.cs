@@ -20,7 +20,7 @@ namespace Project_CakeStore.GUI
         private string getId;
         private account_BUS accountBus = new account_BUS();
         private employee_BUS employeeBUS = new employee_BUS();
-        private RegexPattern checkData=new RegexPattern();
+        private RegexPattern checkData = new RegexPattern();
         public accountForm(string getName, string getId)
         {
             InitializeComponent();
@@ -151,7 +151,7 @@ namespace Project_CakeStore.GUI
                     accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Manager));
                     SetTableAccount();
                 }
-                else if(Permission.Equals(account_DTO.Permission.Employee.ToString()))
+                else if (Permission.Equals(account_DTO.Permission.Employee.ToString()))
                 {
                     accountBus.UpdateAcc(new account_DTO(AccID, EmpID, AccName, Pass, account_DTO.Permission.Employee));
                     SetTableAccount();
@@ -280,7 +280,7 @@ namespace Project_CakeStore.GUI
         {
             this.Close();
             this.Owner.Close();
-
+        }
         private void ImportExcel(string path)
         {
             using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
