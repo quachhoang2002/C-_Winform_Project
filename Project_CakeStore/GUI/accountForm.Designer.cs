@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(accountForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.exit = new System.Windows.Forms.PictureBox();
             this.txtAccName1 = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
             this.picLogOut = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,6 @@
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.cmbTypeSearch = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnImportExcel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.cmbEmpID = new System.Windows.Forms.ComboBox();
@@ -65,8 +65,8 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.exit = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             this.panel1.SuspendLayout();
@@ -80,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableAccount)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -96,6 +95,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(901, 64);
             this.panel2.TabIndex = 2;
+            // 
+            // exit
+            // 
+            this.exit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
+            this.exit.Location = new System.Drawing.Point(854, 10);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(36, 38);
+            this.exit.TabIndex = 24;
+            this.exit.TabStop = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // txtAccName1
             // 
@@ -152,7 +161,6 @@
             // 
             this.panel1.Controls.Add(this.btnExportEcel);
             this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.btnImportExcel);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
@@ -171,7 +179,7 @@
             this.btnExportEcel.BackColor = System.Drawing.Color.Red;
             this.btnExportEcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExportEcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExportEcel.Location = new System.Drawing.Point(778, 270);
+            this.btnExportEcel.Location = new System.Drawing.Point(679, 271);
             this.btnExportEcel.Name = "btnExportEcel";
             this.btnExportEcel.Size = new System.Drawing.Size(105, 41);
             this.btnExportEcel.TabIndex = 25;
@@ -246,25 +254,12 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.BackColor = System.Drawing.Color.Red;
-            this.btnImportExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnImportExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImportExcel.Location = new System.Drawing.Point(617, 270);
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(108, 41);
-            this.btnImportExcel.TabIndex = 24;
-            this.btnImportExcel.Text = "Nhập Excel";
-            this.btnImportExcel.UseVisualStyleBackColor = false;
-            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
-            // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.Red;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(473, 271);
+            this.btnClear.Location = new System.Drawing.Point(562, 271);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(88, 40);
             this.btnClear.TabIndex = 20;
@@ -473,16 +468,6 @@
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.button1_Click);
             // 
-            // exit
-            // 
-            this.exit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
-            this.exit.Location = new System.Drawing.Point(854, 10);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(36, 38);
-            this.exit.TabIndex = 24;
-            this.exit.TabStop = false;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
-            // 
             // accountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -501,6 +486,7 @@
             this.Text = "Account";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -520,7 +506,6 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,7 +547,6 @@
         private Panel panel11;
         private ComboBox cmbPermission;
         private Button btnExportEcel;
-        private Button btnImportExcel;
         private PictureBox exit;
     }
 }

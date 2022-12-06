@@ -53,13 +53,12 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbxSearch = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnExportExcel = new System.Windows.Forms.Button();
-            this.btnImportExcel = new System.Windows.Forms.Button();
             this.btnRefesh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnExportExcel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
@@ -319,32 +318,6 @@
             this.txtSearch.Size = new System.Drawing.Size(136, 22);
             this.txtSearch.TabIndex = 15;
             // 
-            // btnExportExcel
-            // 
-            this.btnExportExcel.BackColor = System.Drawing.Color.Red;
-            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExportExcel.Location = new System.Drawing.Point(177, 164);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(113, 41);
-            this.btnExportExcel.TabIndex = 18;
-            this.btnExportExcel.Text = "Xuất excel";
-            this.btnExportExcel.UseVisualStyleBackColor = false;
-            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.BackColor = System.Drawing.Color.Red;
-            this.btnImportExcel.ForeColor = System.Drawing.Color.White;
-            this.btnImportExcel.Location = new System.Drawing.Point(177, 100);
-            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(113, 41);
-            this.btnImportExcel.TabIndex = 4;
-            this.btnImportExcel.Text = "Nhập excel";
-            this.btnImportExcel.UseVisualStyleBackColor = false;
-            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
-            // 
             // btnRefesh
             // 
             this.btnRefesh.BackColor = System.Drawing.Color.Red;
@@ -401,7 +374,6 @@
             // 
             this.groupBox4.Controls.Add(this.btnExportExcel);
             this.groupBox4.Controls.Add(this.btnRefesh);
-            this.groupBox4.Controls.Add(this.btnImportExcel);
             this.groupBox4.Controls.Add(this.btnAdd);
             this.groupBox4.Controls.Add(this.btnEdit);
             this.groupBox4.Controls.Add(this.btnDelete);
@@ -413,6 +385,19 @@
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tác vụ";
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.BackColor = System.Drawing.Color.Red;
+            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.Location = new System.Drawing.Point(177, 100);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(113, 41);
+            this.btnExportExcel.TabIndex = 18;
+            this.btnExportExcel.Text = "Xuất excel";
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // supplierForm
             // 
@@ -467,12 +452,11 @@
         private Button btnSearch;
         private ComboBox cbxSearch;
         private TextBox txtSearch;
-        private Button btnImportExcel;
         private Button btnRefesh;
         private Button btnDelete;
         private Button btnEdit;
         private Button btnAdd;
-        private Button btnExportExcel;
         private GroupBox groupBox4;
+        private Button btnExportExcel;
     }
 }

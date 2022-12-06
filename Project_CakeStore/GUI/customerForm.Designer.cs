@@ -55,7 +55,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExportExcel = new System.Windows.Forms.Button();
-            this.btnImportExcel = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -329,7 +328,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnExportExcel);
-            this.groupBox2.Controls.Add(this.btnImportExcel);
             this.groupBox2.Controls.Add(this.btnReset);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnEdit);
@@ -347,7 +345,7 @@
             // 
             this.btnExportExcel.BackColor = System.Drawing.Color.Red;
             this.btnExportExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExportExcel.Location = new System.Drawing.Point(155, 184);
+            this.btnExportExcel.Location = new System.Drawing.Point(85, 185);
             this.btnExportExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(120, 38);
@@ -355,19 +353,6 @@
             this.btnExportExcel.Text = "Xuất Excel";
             this.btnExportExcel.UseVisualStyleBackColor = false;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.BackColor = System.Drawing.Color.Red;
-            this.btnImportExcel.ForeColor = System.Drawing.Color.White;
-            this.btnImportExcel.Location = new System.Drawing.Point(12, 184);
-            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(120, 38);
-            this.btnImportExcel.TabIndex = 5;
-            this.btnImportExcel.Text = "Nhập Excel";
-            this.btnImportExcel.UseVisualStyleBackColor = false;
-            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
             // 
             // btnReset
             // 
@@ -475,7 +460,6 @@
         private TextBox txtSearch;
         private GroupBox groupBox2;
         private Button btnExportExcel;
-        private Button btnImportExcel;
         private Button btnReset;
         private Button btnDelete;
         private Button btnEdit;
