@@ -297,5 +297,11 @@ namespace Project_CakeStore.GUI
             main.ShowDialog();
         }
 
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm loginForm = new loginForm();
+            loginForm.ShowDialog();
+        }
     }
 }
