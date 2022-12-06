@@ -224,7 +224,7 @@ namespace Project_CakeStore.GUI
             tableSellReport.Columns[0].Name = "Ma San Pham";
             tableSellReport.Columns[1].Name = "Ten San Pham";
             tableSellReport.Columns[2].Name = "Loai San Pham";
-            tableSellReport.Columns[3].Name = "Nha Cung Cap";
+            tableSellReport.Columns[3].Name = "Khach Hang";
             tableSellReport.Columns[4].Name = "So Luong";
             tableSellReport.Columns[5].Name = "Tong Tien Gia";
             tableSellReport.Columns[6].Name = "Thoi Gian";
