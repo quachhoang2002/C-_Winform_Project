@@ -54,17 +54,17 @@ namespace Project_CakeStore.GUI
             {
                 if (acc_BUS.checkLogin(userName, password).Equals(account_DTO.Permission.Manager))
                 {
-                    this.Hide();
                     MainForm mainForm = new MainForm(getName(), getId());
                     mainForm.Owner = this;
                     mainForm.ShowDialog();
+                    this.Close();
                 }
                 else if (acc_BUS.checkLogin(userName, password).Equals(account_DTO.Permission.Employee))
                 {
-                    this.Hide();
                     employeeLoginForm employeeLoginForm = new employeeLoginForm(getName(), getId());
                     employeeLoginForm.Owner = this;
                     employeeLoginForm.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
