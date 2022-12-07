@@ -30,17 +30,17 @@ namespace Project_CakeStore.DAO
 
                     while (sdr.Read())
                     {
-                        if ((int)sdr["Permission"]==1)
+                        if ((int)sdr["Permission"] == 1)
                         {
                             return account_DTO.Permission.Employee;
                         }
-                        else if ((int)sdr["Permission"]==0)
+                        else if ((int)sdr["Permission"] == 0)
                         {
                             return account_DTO.Permission.Manager;
                         }
                     }
-                } 
-                catch(Exception e)
+                }
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
@@ -55,14 +55,14 @@ namespace Project_CakeStore.DAO
 
         public employee_DTO getInfoEmp(String userName, String password)
         {
-            
+
             String empId = ""
                 , empname = ""
                 , position = ""
                 , sex = ""
                 , phone = ""
-                , address = "";  
-            if(con != null)
+                , address = "";
+            if (con != null)
             {
                 try
                 {
@@ -81,7 +81,8 @@ namespace Project_CakeStore.DAO
 
                     }
 
-                } catch(Exception e)
+                }
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
@@ -109,14 +110,14 @@ namespace Project_CakeStore.DAO
 
                     while (sdr.Read())
                     {
-                        account_DTO account=new account_DTO();
-                        if ((int)sdr["Permission"]==1)
+                        account_DTO account = new account_DTO();
+                        if ((int)sdr["Permission"] == 1)
                         {
-                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), sdr["Password"].ToString(), account_DTO.Permission.Employee);
+                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), "*********", account_DTO.Permission.Employee);
                         }
-                        else if((int)sdr["Permission"]==0)
+                        else if ((int)sdr["Permission"] == 0)
                         {
-                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), sdr["Password"].ToString(), account_DTO.Permission.Manager);
+                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), "*********", account_DTO.Permission.Manager);
                         }
                         list.Add(account);
                     }
@@ -149,7 +150,7 @@ namespace Project_CakeStore.DAO
 
                     while (sdr.Read())
                     {
-                        account_DTO account=new account_DTO();
+                        account_DTO account = new account_DTO();
                         if ((int)sdr["Permission"] == 1)
                         {
                             account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), sdr["Password"].ToString(), account_DTO.Permission.Employee);
@@ -188,12 +189,12 @@ namespace Project_CakeStore.DAO
                     cm.Parameters.AddWithValue("@EmpID", account.EmpID);
                     cm.Parameters.AddWithValue("@UserName", account.UserName);
                     cm.Parameters.AddWithValue("@Password", account.Password);
-                    int permission=0;
+                    int permission = 0;
                     if (account.AccountPermission.Equals(account_DTO.Permission.Employee))
                     {
                         permission = 1;
                     }
-                    else if(account.AccountPermission.Equals(account_DTO.Permission.Manager))
+                    else if (account.AccountPermission.Equals(account_DTO.Permission.Manager))
                     {
                         permission = 0;
                     }
@@ -224,7 +225,7 @@ namespace Project_CakeStore.DAO
             Boolean check = false;
             try
             {
-                string sql = "Update Account set isDeleted=0 Where AccID='"+ID+"'";
+                string sql = "Update Account set isDeleted=0 Where AccID='" + ID + "'";
                 SqlCommand cm = new SqlCommand(sql, con);
                 con.Open();
                 int n = cm.ExecuteNonQuery();
@@ -238,7 +239,8 @@ namespace Project_CakeStore.DAO
             {
                 MessageBox.Show(e.Message);
             }
-            finally { 
+            finally
+            {
                 con.Close();
             }
             return check;
@@ -252,21 +254,21 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    string sql = "Select * from Account  Where "+column+"='"+data+"' "+" and isDeleted=1";
+                    string sql = "Select * from Account  Where " + column + "='" + data + "' " + " and isDeleted=1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
 
                     while (sdr.Read())
                     {
-                        account_DTO account=new account_DTO();
+                        account_DTO account = new account_DTO();
                         if ((int)sdr["Permission"] == 1)
                         {
-                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), sdr["Password"].ToString(), account_DTO.Permission.Employee);
+                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), "*********", account_DTO.Permission.Employee);
                         }
-                        else if((int)sdr["Permission"] == 0)
+                        else if ((int)sdr["Permission"] == 0)
                         {
-                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), sdr["Password"].ToString(), account_DTO.Permission.Manager);
+                            account = new account_DTO(sdr["AccID"].ToString(), sdr["EmpID"].ToString(), sdr["UserName"].ToString(), "*********", account_DTO.Permission.Manager);
                         }
                         list.Add(account);
                     }
@@ -326,7 +328,7 @@ namespace Project_CakeStore.DAO
             return check;
         }
 
-        
+
 
     }
 

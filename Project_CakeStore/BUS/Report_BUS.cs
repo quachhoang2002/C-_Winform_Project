@@ -37,14 +37,14 @@ namespace Project_CakeStore.BUS
             return reportDao.totalManufactor();
         }
 
-        public List<ReportImport_DTO> reportImport(string start_time, string end_time, string field, string data)
+        public List<ReportImport_DTO> reportImport(string start_time, string end_time, string field, string data, string date_format = "")
         {
-            return reportDao.ReportImport(start_time, end_time, field, data);
+            return reportDao.ReportImport(start_time, end_time, field, data, date_format);
         }
 
-        public List<ReportSell_DTO> reportSell(string start_time, string end_time, string field, string data)
+        public List<ReportSell_DTO> reportSell(string start_time, string end_time, string field, string data, string date_format = "")
         {
-            return reportDao.ReportSell(start_time, end_time, field, data);
+            return reportDao.ReportSell(start_time, end_time, field, data, date_format);
         }
     }
 
