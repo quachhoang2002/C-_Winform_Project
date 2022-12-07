@@ -61,6 +61,7 @@
             this.import = new System.Windows.Forms.TabPage();
             this.tableImportReport = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ImportDateFormat = new System.Windows.Forms.ComboBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.exportExcel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -72,6 +73,7 @@
             this.sell = new System.Windows.Forms.TabPage();
             this.tableSellReport = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sellCbxDateFormat = new System.Windows.Forms.ComboBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.exportExcelSell = new System.Windows.Forms.Button();
             this.dtpEndSell = new System.Windows.Forms.DateTimePicker();
@@ -200,7 +202,7 @@
             this.total.Padding = new System.Windows.Forms.Padding(3);
             this.total.Size = new System.Drawing.Size(1012, 568);
             this.total.TabIndex = 0;
-            this.total.Text = "Tong";
+            this.total.Text = "Tổng";
             // 
             // panel6
             // 
@@ -241,7 +243,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 19);
             this.label11.TabIndex = 1;
-            this.label11.Text = "Nha Cung Cap";
+            this.label11.Text = "Nhà Cung Cấp";
             // 
             // panel4
             // 
@@ -282,7 +284,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 19);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Don Hang";
+            this.label7.Text = "Đơn Hàng";
             // 
             // panel3
             // 
@@ -323,7 +325,7 @@
             this.customer.Name = "customer";
             this.customer.Size = new System.Drawing.Size(105, 19);
             this.customer.TabIndex = 1;
-            this.customer.Text = "Khach Hang";
+            this.customer.Text = "Khách Hàng";
             // 
             // panel5
             // 
@@ -364,7 +366,7 @@
             this.cake.Name = "cake";
             this.cake.Size = new System.Drawing.Size(50, 19);
             this.cake.TabIndex = 1;
-            this.cake.Text = "Banh";
+            this.cake.Text = "Bánh";
             // 
             // panel1
             // 
@@ -395,7 +397,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nhan Vien";
+            this.label2.Text = "Nhân Viên";
             // 
             // pictureBox1
             // 
@@ -417,7 +419,7 @@
             this.import.Padding = new System.Windows.Forms.Padding(3);
             this.import.Size = new System.Drawing.Size(1012, 568);
             this.import.TabIndex = 1;
-            this.import.Text = "Nhap Hang";
+            this.import.Text = "Nhập Hàng";
             this.import.UseVisualStyleBackColor = true;
             // 
             // tableImportReport
@@ -433,6 +435,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ImportDateFormat);
             this.groupBox2.Controls.Add(this.pictureBox6);
             this.groupBox2.Controls.Add(this.exportExcel);
             this.groupBox2.Controls.Add(this.dataGridView1);
@@ -450,10 +453,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
+            // ImportDateFormat
+            // 
+            this.ImportDateFormat.FormattingEnabled = true;
+            this.ImportDateFormat.Location = new System.Drawing.Point(695, 20);
+            this.ImportDateFormat.Margin = new System.Windows.Forms.Padding(2);
+            this.ImportDateFormat.Name = "ImportDateFormat";
+            this.ImportDateFormat.Size = new System.Drawing.Size(57, 23);
+            this.ImportDateFormat.TabIndex = 14;
+            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Project_CakeStore.Properties.Resources.refresh;
-            this.pictureBox6.Location = new System.Drawing.Point(742, 21);
+            this.pictureBox6.Location = new System.Drawing.Point(757, 21);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(32, 23);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -539,7 +551,7 @@
             this.sell.Padding = new System.Windows.Forms.Padding(3);
             this.sell.Size = new System.Drawing.Size(1012, 568);
             this.sell.TabIndex = 2;
-            this.sell.Text = "Ban Hang";
+            this.sell.Text = "Bán Hàng";
             this.sell.UseVisualStyleBackColor = true;
             // 
             // tableSellReport
@@ -555,6 +567,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.sellCbxDateFormat);
             this.groupBox1.Controls.Add(this.pictureBox7);
             this.groupBox1.Controls.Add(this.exportExcelSell);
             this.groupBox1.Controls.Add(this.dtpEndSell);
@@ -571,10 +584,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
+            // sellCbxDateFormat
+            // 
+            this.sellCbxDateFormat.FormattingEnabled = true;
+            this.sellCbxDateFormat.Location = new System.Drawing.Point(699, 20);
+            this.sellCbxDateFormat.Margin = new System.Windows.Forms.Padding(2);
+            this.sellCbxDateFormat.Name = "sellCbxDateFormat";
+            this.sellCbxDateFormat.Size = new System.Drawing.Size(57, 23);
+            this.sellCbxDateFormat.TabIndex = 15;
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Project_CakeStore.Properties.Resources.refresh;
-            this.pictureBox7.Location = new System.Drawing.Point(742, 20);
+            this.pictureBox7.Location = new System.Drawing.Point(761, 20);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 23);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -749,5 +771,7 @@
         private Button exportExcelSell;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
+        private ComboBox ImportDateFormat;
+        private ComboBox sellCbxDateFormat;
     }
 }

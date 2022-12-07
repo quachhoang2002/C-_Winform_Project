@@ -141,14 +141,19 @@ namespace Project_CakeStore.DAO
             return total;
         }
 
-        public List<ReportImport_DTO> ReportImport(string start_time, string end_time, string field, string data)
+        public List<ReportImport_DTO> ReportImport(string start_time, string end_time, string field, string data, string date_format = "")
         {
             List<ReportImport_DTO> list = new List<ReportImport_DTO>();
             if (con != null)
             {
+                string import_date = "Import.Date";
+                if (date_format == "Y-m")
+                {
+                    import_date = "FORMAT(Import.Date,'MM-yyyy')";
+                }
                 try
                 {
-                    String sql = "select Cake.CakeID,Cake.CakeName ,Import.Date ,Category.CategoryName, Supplier.SuppName," +
+                    String sql = "select Cake.CakeID,Cake.CakeName ," + import_date + " as Date ,Category.CategoryName, Supplier.SuppName," +
                         " sum(ImportDetail.Quantity) as Quantity,sum(ImportDetail.Price) as Price " +
                         "from Cake " +
                         "LEFT JOIN ImportDetail ON ImportDetail.CakeID = Cake.CakeID " +
@@ -157,8 +162,8 @@ namespace Project_CakeStore.DAO
                         "LEFT JOIN Supplier ON Import.SuppID = Supplier.SuppID " +
                         "where Import.Date between '" + start_time + "' and '" + end_time + "' " +
                         " and " + field + " LIKE '%" + data + "%' " +
-                        "GROUP BY Cake.CakeID,Cake.CakeName,Import.Date,Category.CategoryName,Supplier.SuppName " +
-                        "ORDER BY Import.Date DESC";
+                        "GROUP BY Cake.CakeID,Cake.CakeName," + import_date + ",Category.CategoryName,Supplier.SuppName " +
+                        "ORDER BY Date DESC";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cm.ExecuteReader();
@@ -196,14 +201,20 @@ namespace Project_CakeStore.DAO
 
         }
 
-        public List<ReportSell_DTO> ReportSell(string start_time, string end_time, string field, string data)
+        public List<ReportSell_DTO> ReportSell(string start_time, string end_time, string field, string data, string date_format = "")
         {
             List<ReportSell_DTO> list = new List<ReportSell_DTO>();
             if (con != null)
             {
+                string order_date = "[Order].Date";
+                if (date_format == "Y-m")
+                {
+                    order_date = "FORMAT([Order].Date,'MM-yyyy')";
+                }
+
                 try
                 {
-                    String sql = "select Cake.CakeID,Cake.CakeName ,[Order].Date,Category.CategoryName, Customer.Name as CusName," +
+                    String sql = "select Cake.CakeID,Cake.CakeName ," + order_date + " as Date , Category.CategoryName, Customer.Name as CusName," +
                         " sum(OrderDetail.Quantity) as Quantity,sum(OrderDetail.Price) as Price " +
                         "from Cake " +
                         "LEFT JOIN OrderDetail ON OrderDetail.CakeID = Cake.CakeID " +
@@ -212,7 +223,7 @@ namespace Project_CakeStore.DAO
                         "LEFT JOIN Customer ON [Order].CusID = Customer.CusID " +
                         "where [Order].Date between '" + start_time + "' and '" + end_time + "' " +
                         " and " + field + " LIKE '%" + data + "%' " +
-                        "GROUP BY Cake.CakeID,Cake.CakeName,Category.CategoryName,[Order].Date,Customer.Name " +
+                        "GROUP BY Cake.CakeID,Cake.CakeName,Category.CategoryName," + order_date + ",Customer.Name " +
                         "ORDER BY Date DESC";
                     SqlCommand cm = new SqlCommand(sql, con);
                     con.Open();

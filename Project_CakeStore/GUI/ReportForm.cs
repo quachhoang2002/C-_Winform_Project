@@ -21,8 +21,13 @@ namespace Project_CakeStore.GUI
         {
             InitializeComponent();
             setDefauldValue();
+
             setCbxSearch();
+            setCbxIDateFormat();
+
+            setCbxSellDateFormat();
             setCbxSellSearch();
+
             getName = name;
             getId = id;
             txtAccName.Text = name + "(" + id + ")";
@@ -96,6 +101,13 @@ namespace Project_CakeStore.GUI
             cbxSearch.Items.Add("Nha San Xuat");
         }
 
+        public void setCbxIDateFormat()
+        {
+            ImportDateFormat.Items.Add("Ngay");
+            ImportDateFormat.Items.Add("Thang");
+        }
+
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             int index = cbxSearch.SelectedIndex;
@@ -117,12 +129,20 @@ namespace Project_CakeStore.GUI
                 field = "Supplier.SuppName";
                 data = searchValue.Text;
             }
+            //set start time end time with format 
+            int formatIndex = ImportDateFormat.SelectedIndex;
             string start_time = dtpStart.Value.ToString("yyyy-MM-dd");
             string end_time = dtpEnd.Value.ToString("yyyy-MM-dd");
-            setReportImportTable(start_time, end_time, field, data);
+            string format = "";
+            if (formatIndex == 1)
+            {
+                format = "Y-m";
+            }
+
+            setReportImportTable(start_time, end_time, field, data, format);
         }
 
-        private void setReportImportTable(string start_time, string end_time, string field, string data)
+        private void setReportImportTable(string start_time, string end_time, string field, string data, string format = "")
         {
             tableImportReport.Rows.Clear();
             tableImportReport.ColumnCount = 7;
@@ -133,7 +153,7 @@ namespace Project_CakeStore.GUI
             tableImportReport.Columns[4].Name = "So Luong";
             tableImportReport.Columns[5].Name = "Tong Tien Gia";
             tableImportReport.Columns[6].Name = "Thoi Gian";
-            List<ReportImport_DTO> list = reportBUS.reportImport(start_time, end_time, field, data);
+            List<ReportImport_DTO> list = reportBUS.reportImport(start_time, end_time, field, data, format);
             foreach (ReportImport_DTO item in list)
             {
                 tableImportReport.Rows.Add(item.CakeId, item.CakeName, item.CakeType, item.Supplier, item.Quantity.ToString(), item.TotalPrice.ToString(), item.Date);
@@ -217,7 +237,7 @@ namespace Project_CakeStore.GUI
 
 
         #region Sell
-        private void setReportSellTable(string start_time, string end_time, string field, string data)
+        private void setReportSellTable(string start_time, string end_time, string field, string data, string date_format = "")
         {
             tableSellReport.Rows.Clear();
             tableSellReport.ColumnCount = 7;
@@ -228,7 +248,7 @@ namespace Project_CakeStore.GUI
             tableSellReport.Columns[4].Name = "So Luong";
             tableSellReport.Columns[5].Name = "Tong Tien Gia";
             tableSellReport.Columns[6].Name = "Thoi Gian";
-            List<ReportSell_DTO> list = reportBUS.reportSell(start_time, end_time, field, data);
+            List<ReportSell_DTO> list = reportBUS.reportSell(start_time, end_time, field, data, date_format);
             foreach (ReportSell_DTO item in list)
             {
                 tableSellReport.Rows.Add(item.CakeId, item.CakeName, item.CakeType, item.Customer, item.Quantity.ToString(), item.TotalPrice.ToString(), item.Date);
@@ -240,6 +260,12 @@ namespace Project_CakeStore.GUI
             cbxSellSearch.Items.Add("Ten San Pham");
             cbxSellSearch.Items.Add("Loai San Pham");
             cbxSellSearch.Items.Add("Ten Khach Hang");
+        }
+
+        public void setCbxSellDateFormat()
+        {
+            sellCbxDateFormat.Items.Add("Ngay");
+            sellCbxDateFormat.Items.Add("Thang");
         }
 
         private void btnSellSearch_Click(object sender, EventArgs e)
@@ -265,7 +291,13 @@ namespace Project_CakeStore.GUI
             }
             string start_time = dtpStartSell.Value.ToString("yyyy-MM-dd");
             string end_time = dtpEndSell.Value.ToString("yyyy-MM-dd");
-            setReportSellTable(start_time, end_time, field, data);
+            int formatIndex = sellCbxDateFormat.SelectedIndex;
+            string format = "";
+            if (formatIndex == 1)
+            {
+                format = "Y-m";
+            }
+            setReportSellTable(start_time, end_time, field, data, format);
         }
 
         private void ToExcelSell(DataGridView dataGridView1, string fileName)
