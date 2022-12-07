@@ -22,7 +22,12 @@ namespace Project_CakeStore.GUI
         public loginForm()
         {
             InitializeComponent();
-            
+            txtUserName.Text = Properties.Settings.Default.username;
+            txtPass.Text = Properties.Settings.Default.password;
+            if (Properties.Settings.Default.username != "")
+            {
+                checkLuu.Checked = true;
+            }
         }
 
         public String getName()
@@ -72,6 +77,23 @@ namespace Project_CakeStore.GUI
                 {
                     MessageBox.Show("Sai tai khoan hoac mat khau");
                     txtPass.Text = "";
+                }
+            }
+        }
+
+        private void checkLuu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtUserName.Text != "" && txtPass.Text != "")
+            {
+                if (checkLuu.Checked)
+                {
+                    Properties.Settings.Default.username = txtUserName.Text;
+                    Properties.Settings.Default.password = txtPass.Text;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
                 }
             }
         }
