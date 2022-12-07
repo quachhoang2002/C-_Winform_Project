@@ -20,7 +20,9 @@ namespace Project_CakeStore.DAO
             {
                 try
                 {
-                    String sql = "select * from Cake where isDeleted = 1";
+                    String sql = "select Cake.*,Category.CategoryName from Cake " +
+                        "JOIN Category On Cake.CategoryID = Category.CategoryID " +
+                        " where Cake.isDeleted = 1";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     con.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
@@ -29,7 +31,7 @@ namespace Project_CakeStore.DAO
                     {
                         cake_DTO cake = new cake_DTO(sdr["CakeID"].ToString()
                             , sdr["CakeName"].ToString()
-                            , sdr["CategoryID"].ToString()
+                            , sdr["CategoryName"].ToString()
                             , (int)sdr["UnitPrice"]
                             , (int)sdr["Quantity"]
                             , "");
