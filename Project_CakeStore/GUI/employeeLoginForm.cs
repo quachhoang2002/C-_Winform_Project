@@ -27,7 +27,6 @@ namespace Project_CakeStore.GUI
             this.Hide();
             sellForm sellForm = new sellForm(getName, getid);
             sellForm.ShowDialog();
-            this.Show();
         }
 
         private void txtImportPro_Click(object sender, EventArgs e)
@@ -35,7 +34,6 @@ namespace Project_CakeStore.GUI
             this.Hide();
             importProForm importForm = new importProForm(getName, getid);
             importForm.ShowDialog();
-            this.Show();
         }
 
         private void txtCus_Click(object sender, EventArgs e)
@@ -43,7 +41,6 @@ namespace Project_CakeStore.GUI
             this.Hide();
             customerForm customerForm = new customerForm(getName, getid);
             customerForm.ShowDialog();
-            this.Show();
         }
 
         private void picExit_Click(object sender, EventArgs e)

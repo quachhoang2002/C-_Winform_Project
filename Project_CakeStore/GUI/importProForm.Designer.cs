@@ -129,6 +129,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(985, 833);
+
             this.panel1.TabIndex = 0;
             // 
             // tableCake
@@ -141,6 +142,7 @@
             this.tableCake.RowHeadersWidth = 51;
             this.tableCake.RowTemplate.Height = 25;
             this.tableCake.Size = new System.Drawing.Size(575, 235);
+
             this.tableCake.TabIndex = 20;
             this.tableCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableCake_CellClick);
             // 
@@ -151,6 +153,7 @@
             this.btnPay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPay.Location = new System.Drawing.Point(808, 775);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(168, 55);
             this.btnPay.TabIndex = 19;
@@ -165,6 +168,7 @@
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancel.Location = new System.Drawing.Point(590, 775);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(206, 55);
             this.btnCancel.TabIndex = 18;
@@ -176,6 +180,7 @@
             this.groupBox20.Controls.Add(this.txtPriceAll);
             this.groupBox20.Location = new System.Drawing.Point(808, 719);
             this.groupBox20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox20.Size = new System.Drawing.Size(163, 53);
@@ -198,8 +203,10 @@
             this.btnClear.BackColor = System.Drawing.Color.Red;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+
             this.btnClear.Location = new System.Drawing.Point(695, 719);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(101, 55);
             this.btnClear.TabIndex = 16;
@@ -214,6 +221,7 @@
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Location = new System.Drawing.Point(590, 719);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(98, 55);
             this.btnDelete.TabIndex = 15;
@@ -227,10 +235,12 @@
             this.tableImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableImport.Location = new System.Drawing.Point(590, 335);
             this.tableImport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.tableImport.Name = "tableImport";
             this.tableImport.RowHeadersWidth = 51;
             this.tableImport.RowTemplate.Height = 25;
             this.tableImport.Size = new System.Drawing.Size(387, 313);
+
             this.tableImport.TabIndex = 14;
             // 
             // btnAddNewCake
@@ -240,6 +250,7 @@
             this.btnAddNewCake.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddNewCake.Location = new System.Drawing.Point(304, 775);
             this.btnAddNewCake.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.btnAddNewCake.Name = "btnAddNewCake";
             this.btnAddNewCake.Size = new System.Drawing.Size(279, 55);
             this.btnAddNewCake.TabIndex = 13;
@@ -254,6 +265,7 @@
             this.btnAddOldCake.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddOldCake.Location = new System.Drawing.Point(7, 775);
             this.btnAddOldCake.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.btnAddOldCake.Name = "btnAddOldCake";
             this.btnAddOldCake.Size = new System.Drawing.Size(275, 55);
             this.btnAddOldCake.TabIndex = 12;
@@ -527,6 +539,7 @@
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox7.Size = new System.Drawing.Size(381, 233);
+
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             // 
@@ -723,6 +736,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 833);
+
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "importProForm";

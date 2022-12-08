@@ -131,6 +131,7 @@
             // txtAcc
             // 
             this.txtAcc.AutoSize = true;
+            this.txtAcc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtAcc.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAcc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAcc.Location = new System.Drawing.Point(255, 363);
@@ -152,6 +153,7 @@
             // txtSupp
             // 
             this.txtSupp.AutoSize = true;
+            this.txtSupp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtSupp.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSupp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSupp.Location = new System.Drawing.Point(460, 244);
@@ -173,6 +175,7 @@
             // txtCus
             // 
             this.txtCus.AutoSize = true;
+            this.txtCus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCus.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCus.Location = new System.Drawing.Point(691, 244);
@@ -194,6 +197,7 @@
             // txtEmp
             // 
             this.txtEmp.AutoSize = true;
+            this.txtEmp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtEmp.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtEmp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEmp.Location = new System.Drawing.Point(62, 363);
@@ -216,6 +220,7 @@
             // txtImport
             // 
             this.txtImport.AutoSize = true;
+            this.txtImport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtImport.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtImport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtImport.Location = new System.Drawing.Point(691, 134);
@@ -237,6 +242,7 @@
             // txtOrder
             // 
             this.txtOrder.AutoSize = true;
+            this.txtOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtOrder.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOrder.Location = new System.Drawing.Point(460, 134);
@@ -258,6 +264,7 @@
             // txtCategory
             // 
             this.txtCategory.AutoSize = true;
+            this.txtCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCategory.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCategory.Location = new System.Drawing.Point(255, 244);
@@ -279,6 +286,7 @@
             // txtCake
             // 
             this.txtCake.AutoSize = true;
+            this.txtCake.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCake.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCake.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCake.Location = new System.Drawing.Point(62, 244);
@@ -300,6 +308,7 @@
             // txtImportPro
             // 
             this.txtImportPro.AutoSize = true;
+            this.txtImportPro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtImportPro.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtImportPro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtImportPro.Location = new System.Drawing.Point(255, 134);
@@ -321,6 +330,7 @@
             // txtSellForm
             // 
             this.txtSellForm.AutoSize = true;
+            this.txtSellForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtSellForm.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSellForm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSellForm.Location = new System.Drawing.Point(62, 134);

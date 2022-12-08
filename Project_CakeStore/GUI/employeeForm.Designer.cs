@@ -134,6 +134,7 @@
             // 
             // tableEmployee
             // 
+            this.tableEmployee.AllowUserToAddRows = false;
             this.tableEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableEmployee.Location = new System.Drawing.Point(13, 230);
             this.tableEmployee.Margin = new System.Windows.Forms.Padding(2);

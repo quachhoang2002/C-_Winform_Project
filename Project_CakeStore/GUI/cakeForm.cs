@@ -75,7 +75,7 @@ namespace Project_CakeStore.GUI
             for (int i = 0; i < list.Count; i++)
             {
                 category_DTO cate = list.ElementAt(i);
-                String cateID = cate.getCategoryID();
+                String cateID = cate.getCategoryName();
                 cmbCate.Items.Add(cateID);
             }
         }
