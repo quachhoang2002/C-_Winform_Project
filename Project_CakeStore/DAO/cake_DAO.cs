@@ -290,13 +290,12 @@ namespace Project_CakeStore.DAO
                 try
                 {
                     String sql = "update Cake set CakeName = @cakeName, CategoryID = @categoryID, " +
-                        "UnitPrice = @unitPrice, Quantity = @quantity where CakeID = @cakeID and isDeleted = 1";
+                        "UnitPrice = @unitPrice where CakeID = @cakeID and isDeleted = 1";
                     SqlCommand cm = new SqlCommand(sql, con);
                     cm.Parameters.AddWithValue("@cakeID", cake.getCakeID());
                     cm.Parameters.AddWithValue("@cakeName", cake.getCakeName());
                     cm.Parameters.AddWithValue("@categoryID", cake.getCategoryID());
                     cm.Parameters.AddWithValue("@unitPrice", cake.getUnitPrice());
-                    cm.Parameters.AddWithValue("@quantity", cake.getQuantity());
                     con.Open();
 
                     int n = cm.ExecuteNonQuery();

@@ -42,13 +42,11 @@ namespace Project_CakeStore.GUI
         {
             tableCake.Rows.Clear();
             List<cake_DTO> list = cakeBUS.getAllCakeName();
-
-            tableCake.ColumnCount = 5;
+            tableCake.ColumnCount = 4;
             tableCake.Columns[0].Name = "Mã";
             tableCake.Columns[1].Name = "Tên";
             tableCake.Columns[2].Name = "Loại";
             tableCake.Columns[3].Name = "Đơn giá";
-            tableCake.Columns[4].Name = "Số lượng";
 
             for (int i = 0; i < list.Count; i++)
             {
@@ -56,8 +54,7 @@ namespace Project_CakeStore.GUI
                 tableCake.Rows.Add(cake.getCakeID()
                     , cake.getCakeName()
                     , cake.getCategoryID() + " - " + cake.getCategoryName()
-                    , cake.getUnitPrice()
-                    , cake.getQuantity());
+                    , cake.getUnitPrice());
             }
         }
 
@@ -86,12 +83,11 @@ namespace Project_CakeStore.GUI
             tableCake.Rows.Clear();
             List<cake_DTO> list = cakeBUS.searchCake(column, data);
 
-            tableCake.ColumnCount = 5;
+            tableCake.ColumnCount = 4;
             tableCake.Columns[0].Name = "Mã";
             tableCake.Columns[1].Name = "Tên";
             tableCake.Columns[2].Name = "Loại";
             tableCake.Columns[3].Name = "Đơn giá";
-            tableCake.Columns[4].Name = "Số lượng";
 
             for (int i = 0; i < list.Count; i++)
             {
@@ -99,12 +95,11 @@ namespace Project_CakeStore.GUI
                 tableCake.Rows.Add(cake.getCakeID()
                     , cake.getCakeName()
                     , cake.getCategoryID()
-                    , cake.getUnitPrice()
-                    , cake.getQuantity());
+                    , cake.getUnitPrice());
             }
         }
 
-        public Boolean checkInput(String cakeName, String unitPrice, String quantity, int typeIndex)
+        public Boolean checkInput(String cakeName, String unitPrice, int typeIndex)
         {
             Boolean check = false;
             String checkNum = @"(-)\d{0,9}";
@@ -112,17 +107,17 @@ namespace Project_CakeStore.GUI
             Regex rg1 = new Regex(checkNum);
             Regex rg2 = new Regex(checkChar);
 
-            if (cakeName == "" || unitPrice == "" || quantity == "")
+            if (cakeName == "" || unitPrice == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
-            else if (rg1.IsMatch(unitPrice) || rg1.IsMatch(quantity))
+            else if (rg1.IsMatch(unitPrice) )
             {
-                MessageBox.Show("Đơn giá và số lượng không được âm");
+                MessageBox.Show("Đơn giá không được âm");
             }
-            else if (rg2.IsMatch(unitPrice) || rg2.IsMatch(quantity))
+            else if (rg2.IsMatch(unitPrice) )
             {
-                MessageBox.Show("Đơn giá và số lượng phải là số");
+                MessageBox.Show("Đơn giá  phải là số");
             }
             else if (typeIndex == -1)
             {
@@ -186,12 +181,12 @@ namespace Project_CakeStore.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, cmbCate.SelectedIndex))
             {
                 String categoryID = cmbCate.SelectedItem.ToString().Substring(0, 2);
                 cake_DTO cake = new cake_DTO("", txtCakeName.Text
                 , categoryID, int.Parse(txtUnitPrice.Text)
-                , int.Parse(txtQuantity.Text), "");
+                , 0, "");
 
                 if (cakeBUS.addCakeAuto(cake))
                 {
@@ -215,7 +210,6 @@ namespace Project_CakeStore.GUI
                 txtCakeName.Text = row.Cells["Tên"].Value.ToString();
                 cmbCate.SelectedItem = row.Cells["Loại"].Value.ToString();
                 txtUnitPrice.Text = row.Cells["Đơn giá"].Value.ToString();
-                txtQuantity.Text = row.Cells["Số lượng"].Value.ToString();
             }
         }
 
@@ -234,12 +228,12 @@ namespace Project_CakeStore.GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
+            if (checkInput(txtCakeName.Text, txtUnitPrice.Text, cmbCate.SelectedIndex))
             {
                 String categoryID = cmbCate.SelectedItem.ToString().Substring(0, 2);
                 cake_DTO cake = new cake_DTO(txtCakeId.Text, txtCakeName.Text
                 , categoryID, int.Parse(txtUnitPrice.Text)
-                , int.Parse(txtQuantity.Text), "");
+                , 0, "");
 
                 if (cakeBUS.editCake(cake))
                 {

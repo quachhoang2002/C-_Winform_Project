@@ -31,7 +31,6 @@ namespace Project_CakeStore.GUI
             InitializeComponent();
             txtAccName.Text = getName + "(" + getId + ")";
             setTableCake();
-            setCmbCategory();
             setCmbSupplier();
         }
 
@@ -58,17 +57,7 @@ namespace Project_CakeStore.GUI
         }
 
         //Ham load combobox category
-        public void setCmbCategory()
-        {
-            List<category_DTO> listCate = cate_BUS.getAllCategory();
 
-            for (int i = 0; i < listCate.Count; i++)
-            {
-                category_DTO cate = listCate.ElementAt(i);
-                String cmbItem = cate.getCategoryName() + "(" + cate.getCategoryID() + ")";
-                cmbCateId.Items.Add(cmbItem);
-            }
-        }
 
         //Ham load combobox supplier
         public void setCmbSupplier()
@@ -278,56 +267,12 @@ namespace Project_CakeStore.GUI
                     txtPricePro.Text = finalPrice.ToString();
 
                     //Cap nhat lai bang sp
-                    updateQuantity();
-
-                
+                    updateQuantity();   
 
             }
 
         }
 
-        //Bat su kien them san pham moi
-        private void btnAddNewCake_Click(object sender, EventArgs e)
-        {
-            if (txtNewQuantity.Text.Equals("") || txtNewQuantity.Text.Equals("0"))
-            {
-                MessageBox.Show("Vui long nhap so luong san pham");
-            }
-            else if(checkNewCake(txtNewCakeId.Text, txtNewCakeName.Text, txtNewPrice.Text, txtNewQuantity.Text))
-            {
-                txtEmpName.Text = txtAccName.Text;
-                txtDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
-
-                //Set du lieu cho bang import
-                int unitPrice = int.Parse(txtNewPrice.Text);
-                int quantity = int.Parse(txtNewQuantity.Text);
-                List<category_DTO> cateList = cate_BUS.getAllCategory();
-                category_DTO cate = cateList.ElementAt(cmbCateId.SelectedIndex);
-                String cateid = cate.getCategoryID();
-
-                tableImport.ColumnCount = 6;
-                tableImport.Columns[0].Name = "Mã";
-                tableImport.Columns[1].Name = "Loai";
-                tableImport.Columns[2].Name = "Tên";
-                tableImport.Columns[3].Name = "Số lượng";
-                tableImport.Columns[4].Name = "Đơn giá";
-                tableImport.Columns[5].Name = "Thành tiền";
-                tableImport.Rows.Add(txtNewCakeId.Text
-                    , cateid
-                    , txtNewCakeName.Text
-                    , txtNewQuantity.Text
-                    , txtNewPrice.Text
-                    , (unitPrice * quantity).ToString());
-
-                //Tinh tong tien
-                int price = (unitPrice * quantity);
-                finalPrice = finalPrice + price;
-                txtPriceAll.Text = finalPrice.ToString();
-                txtPricePro.Text = finalPrice.ToString();
-
-            }
-
-        }
 
         //Bat su kien nut xoa
         private void btnDelete_Click(object sender, EventArgs e)
@@ -358,6 +303,13 @@ namespace Project_CakeStore.GUI
             {
                 addImport();
                 addImportDetail();
+                txtPriceAll.Text = "";
+                txtPricePro.Text = "";
+                txtDate.Text = "";
+                finalPrice = 0;
+                tableImport.Rows.Clear();
+                tableCake.Rows.Clear();
+                setTableCake();
             }
         }
 
@@ -368,6 +320,7 @@ namespace Project_CakeStore.GUI
             loginForm.ShowDialog();
         }
 
+  
     }
 
 }

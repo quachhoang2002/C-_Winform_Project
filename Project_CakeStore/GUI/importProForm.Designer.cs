@@ -38,20 +38,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableImport = new System.Windows.Forms.DataGridView();
-            this.btnAddNewCake = new System.Windows.Forms.Button();
             this.btnAddOldCake = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.txtNewQuantity = new System.Windows.Forms.TextBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.txtNewPrice = new System.Windows.Forms.TextBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.txtNewCakeName = new System.Windows.Forms.TextBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.cmbCateId = new System.Windows.Forms.ComboBox();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.txtNewCakeId = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtOldQuantity = new System.Windows.Forms.TextBox();
@@ -84,12 +72,6 @@
             this.groupBox20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableImport)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
-            this.groupBox16.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox19.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -116,7 +98,6 @@
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.tableImport);
-            this.panel1.Controls.Add(this.btnAddNewCake);
             this.panel1.Controls.Add(this.btnAddOldCake);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox7);
@@ -130,11 +111,11 @@
             // 
             this.tableCake.AllowUserToAddRows = false;
             this.tableCake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableCake.Location = new System.Drawing.Point(7, 399);
+            this.tableCake.Location = new System.Drawing.Point(7, 269);
             this.tableCake.Name = "tableCake";
             this.tableCake.RowHeadersWidth = 51;
             this.tableCake.RowTemplate.Height = 25;
-            this.tableCake.Size = new System.Drawing.Size(503, 176);
+            this.tableCake.Size = new System.Drawing.Size(503, 306);
             this.tableCake.TabIndex = 20;
             this.tableCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableCake_CellClick);
             // 
@@ -220,35 +201,21 @@
             this.tableImport.Size = new System.Drawing.Size(339, 250);
             this.tableImport.TabIndex = 14;
             // 
-            // btnAddNewCake
-            // 
-            this.btnAddNewCake.BackColor = System.Drawing.Color.Red;
-            this.btnAddNewCake.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAddNewCake.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddNewCake.Location = new System.Drawing.Point(266, 581);
-            this.btnAddNewCake.Name = "btnAddNewCake";
-            this.btnAddNewCake.Size = new System.Drawing.Size(244, 41);
-            this.btnAddNewCake.TabIndex = 13;
-            this.btnAddNewCake.Text = "Thêm sản phẩm mới";
-            this.btnAddNewCake.UseVisualStyleBackColor = false;
-            this.btnAddNewCake.Click += new System.EventHandler(this.btnAddNewCake_Click);
-            // 
             // btnAddOldCake
             // 
             this.btnAddOldCake.BackColor = System.Drawing.Color.Red;
             this.btnAddOldCake.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddOldCake.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddOldCake.Location = new System.Drawing.Point(6, 581);
+            this.btnAddOldCake.Location = new System.Drawing.Point(117, 581);
             this.btnAddOldCake.Name = "btnAddOldCake";
             this.btnAddOldCake.Size = new System.Drawing.Size(241, 41);
             this.btnAddOldCake.TabIndex = 12;
-            this.btnAddOldCake.Text = "Thêm sản phẩm đã có";
+            this.btnAddOldCake.Text = "Nhập Hàng";
             this.btnAddOldCake.UseVisualStyleBackColor = false;
             this.btnAddOldCake.Click += new System.EventHandler(this.btnAddOldCake_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox14);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(6, 70);
             this.groupBox1.Name = "groupBox1";
@@ -256,106 +223,6 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập sản phẩm";
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.groupBox15);
-            this.groupBox14.Controls.Add(this.groupBox16);
-            this.groupBox14.Controls.Add(this.groupBox17);
-            this.groupBox14.Controls.Add(this.groupBox18);
-            this.groupBox14.Controls.Add(this.groupBox19);
-            this.groupBox14.Location = new System.Drawing.Point(4, 171);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(497, 144);
-            this.groupBox14.TabIndex = 10;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Sản phẩm mới";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.txtNewQuantity);
-            this.groupBox15.Location = new System.Drawing.Point(279, 82);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(119, 55);
-            this.groupBox15.TabIndex = 4;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Số lượng";
-            // 
-            // txtNewQuantity
-            // 
-            this.txtNewQuantity.Location = new System.Drawing.Point(13, 22);
-            this.txtNewQuantity.Name = "txtNewQuantity";
-            this.txtNewQuantity.Size = new System.Drawing.Size(100, 23);
-            this.txtNewQuantity.TabIndex = 0;
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.txtNewPrice);
-            this.groupBox16.Location = new System.Drawing.Point(328, 35);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(145, 46);
-            this.groupBox16.TabIndex = 3;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Đơn giá";
-            // 
-            // txtNewPrice
-            // 
-            this.txtNewPrice.Location = new System.Drawing.Point(29, 17);
-            this.txtNewPrice.Name = "txtNewPrice";
-            this.txtNewPrice.Size = new System.Drawing.Size(100, 23);
-            this.txtNewPrice.TabIndex = 1;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.txtNewCakeName);
-            this.groupBox17.Location = new System.Drawing.Point(169, 34);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(143, 47);
-            this.groupBox17.TabIndex = 2;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Tên sản phẩm";
-            // 
-            // txtNewCakeName
-            // 
-            this.txtNewCakeName.Location = new System.Drawing.Point(24, 18);
-            this.txtNewCakeName.Name = "txtNewCakeName";
-            this.txtNewCakeName.Size = new System.Drawing.Size(100, 23);
-            this.txtNewCakeName.TabIndex = 1;
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.cmbCateId);
-            this.groupBox18.Location = new System.Drawing.Point(78, 87);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(145, 50);
-            this.groupBox18.TabIndex = 1;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Loại sản phẩm";
-            // 
-            // cmbCateId
-            // 
-            this.cmbCateId.FormattingEnabled = true;
-            this.cmbCateId.Location = new System.Drawing.Point(11, 17);
-            this.cmbCateId.Name = "cmbCateId";
-            this.cmbCateId.Size = new System.Drawing.Size(121, 23);
-            this.cmbCateId.TabIndex = 1;
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.txtNewCakeId);
-            this.groupBox19.Location = new System.Drawing.Point(6, 35);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(143, 46);
-            this.groupBox19.TabIndex = 0;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Mã sản phẩm";
-            // 
-            // txtNewCakeId
-            // 
-            this.txtNewCakeId.Location = new System.Drawing.Point(18, 17);
-            this.txtNewCakeId.Name = "txtNewCakeId";
-            this.txtNewCakeId.Size = new System.Drawing.Size(100, 23);
-            this.txtNewCakeId.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -366,7 +233,7 @@
             this.groupBox2.Controls.Add(this.groupBox13);
             this.groupBox2.Location = new System.Drawing.Point(4, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(497, 144);
+            this.groupBox2.Size = new System.Drawing.Size(497, 154);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sản phẩm đã có";
@@ -644,16 +511,6 @@
             this.groupBox20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableImport)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -712,14 +569,6 @@
         private GroupBox groupBox3;
         private Label txtOldCateId;
         private GroupBox groupBox13;
-        private GroupBox groupBox14;
-        private GroupBox groupBox15;
-        private TextBox txtNewQuantity;
-        private GroupBox groupBox16;
-        private GroupBox groupBox17;
-        private GroupBox groupBox18;
-        private GroupBox groupBox19;
-        private Button btnAddNewCake;
         private Button btnAddOldCake;
         private DataGridView tableImport;
         private Button btnDelete;
@@ -728,11 +577,7 @@
         private Label txtPriceAll;
         private Button btnCancel;
         private Button btnPay;
-        private ComboBox cmbCateId;
         private DataGridView tableCake;
         private Label txtOldCakeId;
-        private TextBox txtNewPrice;
-        private TextBox txtNewCakeName;
-        private TextBox txtNewCakeId;
     }
 }
