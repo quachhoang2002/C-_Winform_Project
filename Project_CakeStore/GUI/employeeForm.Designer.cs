@@ -407,6 +407,7 @@
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "employeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "employeeForm";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

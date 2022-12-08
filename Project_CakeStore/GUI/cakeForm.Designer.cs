@@ -399,6 +399,7 @@
             this.ClientSize = new System.Drawing.Size(892, 523);
             this.Controls.Add(this.panel1);
             this.Name = "cakeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cakeForm";
             this.panel1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);

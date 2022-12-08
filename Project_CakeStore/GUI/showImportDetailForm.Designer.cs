@@ -219,6 +219,7 @@
             this.ClientSize = new System.Drawing.Size(865, 464);
             this.Controls.Add(this.panel1);
             this.Name = "showImportDetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "showImportDetailForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableShowInfo)).EndInit();

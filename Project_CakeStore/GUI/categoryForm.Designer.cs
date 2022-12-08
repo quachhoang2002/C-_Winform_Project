@@ -336,6 +336,7 @@
             this.ClientSize = new System.Drawing.Size(889, 529);
             this.Controls.Add(this.panel1);
             this.Name = "categoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "categoryForm";
             this.panel1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);

@@ -241,7 +241,7 @@ namespace Project_CakeStore.GUI
         //Bat su kien nut them san pham da co
         private void btnAddOldCake_Click(object sender, EventArgs e)
         {
-            if (txtOldQuantity.Text.Equals(""))
+            if (txtOldQuantity.Text.Equals("") || txtOldQuantity.Text.Equals("0"))
             {
                 MessageBox.Show("Vui long nhap so luong san pham");
             }
@@ -289,7 +289,7 @@ namespace Project_CakeStore.GUI
         //Bat su kien them san pham moi
         private void btnAddNewCake_Click(object sender, EventArgs e)
         {
-            if (txtNewQuantity.Text.Equals(""))
+            if (txtNewQuantity.Text.Equals("") || txtNewQuantity.Text.Equals("0"))
             {
                 MessageBox.Show("Vui long nhap so luong san pham");
             }

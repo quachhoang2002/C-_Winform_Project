@@ -668,6 +668,7 @@
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.Coral;
             this.Name = "ReportForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
