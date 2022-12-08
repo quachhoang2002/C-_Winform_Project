@@ -37,8 +37,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -62,7 +60,6 @@
             this.panel1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -168,34 +165,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(3, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(487, 167);
+            this.groupBox1.Size = new System.Drawing.Size(487, 147);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.txtQuantity);
-            this.groupBox6.Location = new System.Drawing.Point(186, 106);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(119, 55);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Số lượng";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(13, 22);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(100, 23);
-            this.txtQuantity.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -330,12 +309,13 @@
             // tableCake
             // 
             this.tableCake.AllowUserToAddRows = false;
+            this.tableCake.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableCake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableCake.Location = new System.Drawing.Point(3, 255);
+            this.tableCake.Location = new System.Drawing.Point(3, 226);
             this.tableCake.Name = "tableCake";
             this.tableCake.RowHeadersWidth = 51;
             this.tableCake.RowTemplate.Height = 25;
-            this.tableCake.Size = new System.Drawing.Size(487, 270);
+            this.tableCake.Size = new System.Drawing.Size(487, 299);
             this.tableCake.TabIndex = 4;
             this.tableCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableCake_CellClick);
             // 
@@ -404,8 +384,6 @@
             this.panel1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -440,8 +418,6 @@
         private GroupBox groupBox18;
         private ComboBox cmbTypeSearch;
         private GroupBox groupBox1;
-        private GroupBox groupBox6;
-        private TextBox txtQuantity;
         private GroupBox groupBox5;
         private GroupBox groupBox4;
         private GroupBox groupBox3;
