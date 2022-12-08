@@ -111,11 +111,11 @@ namespace Project_CakeStore.GUI
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
-            else if (rg1.IsMatch(unitPrice) )
+            else if (rg1.IsMatch(unitPrice))
             {
                 MessageBox.Show("Đơn giá không được âm");
             }
-            else if (rg2.IsMatch(unitPrice) )
+            else if (rg2.IsMatch(unitPrice))
             {
                 MessageBox.Show("Đơn giá  phải là số");
             }
@@ -291,6 +291,13 @@ namespace Project_CakeStore.GUI
 
         }
 
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCakeId.Text = "";
+            txtCakeName.Text = "";
+            txtContent.Text = "";
+            txtUnitPrice.Text = "";
+            setTableCake();
+        }
     }
 }

@@ -219,5 +219,12 @@ namespace Project_CakeStore.GUI
             loginForm loginForm = new loginForm();
             loginForm.ShowDialog();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCateName.Text = "";
+            txtContent.Text = "";
+            setTableCate();
+        }
     }
 }

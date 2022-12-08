@@ -203,9 +203,9 @@ namespace Project_CakeStore.GUI
         //Bat su kien nut "Them"
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtQuantity.Text.Equals(""))
+            if (txtQuantity.Text.Equals("") || txtCakeName.Text.Equals("..."))
             {
-                MessageBox.Show("Vui long nhap so luong san pham muon mua");
+                MessageBox.Show("Vui long nhap so luong san pham muon mua,chon san pham");
             }
             else if(checkQuantity(txtQuantity.Text))
             {

@@ -123,6 +123,7 @@
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Làm mới";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnEdit
             // 
