@@ -31,11 +31,11 @@ namespace Project_CakeStore.DAO
                     {
                         cake_DTO cake = new cake_DTO(sdr["CakeID"].ToString()
                             , sdr["CakeName"].ToString()
-                            , sdr["CategoryName"].ToString()
+                            , sdr["CategoryID"].ToString()
                             , (int)sdr["UnitPrice"]
                             , (int)sdr["Quantity"]
                             , "");
-
+                        cake.setCategoryName(sdr["CategoryName"].ToString());
                         list.Add(cake);
                     }
                 }

@@ -55,7 +55,7 @@ namespace Project_CakeStore.GUI
                 cake_DTO cake = list.ElementAt(i);
                 tableCake.Rows.Add(cake.getCakeID()
                     , cake.getCakeName()
-                    , cake.getCategoryID()
+                    , cake.getCategoryID() + " - " + cake.getCategoryName()
                     , cake.getUnitPrice()
                     , cake.getQuantity());
             }
@@ -76,7 +76,8 @@ namespace Project_CakeStore.GUI
             {
                 category_DTO cate = list.ElementAt(i);
                 String cateID = cate.getCategoryID();
-                cmbCate.Items.Add(cateID);
+                String cakeName = cate.getCategoryName();
+                cmbCate.Items.Add(cateID + " - " + cakeName);
             }
         }
 
@@ -187,8 +188,9 @@ namespace Project_CakeStore.GUI
         {
             if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
             {
+                String categoryID = cmbCate.SelectedItem.ToString().Substring(0, 2);
                 cake_DTO cake = new cake_DTO("", txtCakeName.Text
-                , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
+                , categoryID, int.Parse(txtUnitPrice.Text)
                 , int.Parse(txtQuantity.Text), "");
 
                 if (cakeBUS.addCakeAuto(cake))
@@ -234,8 +236,9 @@ namespace Project_CakeStore.GUI
         {
             if (checkInput(txtCakeName.Text, txtUnitPrice.Text, txtQuantity.Text, cmbCate.SelectedIndex))
             {
+                String categoryID = cmbCate.SelectedItem.ToString().Substring(0, 2);
                 cake_DTO cake = new cake_DTO(txtCakeId.Text, txtCakeName.Text
-                , cmbCate.SelectedItem.ToString(), int.Parse(txtUnitPrice.Text)
+                , categoryID, int.Parse(txtUnitPrice.Text)
                 , int.Parse(txtQuantity.Text), "");
 
                 if (cakeBUS.editCake(cake))

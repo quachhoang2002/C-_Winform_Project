@@ -11,6 +11,7 @@ namespace Project_CakeStore.DTO
         private String cakeID;
         private String cakeName;
         private String categoryID;
+        private String categoryName;
         private int unitPrice;
         private int quantity;
         private String img;
@@ -23,6 +24,17 @@ namespace Project_CakeStore.DTO
             this.unitPrice = unitPrice;
             this.quantity = quantity;
             this.img = img;
+        }
+
+        //get set category name
+        public String getCategoryName()
+        {
+            return categoryName;
+        }
+
+        public void setCategoryName(String categoryName)
+        {
+            this.categoryName = categoryName;
         }
 
         public String getCakeID()
