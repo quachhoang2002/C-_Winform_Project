@@ -183,7 +183,9 @@ namespace Project_CakeStore.GUI
         {
             if (checkInput(txtCakeName.Text, txtUnitPrice.Text, cmbCate.SelectedIndex))
             {
-                String categoryID = cmbCate.SelectedItem.ToString().Substring(0, 2);
+                //split by -
+                String[] category = cmbCate.SelectedItem.ToString().Split('-');
+                String categoryID = category[0].Trim();
                 cake_DTO cake = new cake_DTO("", txtCakeName.Text
                 , categoryID, int.Parse(txtUnitPrice.Text)
                 , 0, "");
@@ -230,7 +232,8 @@ namespace Project_CakeStore.GUI
         {
             if (checkInput(txtCakeName.Text, txtUnitPrice.Text, cmbCate.SelectedIndex))
             {
-                String categoryID = cmbCate.SelectedItem.ToString().Substring(0, 2);
+                String[] category = cmbCate.SelectedItem.ToString().Split('-');
+                String categoryID = category[0].Trim();
                 cake_DTO cake = new cake_DTO(txtCakeId.Text, txtCakeName.Text
                 , categoryID, int.Parse(txtUnitPrice.Text)
                 , 0, "");
