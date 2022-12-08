@@ -157,7 +157,7 @@ namespace Project_CakeStore.GUI
             String checkChar = @"\D";
             System.Text.RegularExpressions.Regex rg1 = new System.Text.RegularExpressions.Regex(checkNum);
             System.Text.RegularExpressions.Regex rg2 = new System.Text.RegularExpressions.Regex(checkChar);
-            if (rg1.IsMatch(quantity) == false && rg2.IsMatch(quantity) == false)
+            if (rg1.IsMatch(quantity) == false && rg2.IsMatch(quantity) == false && quantity.Equals("0") == false)
             {
                 check = true;
             }

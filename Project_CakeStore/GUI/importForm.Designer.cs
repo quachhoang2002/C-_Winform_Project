@@ -223,6 +223,7 @@
             this.ClientSize = new System.Drawing.Size(857, 527);
             this.Controls.Add(this.panel1);
             this.Name = "importForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "showImportDetailForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableImport)).EndInit();
