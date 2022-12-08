@@ -51,7 +51,7 @@ namespace Project_CakeStore.GUI
             }
         }
 
-        private void picLogOut_Click(object sender, EventArgs e)
+        private void picLogOut_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             loginForm loginForm = new loginForm();
@@ -69,5 +69,7 @@ namespace Project_CakeStore.GUI
             cakeForm cake = new cakeForm(getName, getid);
             cake.ShowDialog();
         }
+
+
     }
 }

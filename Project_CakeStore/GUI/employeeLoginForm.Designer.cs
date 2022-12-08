@@ -44,6 +44,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtSellForm = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picLogOut = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -51,11 +52,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.picLogOut);
             this.panel2.Controls.Add(this.txtAccName);
             this.panel2.Controls.Add(this.picExit);
             this.panel2.Controls.Add(this.label1);
@@ -70,7 +73,7 @@
             this.txtAccName.AutoSize = true;
             this.txtAccName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAccName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAccName.Location = new System.Drawing.Point(13, 18);
+            this.txtAccName.Location = new System.Drawing.Point(52, 18);
             this.txtAccName.Name = "txtAccName";
             this.txtAccName.Size = new System.Drawing.Size(128, 26);
             this.txtAccName.TabIndex = 2;
@@ -216,6 +219,16 @@
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
+            // picLogOut
+            // 
+            this.picLogOut.Image = global::Project_CakeStore.Properties.Resources.Logout_36px;
+            this.picLogOut.Location = new System.Drawing.Point(15, 11);
+            this.picLogOut.Name = "picLogOut";
+            this.picLogOut.Size = new System.Drawing.Size(31, 38);
+            this.picLogOut.TabIndex = 4;
+            this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click_1);
+            // 
             // employeeLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -244,6 +257,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +280,6 @@
         private PictureBox pictureBox4;
         private Label txtSellForm;
         private PictureBox pictureBox3;
+        private PictureBox picLogOut;
     }
 }
