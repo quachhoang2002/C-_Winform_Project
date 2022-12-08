@@ -80,7 +80,6 @@
             this.picLogOut = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ABC = new System.Windows.Forms.Label();
-            this.btnExportEcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCake)).BeginInit();
             this.groupBox20.SuspendLayout();
@@ -112,7 +111,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.btnExportEcel);
             this.panel1.Controls.Add(this.tableCake);
             this.panel1.Controls.Add(this.btnPay);
             this.panel1.Controls.Add(this.btnCancel);
@@ -126,23 +124,19 @@
             this.panel1.Controls.Add(this.groupBox7);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(2, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(985, 833);
-
+            this.panel1.Size = new System.Drawing.Size(862, 625);
             this.panel1.TabIndex = 0;
             // 
             // tableCake
             // 
             this.tableCake.AllowUserToAddRows = false;
             this.tableCake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableCake.Location = new System.Drawing.Point(8, 532);
-            this.tableCake.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableCake.Location = new System.Drawing.Point(7, 399);
             this.tableCake.Name = "tableCake";
             this.tableCake.RowHeadersWidth = 51;
             this.tableCake.RowTemplate.Height = 25;
-            this.tableCake.Size = new System.Drawing.Size(575, 235);
-
+            this.tableCake.Size = new System.Drawing.Size(503, 176);
             this.tableCake.TabIndex = 20;
             this.tableCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableCake_CellClick);
             // 
@@ -151,11 +145,9 @@
             this.btnPay.BackColor = System.Drawing.Color.Red;
             this.btnPay.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPay.Location = new System.Drawing.Point(808, 775);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.btnPay.Location = new System.Drawing.Point(707, 581);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(168, 55);
+            this.btnPay.Size = new System.Drawing.Size(147, 41);
             this.btnPay.TabIndex = 19;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.UseVisualStyleBackColor = false;
@@ -166,11 +158,9 @@
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(590, 775);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.btnCancel.Location = new System.Drawing.Point(516, 581);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(206, 55);
+            this.btnCancel.Size = new System.Drawing.Size(180, 41);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -178,12 +168,9 @@
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.txtPriceAll);
-            this.groupBox20.Location = new System.Drawing.Point(808, 719);
-            this.groupBox20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.groupBox20.Location = new System.Drawing.Point(707, 514);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox20.Size = new System.Drawing.Size(163, 53);
+            this.groupBox20.Size = new System.Drawing.Size(143, 40);
             this.groupBox20.TabIndex = 17;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Tổng tiền";
@@ -192,9 +179,9 @@
             // 
             this.txtPriceAll.AutoSize = true;
             this.txtPriceAll.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPriceAll.Location = new System.Drawing.Point(59, 25);
+            this.txtPriceAll.Location = new System.Drawing.Point(52, 19);
             this.txtPriceAll.Name = "txtPriceAll";
-            this.txtPriceAll.Size = new System.Drawing.Size(21, 20);
+            this.txtPriceAll.Size = new System.Drawing.Size(17, 17);
             this.txtPriceAll.TabIndex = 0;
             this.txtPriceAll.Text = "...";
             // 
@@ -203,12 +190,9 @@
             this.btnClear.BackColor = System.Drawing.Color.Red;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-
-            this.btnClear.Location = new System.Drawing.Point(695, 719);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.btnClear.Location = new System.Drawing.Point(608, 533);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(101, 55);
+            this.btnClear.Size = new System.Drawing.Size(88, 41);
             this.btnClear.TabIndex = 16;
             this.btnClear.Text = "Làm mới";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -219,11 +203,9 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(590, 719);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.btnDelete.Location = new System.Drawing.Point(516, 533);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(98, 55);
+            this.btnDelete.Size = new System.Drawing.Size(86, 41);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -233,14 +215,11 @@
             // 
             this.tableImport.AllowUserToAddRows = false;
             this.tableImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableImport.Location = new System.Drawing.Point(590, 335);
-            this.tableImport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.tableImport.Location = new System.Drawing.Point(516, 251);
             this.tableImport.Name = "tableImport";
             this.tableImport.RowHeadersWidth = 51;
             this.tableImport.RowTemplate.Height = 25;
-            this.tableImport.Size = new System.Drawing.Size(387, 313);
-
+            this.tableImport.Size = new System.Drawing.Size(339, 250);
             this.tableImport.TabIndex = 14;
             // 
             // btnAddNewCake
@@ -248,11 +227,9 @@
             this.btnAddNewCake.BackColor = System.Drawing.Color.Red;
             this.btnAddNewCake.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddNewCake.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddNewCake.Location = new System.Drawing.Point(304, 775);
-            this.btnAddNewCake.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.btnAddNewCake.Location = new System.Drawing.Point(266, 581);
             this.btnAddNewCake.Name = "btnAddNewCake";
-            this.btnAddNewCake.Size = new System.Drawing.Size(279, 55);
+            this.btnAddNewCake.Size = new System.Drawing.Size(244, 41);
             this.btnAddNewCake.TabIndex = 13;
             this.btnAddNewCake.Text = "Thêm sản phẩm mới";
             this.btnAddNewCake.UseVisualStyleBackColor = false;
@@ -263,11 +240,9 @@
             this.btnAddOldCake.BackColor = System.Drawing.Color.Red;
             this.btnAddOldCake.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddOldCake.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddOldCake.Location = new System.Drawing.Point(7, 775);
-            this.btnAddOldCake.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-
+            this.btnAddOldCake.Location = new System.Drawing.Point(6, 581);
             this.btnAddOldCake.Name = "btnAddOldCake";
-            this.btnAddOldCake.Size = new System.Drawing.Size(275, 55);
+            this.btnAddOldCake.Size = new System.Drawing.Size(241, 41);
             this.btnAddOldCake.TabIndex = 12;
             this.btnAddOldCake.Text = "Thêm sản phẩm đã có";
             this.btnAddOldCake.UseVisualStyleBackColor = false;
@@ -277,11 +252,9 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox14);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(7, 93);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(6, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(579, 431);
+            this.groupBox1.Size = new System.Drawing.Size(507, 323);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập sản phẩm";
@@ -293,11 +266,9 @@
             this.groupBox14.Controls.Add(this.groupBox17);
             this.groupBox14.Controls.Add(this.groupBox18);
             this.groupBox14.Controls.Add(this.groupBox19);
-            this.groupBox14.Location = new System.Drawing.Point(5, 228);
-            this.groupBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox14.Location = new System.Drawing.Point(4, 171);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox14.Size = new System.Drawing.Size(568, 192);
+            this.groupBox14.Size = new System.Drawing.Size(497, 144);
             this.groupBox14.TabIndex = 10;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Sản phẩm mới";
@@ -305,71 +276,60 @@
             // groupBox15
             // 
             this.groupBox15.Controls.Add(this.txtNewQuantity);
-            this.groupBox15.Location = new System.Drawing.Point(319, 109);
-            this.groupBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox15.Location = new System.Drawing.Point(279, 82);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox15.Size = new System.Drawing.Size(136, 73);
+            this.groupBox15.Size = new System.Drawing.Size(119, 55);
             this.groupBox15.TabIndex = 4;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Số lượng";
             // 
             // txtNewQuantity
             // 
-            this.txtNewQuantity.Location = new System.Drawing.Point(15, 29);
-            this.txtNewQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewQuantity.Location = new System.Drawing.Point(13, 22);
             this.txtNewQuantity.Name = "txtNewQuantity";
-            this.txtNewQuantity.Size = new System.Drawing.Size(114, 27);
+            this.txtNewQuantity.Size = new System.Drawing.Size(100, 23);
             this.txtNewQuantity.TabIndex = 0;
             // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.txtNewPrice);
-            this.groupBox16.Location = new System.Drawing.Point(375, 47);
-            this.groupBox16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox16.Location = new System.Drawing.Point(328, 35);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox16.Size = new System.Drawing.Size(166, 61);
+            this.groupBox16.Size = new System.Drawing.Size(145, 46);
             this.groupBox16.TabIndex = 3;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Đơn giá";
             // 
             // txtNewPrice
             // 
-            this.txtNewPrice.Location = new System.Drawing.Point(33, 23);
-            this.txtNewPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewPrice.Location = new System.Drawing.Point(29, 17);
             this.txtNewPrice.Name = "txtNewPrice";
-            this.txtNewPrice.Size = new System.Drawing.Size(114, 27);
+            this.txtNewPrice.Size = new System.Drawing.Size(100, 23);
             this.txtNewPrice.TabIndex = 1;
             // 
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.txtNewCakeName);
-            this.groupBox17.Location = new System.Drawing.Point(193, 45);
-            this.groupBox17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox17.Location = new System.Drawing.Point(169, 34);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox17.Size = new System.Drawing.Size(163, 63);
+            this.groupBox17.Size = new System.Drawing.Size(143, 47);
             this.groupBox17.TabIndex = 2;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Tên sản phẩm";
             // 
             // txtNewCakeName
             // 
-            this.txtNewCakeName.Location = new System.Drawing.Point(27, 24);
-            this.txtNewCakeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewCakeName.Location = new System.Drawing.Point(24, 18);
             this.txtNewCakeName.Name = "txtNewCakeName";
-            this.txtNewCakeName.Size = new System.Drawing.Size(114, 27);
+            this.txtNewCakeName.Size = new System.Drawing.Size(100, 23);
             this.txtNewCakeName.TabIndex = 1;
             // 
             // groupBox18
             // 
             this.groupBox18.Controls.Add(this.cmbCateId);
-            this.groupBox18.Location = new System.Drawing.Point(89, 116);
-            this.groupBox18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox18.Location = new System.Drawing.Point(78, 87);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox18.Size = new System.Drawing.Size(166, 67);
+            this.groupBox18.Size = new System.Drawing.Size(145, 50);
             this.groupBox18.TabIndex = 1;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Loại sản phẩm";
@@ -377,30 +337,26 @@
             // cmbCateId
             // 
             this.cmbCateId.FormattingEnabled = true;
-            this.cmbCateId.Location = new System.Drawing.Point(13, 23);
-            this.cmbCateId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCateId.Location = new System.Drawing.Point(11, 17);
             this.cmbCateId.Name = "cmbCateId";
-            this.cmbCateId.Size = new System.Drawing.Size(138, 28);
+            this.cmbCateId.Size = new System.Drawing.Size(121, 23);
             this.cmbCateId.TabIndex = 1;
             // 
             // groupBox19
             // 
             this.groupBox19.Controls.Add(this.txtNewCakeId);
-            this.groupBox19.Location = new System.Drawing.Point(7, 47);
-            this.groupBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox19.Location = new System.Drawing.Point(6, 35);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox19.Size = new System.Drawing.Size(163, 61);
+            this.groupBox19.Size = new System.Drawing.Size(143, 46);
             this.groupBox19.TabIndex = 0;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Mã sản phẩm";
             // 
             // txtNewCakeId
             // 
-            this.txtNewCakeId.Location = new System.Drawing.Point(21, 23);
-            this.txtNewCakeId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewCakeId.Location = new System.Drawing.Point(18, 17);
             this.txtNewCakeId.Name = "txtNewCakeId";
-            this.txtNewCakeId.Size = new System.Drawing.Size(114, 27);
+            this.txtNewCakeId.Size = new System.Drawing.Size(100, 23);
             this.txtNewCakeId.TabIndex = 1;
             // 
             // groupBox2
@@ -410,11 +366,9 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox13);
-            this.groupBox2.Location = new System.Drawing.Point(5, 28);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(4, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(568, 192);
+            this.groupBox2.Size = new System.Drawing.Size(497, 144);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sản phẩm đã có";
@@ -422,31 +376,26 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.txtOldQuantity);
-            this.groupBox6.Location = new System.Drawing.Point(319, 103);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Location = new System.Drawing.Point(279, 77);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Size = new System.Drawing.Size(136, 73);
+            this.groupBox6.Size = new System.Drawing.Size(119, 55);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Số lượng";
             // 
             // txtOldQuantity
             // 
-            this.txtOldQuantity.Location = new System.Drawing.Point(15, 29);
-            this.txtOldQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtOldQuantity.Location = new System.Drawing.Point(13, 22);
             this.txtOldQuantity.Name = "txtOldQuantity";
-            this.txtOldQuantity.Size = new System.Drawing.Size(114, 27);
+            this.txtOldQuantity.Size = new System.Drawing.Size(100, 23);
             this.txtOldQuantity.TabIndex = 0;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txtOldPrice);
-            this.groupBox5.Location = new System.Drawing.Point(375, 32);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox5.Location = new System.Drawing.Point(328, 24);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(166, 63);
+            this.groupBox5.Size = new System.Drawing.Size(145, 47);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Đơn giá";
@@ -455,20 +404,18 @@
             // 
             this.txtOldPrice.AutoSize = true;
             this.txtOldPrice.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOldPrice.Location = new System.Drawing.Point(33, 25);
+            this.txtOldPrice.Location = new System.Drawing.Point(29, 19);
             this.txtOldPrice.Name = "txtOldPrice";
-            this.txtOldPrice.Size = new System.Drawing.Size(21, 20);
+            this.txtOldPrice.Size = new System.Drawing.Size(17, 17);
             this.txtOldPrice.TabIndex = 1;
             this.txtOldPrice.Text = "...";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txtOldCakeName);
-            this.groupBox4.Location = new System.Drawing.Point(193, 32);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Location = new System.Drawing.Point(169, 24);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(163, 63);
+            this.groupBox4.Size = new System.Drawing.Size(143, 47);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tên sản phẩm";
@@ -477,20 +424,18 @@
             // 
             this.txtOldCakeName.AutoSize = true;
             this.txtOldCakeName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOldCakeName.Location = new System.Drawing.Point(27, 25);
+            this.txtOldCakeName.Location = new System.Drawing.Point(24, 19);
             this.txtOldCakeName.Name = "txtOldCakeName";
-            this.txtOldCakeName.Size = new System.Drawing.Size(21, 20);
+            this.txtOldCakeName.Size = new System.Drawing.Size(17, 17);
             this.txtOldCakeName.TabIndex = 1;
             this.txtOldCakeName.Text = "...";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtOldCateId);
-            this.groupBox3.Location = new System.Drawing.Point(89, 109);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Location = new System.Drawing.Point(78, 82);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(166, 67);
+            this.groupBox3.Size = new System.Drawing.Size(145, 50);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Loại sản phẩm";
@@ -499,20 +444,18 @@
             // 
             this.txtOldCateId.AutoSize = true;
             this.txtOldCateId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOldCateId.Location = new System.Drawing.Point(33, 25);
+            this.txtOldCateId.Location = new System.Drawing.Point(29, 19);
             this.txtOldCateId.Name = "txtOldCateId";
-            this.txtOldCateId.Size = new System.Drawing.Size(21, 20);
+            this.txtOldCateId.Size = new System.Drawing.Size(17, 17);
             this.txtOldCateId.TabIndex = 1;
             this.txtOldCateId.Text = "...";
             // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.txtOldCakeId);
-            this.groupBox13.Location = new System.Drawing.Point(7, 32);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox13.Location = new System.Drawing.Point(6, 24);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox13.Size = new System.Drawing.Size(163, 61);
+            this.groupBox13.Size = new System.Drawing.Size(143, 46);
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Mã sản phẩm";
@@ -521,9 +464,9 @@
             // 
             this.txtOldCakeId.AutoSize = true;
             this.txtOldCakeId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOldCakeId.Location = new System.Drawing.Point(27, 25);
+            this.txtOldCakeId.Location = new System.Drawing.Point(24, 19);
             this.txtOldCakeId.Name = "txtOldCakeId";
-            this.txtOldCakeId.Size = new System.Drawing.Size(21, 20);
+            this.txtOldCakeId.Size = new System.Drawing.Size(17, 17);
             this.txtOldCakeId.TabIndex = 1;
             this.txtOldCakeId.Text = "...";
             // 
@@ -534,23 +477,18 @@
             this.groupBox7.Controls.Add(this.groupBox10);
             this.groupBox7.Controls.Add(this.groupBox9);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Location = new System.Drawing.Point(593, 93);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox7.Location = new System.Drawing.Point(519, 70);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox7.Size = new System.Drawing.Size(381, 233);
-
+            this.groupBox7.Size = new System.Drawing.Size(333, 175);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.txtPricePro);
-            this.groupBox12.Location = new System.Drawing.Point(114, 172);
-            this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox12.Location = new System.Drawing.Point(100, 129);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox12.Size = new System.Drawing.Size(163, 53);
+            this.groupBox12.Size = new System.Drawing.Size(143, 40);
             this.groupBox12.TabIndex = 5;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Tổng tiền";
@@ -559,20 +497,18 @@
             // 
             this.txtPricePro.AutoSize = true;
             this.txtPricePro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPricePro.Location = new System.Drawing.Point(37, 25);
+            this.txtPricePro.Location = new System.Drawing.Point(32, 19);
             this.txtPricePro.Name = "txtPricePro";
-            this.txtPricePro.Size = new System.Drawing.Size(21, 20);
+            this.txtPricePro.Size = new System.Drawing.Size(17, 17);
             this.txtPricePro.TabIndex = 0;
             this.txtPricePro.Text = "...";
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.txtDate);
-            this.groupBox11.Location = new System.Drawing.Point(199, 93);
-            this.groupBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox11.Location = new System.Drawing.Point(174, 70);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox11.Size = new System.Drawing.Size(163, 63);
+            this.groupBox11.Size = new System.Drawing.Size(143, 47);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Ngày lập ";
@@ -581,20 +517,18 @@
             // 
             this.txtDate.AutoSize = true;
             this.txtDate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDate.Location = new System.Drawing.Point(39, 25);
+            this.txtDate.Location = new System.Drawing.Point(34, 19);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(21, 20);
+            this.txtDate.Size = new System.Drawing.Size(17, 17);
             this.txtDate.TabIndex = 0;
             this.txtDate.Text = "...";
             // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.txtEmpName);
-            this.groupBox10.Location = new System.Drawing.Point(7, 93);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox10.Location = new System.Drawing.Point(6, 70);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox10.Size = new System.Drawing.Size(163, 63);
+            this.groupBox10.Size = new System.Drawing.Size(143, 47);
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Nhân Viên";
@@ -603,20 +537,18 @@
             // 
             this.txtEmpName.AutoSize = true;
             this.txtEmpName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmpName.Location = new System.Drawing.Point(35, 25);
+            this.txtEmpName.Location = new System.Drawing.Point(31, 19);
             this.txtEmpName.Name = "txtEmpName";
-            this.txtEmpName.Size = new System.Drawing.Size(21, 20);
+            this.txtEmpName.Size = new System.Drawing.Size(17, 17);
             this.txtEmpName.TabIndex = 0;
             this.txtEmpName.Text = "...";
             // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.cmbSuppName);
-            this.groupBox9.Location = new System.Drawing.Point(199, 16);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox9.Location = new System.Drawing.Point(174, 12);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox9.Size = new System.Drawing.Size(163, 69);
+            this.groupBox9.Size = new System.Drawing.Size(143, 52);
             this.groupBox9.TabIndex = 2;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Nhà cung cấp";
@@ -624,30 +556,26 @@
             // cmbSuppName
             // 
             this.cmbSuppName.FormattingEnabled = true;
-            this.cmbSuppName.Location = new System.Drawing.Point(14, 25);
-            this.cmbSuppName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbSuppName.Location = new System.Drawing.Point(12, 19);
             this.cmbSuppName.Name = "cmbSuppName";
-            this.cmbSuppName.Size = new System.Drawing.Size(138, 28);
+            this.cmbSuppName.Size = new System.Drawing.Size(121, 23);
             this.cmbSuppName.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.txtImportID);
-            this.groupBox8.Location = new System.Drawing.Point(7, 16);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox8.Location = new System.Drawing.Point(6, 12);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox8.Size = new System.Drawing.Size(163, 69);
+            this.groupBox8.Size = new System.Drawing.Size(143, 52);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Mã phiếu nhập";
             // 
             // txtImportID
             // 
-            this.txtImportID.Location = new System.Drawing.Point(21, 29);
-            this.txtImportID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtImportID.Location = new System.Drawing.Point(18, 22);
             this.txtImportID.Name = "txtImportID";
-            this.txtImportID.Size = new System.Drawing.Size(114, 27);
+            this.txtImportID.Size = new System.Drawing.Size(100, 23);
             this.txtImportID.TabIndex = 1;
             // 
             // panel2
@@ -659,9 +587,8 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.ABC);
             this.panel2.Location = new System.Drawing.Point(3, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(974, 85);
+            this.panel2.Size = new System.Drawing.Size(852, 64);
             this.panel2.TabIndex = 2;
             // 
             // txtAccName
@@ -669,19 +596,18 @@
             this.txtAccName.AutoSize = true;
             this.txtAccName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAccName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAccName.Location = new System.Drawing.Point(46, 24);
+            this.txtAccName.Location = new System.Drawing.Point(40, 18);
             this.txtAccName.Name = "txtAccName";
-            this.txtAccName.Size = new System.Drawing.Size(156, 32);
+            this.txtAccName.Size = new System.Drawing.Size(128, 26);
             this.txtAccName.TabIndex = 2;
             this.txtAccName.Text = "Acc Name";
             // 
             // picExit
             // 
             this.picExit.Image = global::Project_CakeStore.Properties.Resources.chain_start_36px;
-            this.picExit.Location = new System.Drawing.Point(929, 16);
-            this.picExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picExit.Location = new System.Drawing.Point(813, 12);
             this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(41, 51);
+            this.picExit.Size = new System.Drawing.Size(36, 38);
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
@@ -689,10 +615,9 @@
             // picLogOut
             // 
             this.picLogOut.Image = global::Project_CakeStore.Properties.Resources.Logout_36px;
-            this.picLogOut.Location = new System.Drawing.Point(3, 16);
-            this.picLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picLogOut.Location = new System.Drawing.Point(3, 12);
             this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(35, 51);
+            this.picLogOut.Size = new System.Drawing.Size(31, 38);
             this.picLogOut.TabIndex = 2;
             this.picLogOut.TabStop = false;
             this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
@@ -701,9 +626,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(15, 35);
+            this.label1.Location = new System.Drawing.Point(13, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.Size = new System.Drawing.Size(0, 15);
             this.label1.TabIndex = 1;
             // 
             // ABC
@@ -711,34 +636,18 @@
             this.ABC.AutoSize = true;
             this.ABC.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ABC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ABC.Location = new System.Drawing.Point(407, 24);
+            this.ABC.Location = new System.Drawing.Point(356, 18);
             this.ABC.Name = "ABC";
-            this.ABC.Size = new System.Drawing.Size(214, 40);
+            this.ABC.Size = new System.Drawing.Size(171, 32);
             this.ABC.TabIndex = 0;
             this.ABC.Text = "ABC Bakery";
             // 
-            // btnExportEcel
-            // 
-            this.btnExportEcel.BackColor = System.Drawing.Color.Red;
-            this.btnExportEcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExportEcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExportEcel.Location = new System.Drawing.Point(732, 656);
-            this.btnExportEcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnExportEcel.Name = "btnExportEcel";
-            this.btnExportEcel.Size = new System.Drawing.Size(120, 55);
-            this.btnExportEcel.TabIndex = 26;
-            this.btnExportEcel.Text = "Xuất Excel";
-            this.btnExportEcel.UseVisualStyleBackColor = false;
-            this.btnExportEcel.Click += new System.EventHandler(this.btnExportEcel_Click);
-            // 
             // importProForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 833);
-
+            this.ClientSize = new System.Drawing.Size(864, 625);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "importProForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "importProForm";
@@ -840,6 +749,5 @@
         private TextBox txtNewPrice;
         private TextBox txtNewCakeName;
         private TextBox txtNewCakeId;
-        private Button btnExportEcel;
     }
 }
