@@ -211,8 +211,6 @@ namespace Project_CakeStore.GUI
         private void picExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainForm mainForm = new MainForm(getName, getID);
-            mainForm.ShowDialog();
         }
 
         private void picLogOut_Click(object sender, EventArgs e)

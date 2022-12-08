@@ -44,8 +44,6 @@ namespace Project_CakeStore.GUI
         private void picExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainForm mainForm = new MainForm(getName, getId);
-            mainForm.ShowDialog();
         }
 
         private void setDefauldValue()
@@ -372,10 +370,14 @@ namespace Project_CakeStore.GUI
         }
 
 
+
+
         #endregion
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
     }
 }
 

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplierForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.picLogOut = new System.Windows.Forms.PictureBox();
             this.txtAccName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +60,6 @@
             this.btnExportExcel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSupplier)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -72,7 +70,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Controls.Add(this.picExit);
-            this.panel2.Controls.Add(this.picLogOut);
             this.panel2.Controls.Add(this.txtAccName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
@@ -91,22 +88,12 @@
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
-            // picLogOut
-            // 
-            this.picLogOut.Image = global::Project_CakeStore.Properties.Resources.Logout_36px;
-            this.picLogOut.Location = new System.Drawing.Point(8, 17);
-            this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(33, 38);
-            this.picLogOut.TabIndex = 4;
-            this.picLogOut.TabStop = false;
-            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
-            // 
             // txtAccName
             // 
             this.txtAccName.AutoSize = true;
             this.txtAccName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAccName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAccName.Location = new System.Drawing.Point(46, 26);
+            this.txtAccName.Location = new System.Drawing.Point(19, 26);
             this.txtAccName.Name = "txtAccName";
             this.txtAccName.Size = new System.Drawing.Size(128, 26);
             this.txtAccName.TabIndex = 2;
@@ -416,7 +403,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSupplier)).EndInit();
@@ -431,7 +417,6 @@
 
         private Panel panel2;
         private PictureBox picExit;
-        private PictureBox picLogOut;
         private Label txtAccName;
         private Label label2;
         private Label label3;

@@ -42,7 +42,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtAccName = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.picLogOut = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ABC = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -52,7 +51,6 @@
             this.groupBox18.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,7 +170,6 @@
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Controls.Add(this.txtAccName);
             this.panel2.Controls.Add(this.picExit);
-            this.panel2.Controls.Add(this.picLogOut);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.ABC);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -185,7 +182,7 @@
             this.txtAccName.AutoSize = true;
             this.txtAccName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAccName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAccName.Location = new System.Drawing.Point(40, 18);
+            this.txtAccName.Location = new System.Drawing.Point(13, 18);
             this.txtAccName.Name = "txtAccName";
             this.txtAccName.Size = new System.Drawing.Size(128, 26);
             this.txtAccName.TabIndex = 2;
@@ -200,15 +197,6 @@
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
-            // 
-            // picLogOut
-            // 
-            this.picLogOut.Image = global::Project_CakeStore.Properties.Resources.Logout_36px;
-            this.picLogOut.Location = new System.Drawing.Point(3, 12);
-            this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(31, 38);
-            this.picLogOut.TabIndex = 2;
-            this.picLogOut.TabStop = false;
             // 
             // label1
             // 
@@ -249,7 +237,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,7 +247,6 @@
         private Panel panel2;
         private Label txtAccName;
         private PictureBox picExit;
-        private PictureBox picLogOut;
         private Label label1;
         private Label ABC;
         private GroupBox groupBox14;

@@ -24,21 +24,18 @@ namespace Project_CakeStore.GUI
 
         private void txtSellForm_Click(object sender, EventArgs e)
         {
-            this.Hide();
             sellForm sellForm = new sellForm(getName, getid);
             sellForm.ShowDialog();
         }
 
         private void txtImportPro_Click(object sender, EventArgs e)
         {
-            this.Hide();
             importProForm importForm = new importProForm(getName, getid);
             importForm.ShowDialog();
         }
 
         private void txtCus_Click(object sender, EventArgs e)
         {
-            this.Hide();
             customerForm customerForm = new customerForm(getName, getid);
             customerForm.ShowDialog();
         }
@@ -59,6 +56,18 @@ namespace Project_CakeStore.GUI
             this.Hide();
             loginForm loginForm = new loginForm();
             loginForm.ShowDialog();
+        }
+
+        private void txtCategory_Click(object sender, EventArgs e)
+        {
+            categoryForm category = new categoryForm(getName, getid);
+            category.ShowDialog();
+        }
+
+        private void txtCake_Click(object sender, EventArgs e)
+        {
+            cakeForm cake = new cakeForm(getName, getid);
+            cake.ShowDialog();
         }
     }
 }

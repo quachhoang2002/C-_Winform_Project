@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtAccName = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.picLogOut = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ABC = new System.Windows.Forms.Label();
             this.txtCus = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -60,7 +58,6 @@
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Controls.Add(this.txtAccName);
             this.panel2.Controls.Add(this.picExit);
-            this.panel2.Controls.Add(this.picLogOut);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.ABC);
             this.panel2.Location = new System.Drawing.Point(2, 1);
@@ -73,7 +70,7 @@
             this.txtAccName.AutoSize = true;
             this.txtAccName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAccName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAccName.Location = new System.Drawing.Point(40, 18);
+            this.txtAccName.Location = new System.Drawing.Point(13, 18);
             this.txtAccName.Name = "txtAccName";
             this.txtAccName.Size = new System.Drawing.Size(128, 26);
             this.txtAccName.TabIndex = 2;
@@ -88,16 +85,6 @@
             this.picExit.TabIndex = 3;
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
-            // 
-            // picLogOut
-            // 
-            this.picLogOut.Image = global::Project_CakeStore.Properties.Resources.Logout_36px;
-            this.picLogOut.Location = new System.Drawing.Point(3, 12);
-            this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(31, 38);
-            this.picLogOut.TabIndex = 2;
-            this.picLogOut.TabStop = false;
-            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // label1
             // 
@@ -122,6 +109,7 @@
             // txtCus
             // 
             this.txtCus.AutoSize = true;
+            this.txtCus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCus.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCus.Location = new System.Drawing.Point(54, 326);
@@ -143,6 +131,7 @@
             // txtCategory
             // 
             this.txtCategory.AutoSize = true;
+            this.txtCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCategory.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCategory.Location = new System.Drawing.Point(478, 206);
@@ -150,6 +139,7 @@
             this.txtCategory.Size = new System.Drawing.Size(114, 26);
             this.txtCategory.TabIndex = 25;
             this.txtCategory.Text = "Loại Bánh";
+            this.txtCategory.Click += new System.EventHandler(this.txtCategory_Click);
             // 
             // pictureBox6
             // 
@@ -163,6 +153,7 @@
             // txtCake
             // 
             this.txtCake.AutoSize = true;
+            this.txtCake.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCake.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCake.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCake.Location = new System.Drawing.Point(54, 206);
@@ -170,6 +161,7 @@
             this.txtCake.Size = new System.Drawing.Size(66, 26);
             this.txtCake.TabIndex = 23;
             this.txtCake.Text = "Bánh";
+            this.txtCake.Click += new System.EventHandler(this.txtCake_Click);
             // 
             // pictureBox5
             // 
@@ -183,6 +175,7 @@
             // txtImportPro
             // 
             this.txtImportPro.AutoSize = true;
+            this.txtImportPro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtImportPro.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtImportPro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtImportPro.Location = new System.Drawing.Point(478, 106);
@@ -204,6 +197,7 @@
             // txtSellForm
             // 
             this.txtSellForm.AutoSize = true;
+            this.txtSellForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtSellForm.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSellForm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSellForm.Location = new System.Drawing.Point(54, 106);
@@ -245,7 +239,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -261,7 +254,6 @@
         private Panel panel2;
         private Label txtAccName;
         private PictureBox picExit;
-        private PictureBox picLogOut;
         private Label label1;
         private Label ABC;
         private Label txtCus;
