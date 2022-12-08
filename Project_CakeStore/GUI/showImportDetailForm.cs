@@ -54,8 +54,6 @@ namespace Project_CakeStore.GUI
 
         private void picExit_Click(object sender, EventArgs e)
         {
-            importForm importForm = new importForm(getName, getId);
-            importForm.ShowDialog();
             this.Hide();
         }
     }

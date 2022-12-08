@@ -54,8 +54,6 @@ namespace Project_CakeStore.GUI
         private void picExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            orderForm order = new orderForm(getName, getId);
-            order.ShowDialog();
         }
     }
 }
