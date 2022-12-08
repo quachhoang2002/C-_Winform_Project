@@ -22,10 +22,6 @@ namespace Project_CakeStore.BUS
             return cake_DAO.checkCakeID(cakeID);
         }
 
-        public Boolean addCake(cake_DTO cake)
-        {
-            return cake_DAO.addCake(cake);
-        }
 
         public Boolean updateQuantityCake(String cakeID, int quantity)
         {

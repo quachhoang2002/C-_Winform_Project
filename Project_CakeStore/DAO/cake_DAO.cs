@@ -52,43 +52,7 @@ namespace Project_CakeStore.DAO
             return list;
         }
 
-        public Boolean addCake(cake_DTO cake)
-        {
-            Boolean check = false;
 
-            if (con != null)
-            {
-                try
-                {
-                    String sql = "insert into Cake (CakeID, CakeName, CategoryID, UnitPrice, Quantity, isDeleted)" +
-                    " values (@CakeID, @CakeName, @categoryID, @UnitPrice, @Quantity, 1)";
-                    SqlCommand cm = new SqlCommand(sql, con);
-                    con.Open();
-                    cm.Parameters.AddWithValue("@CakeID", cake.getCakeID());
-                    cm.Parameters.AddWithValue("@CakeName", cake.getCakeName());
-                    cm.Parameters.AddWithValue("@categoryID", cake.getCategoryID());
-                    cm.Parameters.AddWithValue("@UnitPrice", cake.getUnitPrice());
-                    cm.Parameters.AddWithValue("@Quantity", cake.getQuantity());
-                    con.Open();
-                    int n = cm.ExecuteNonQuery();
-
-                    if (n > 0)
-                    {
-                        check = true;
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
-            }
-
-            return check;
-        }
 
         public Boolean checkCakeID(String cakeID)
         {

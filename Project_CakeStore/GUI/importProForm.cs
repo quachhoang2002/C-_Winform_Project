@@ -56,9 +56,6 @@ namespace Project_CakeStore.GUI
             }
         }
 
-        //Ham load combobox category
-
-
         //Ham load combobox supplier
         public void setCmbSupplier()
         {
@@ -103,11 +100,6 @@ namespace Project_CakeStore.GUI
                 int quantity = int.Parse(tableImport.Rows[i].Cells[3].Value.ToString());
                 int price = int.Parse(tableImport.Rows[i].Cells[5].Value.ToString());
 
-                String cateID = tableImport.Rows[i].Cells[1].Value.ToString();
-                String cakeName = tableImport.Rows[i].Cells[2].Value.ToString();
-                int unitPrice = int.Parse(tableImport.Rows[i].Cells[4].Value.ToString());
-
-
                 Boolean tmp = impDe_BUS.checkImportDetail(importID, cakeID);
                 Boolean checkCakeid = cakeBUS.checkCakeID(cakeID);
                 if(tmp == true)
@@ -118,19 +110,11 @@ namespace Project_CakeStore.GUI
                 } 
                 else
                 {
-                    if(checkCakeid == true)
-                    {
-                        importDetail_DTO impDe = new importDetail_DTO(importID, cakeID, quantity, price);
-                        Boolean a = impDe_BUS.addimportDetail(impDe);
-                        Boolean b = cakeBUS.updateQuantityPlus(cakeID, quantity);
-                    }
-                    else
-                    {
-                        cake_DTO cake = new cake_DTO(cakeID,cakeName,cateID,unitPrice,quantity,"");
-                        importDetail_DTO impDe = new importDetail_DTO(importID, cakeID, quantity, price);
-                        Boolean a = cakeBUS.addCake(cake);
-                        Boolean b = impDe_BUS.addimportDetail(impDe);
-                    }
+                    
+                    importDetail_DTO impDe = new importDetail_DTO(importID, cakeID, quantity, price);
+                    Boolean a = impDe_BUS.addimportDetail(impDe);
+                    Boolean b = cakeBUS.updateQuantityPlus(cakeID, quantity);
+
                 }
 
             }
@@ -139,15 +123,10 @@ namespace Project_CakeStore.GUI
         public void updateQuantity()
         {
             int curIndex = tableCake.CurrentCell.RowIndex;
-            if (int.Parse(tableCake.Rows[curIndex].Cells[4].Value.ToString()) >= 0)
-            {
-                int newQuantity = int.Parse(tableCake.Rows[curIndex].Cells[4].Value.ToString()) + int.Parse(txtOldQuantity.Text);
-                tableCake.Rows[curIndex].Cells[4].Value = newQuantity.ToString();
-            }
-            else
-            {
-                MessageBox.Show("So luong san pham khong du, vui long nhap lai so luong");
-            }
+            
+            int newQuantity = int.Parse(tableCake.Rows[curIndex].Cells[4].Value.ToString()) + int.Parse(txtOldQuantity.Text);
+            tableCake.Rows[curIndex].Cells[4].Value = newQuantity.ToString();
+            
         }
 
         //Ham check regex old Quantity
@@ -170,27 +149,6 @@ namespace Project_CakeStore.GUI
             return check;
         }
 
-        //Ham check regen new Cake
-        public Boolean checkNewCake(String cakeID, String cakeName, String unitPrice, String quantity)
-        {
-            Boolean check = false;
-            String checkCakeID = @"(C)\d{0,9}";
-            Regex rgCakeID = new Regex(checkCakeID);
-            if (cakeID.Equals("") || cakeName.Equals("") || unitPrice.Equals(""))
-            {
-                MessageBox.Show("Vui long nhap day du thong tin");
-            }
-            else if (cakeBUS.checkCakeID(cakeID) == false && rgCakeID.IsMatch(cakeID) && checkOldQuantity(unitPrice) && checkOldQuantity(quantity))
-            {
-                check = true;
-            }
-            else if (cakeBUS.checkCakeID(cakeID))
-            {
-                MessageBox.Show("Ma san pham da ton tai");
-            }
-
-            return check;
-        }
 
         public Boolean checkImportID(String importID)
         {
